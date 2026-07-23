@@ -13,11 +13,15 @@ Large Language Models sind KI-Modelle, die auf riesigen Mengen an Text trainiert
 
 ## Grundprinzip "nächstes wahrscheinliches Wort"
 
-Ein LLM zerlegt Text in **[Tokens](../glossar.md#token)** (häufig Wortteile, ca. 0,5–1 Token pro Wort) und sagt für jeden nächsten Token eine Wahrscheinlichkeitsverteilung vorher. Die Auswahl aus dieser Verteilung — gesteuert durch die **[Temperatur](../glossar.md#temperatur)** — ergibt den Text.
+Ein LLM zerlegt Text in **[Tokens](../glossar.md#token)** (häufig Wortteile; etwa 0,5–1 Token pro englisches Wort; Deutsch liegt je nach Tokenizer häufig bei 1,2–2 Tokens pro Wort) und sagt für jeden nächsten Token eine Wahrscheinlichkeitsverteilung vorher. Die Auswahl aus dieser Verteilung — gesteuert durch die **[Temperatur](../glossar.md#temperatur)** — ergibt den Text.
+
+**Stand: 23.07.2026**
 
 ## Kontextfenster
 
 Das **[Kontextfenster](../glossar.md#kontextfenster)** ist die maximale Länge an Eingabe + Ausgabe, die ein Modell gleichzeitig verarbeiten kann. Typische Werte 2026:
+
+**Stand: 23.07.2026, Preisangaben ohne Gewähr — vor Einsatz Angebot des Anbieters einholen**
 
 - GPT-4-Klasse: 128k bis 1M Tokens
 - Claude Opus / Sonnet: 200k bis 1M Tokens

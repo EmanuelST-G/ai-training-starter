@@ -23,7 +23,7 @@ Einen Business Case mit mehreren Szenarien erstellen, statt nur Lizenzkosten zu 
 | Aspekt | Cloud | On-Premises |
 |--------|-------|-------------|
 | Time-to-Market | Tage | Monate |
-| Datenschutz | abhängig vom Anbieter | maximal |
+| Datenschutz | abhängig vom Anbieter | am besten kontrollierbar; Compliance hängt von der Umsetzung ab (Betreibermodell, Audit, Zertifizierungen) |
 | Kostenverlauf | OPEX, skalierend | CAPEX + OPEX |
 | [Vendor Lock-in](../glossar.md#vendor-lock-in) | hoch | gering |
 
@@ -35,6 +35,8 @@ Einen Business Case mit mehreren Szenarien erstellen, statt nur Lizenzkosten zu 
 ## Kosten pro Anfrage
 
 Beispiel: [RAG](../glossar.md#rag-retrieval-augmented-generation)-Anfrage mit 2k Input + 500 Output Tokens.
+
+**Stand: 23.07.2026, Preisangaben ohne Gewähr — vor Einsatz Angebot des Anbieters einholen**
 
 - GPT-4o: ca. $0,01
 - Claude Haiku: ca. $0,003

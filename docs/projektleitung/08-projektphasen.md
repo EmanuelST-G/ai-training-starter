@@ -66,7 +66,7 @@ Beispiel: PoC → Pilot
 
 ## Umgang mit Experimenten und Fehlschlägen
 
-AI-Projekte sind Forschungsprojekte. 30–40 % der Pilotprojekte erreichen nicht die Produktion. Das ist **keine Schande**, sondern Risiko. Offen damit umgehen.
+AI-Projekte sind Forschungsprojekte. Ein Erfahrungswert aus DACH-AI-Projekten ca. 2024–2026: Rund 30–40 % der Pilotprojekte erreichen nicht die Produktion. Das ist stark branchenabhängig; exakte Zahlen variieren. Ein Fehlschlag ist **keine Schande**, sondern ein Projektrisiko, mit dem offen umzugehen ist.
 
 ## AI Product Owner und AI-Projektleitung
 

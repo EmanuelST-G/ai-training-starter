@@ -1,0 +1,58 @@
+site_name: AI-Ausbildung Projektleitung
+site_description: Schulungsunterlagen für die Projektleiterin im Bereich AI & Management
+site_url: https://EmanuelST-G.github.io/ai-training-starter/
+repo_url: https://github.com/EmanuelST-G/ai-training-starter
+docs_dir: docs
+use_directory_urls: true
+exclude_docs: |
+  superpowers/
+  glossar.md
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+
+plugins:
+  - search
+
+extra_css:
+  - stylesheets/print.css
+
+nav:
+  - Startseite: index.md
+  - Lernpfad: lernpfad.md
+  - Themenliste: themenliste.md

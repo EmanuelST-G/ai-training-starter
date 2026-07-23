@@ -1998,7 +1998,7 @@ git commit -m "docs: readme mit live-url und lokaler build-anleitung"
 ## Task 12: Final-Verifikation
 
 **Files:**
-- keine Datei-Änderungen, nur Verifikation
+- Potentiell: `docs/grundlagen/01-ai-grundlagen.md` (Cross-Task-Link-Cleanup)
 
 - [ ] **Step 1: Build und Link-Prüfung**
 
@@ -2012,11 +2012,20 @@ Erwartet:
 - Exit-Code 0
 - `INFO - Documentation built in X seconds`
 - Keine `WARNING` oder `ERROR`-Zeilen
-- `/tmp/mkdocs.log` zeigt nur INFO und ggf. einen Hinweis auf Annotationen
 
 Falls WARNING erscheint: zugehörige Datei reparieren, dann erneut bauen.
 
-- [ ] **Step 2: Lokal im Browser prüfen**
+- [ ] **Step 2: Cross-Task-Link-Cleanup (bekannte Nacharbeit aus Task 6)**
+
+In `docs/grundlagen/01-ai-grundlagen.md` steht noch der Backtick-Verweis `` `business/07-daten.md` (folgt in Phase 2) ``. Da `docs/business/07-daten.md` jetzt existiert (Task 7), ersetzen durch einen Markdown-Link:
+
+```markdown
+- [Datenverständnis](../business/07-daten.md)
+```
+
+Erneut `mkdocs build --strict` ausführen — Build muss clean bleiben.
+
+- [ ] **Step 3: Lokal im Browser prüfen**
 
 ```bash
 source .venv/bin/activate
@@ -2030,17 +2039,13 @@ pkill -f "mkdocs serve"
 
 Erwartet: jede URL gibt `200` zurück.
 
-- [ ] **Step 3: Push auf `main`, damit die GitHub-Pages-Workflow läuft**
+- [ ] **Step 4: Push-Hinweis für den Nutzer (nicht selbst pushen!)**
 
-```bash
-git push origin main
-```
-
-Erwartet: in GitHub unter `Actions` läuft der Workflow grün durch und die Site ist unter `https://<github-user>.github.io/ai-training-starter/` erreichbar.
+!!! warning "Out of band"
+    Den `git push origin main` führt der Mensch aus, nicht der Implementer. Wenn der Workflow auf GitHub noch nie gelaufen ist, muss vorher in `Settings → Pages → Source: GitHub Actions` aktiviert werden.
 
 !!! info "Ergebnis dieses Plans"
     Nach Abschluss ist die Site für Phase 1–3 + Glossar live. Phase 4 + 5, Übungen, Cheat-Sheets, Fallstudien und Folien kommen in Folge-Plänen.
-```
 
 ---
 

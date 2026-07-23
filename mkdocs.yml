@@ -55,4 +55,18 @@ nav:
   - Startseite: index.md
   - Lernpfad: lernpfad.md
   - Themenliste: themenliste.md
+  - Phase 1 – Grundlagen:
+      - AI-Grundlagen: grundlagen/01-ai-grundlagen.md
+      - LLMs: grundlagen/02-llms.md
+      - Prompt Engineering: grundlagen/03-prompt-engineering.md
+  - Phase 2 – Business:
+      - Use Cases: business/04-use-cases.md
+      - Bewertung: business/05-bewertung.md
+      - Business Case: business/06-business-case.md
+      - Daten: business/07-daten.md
+  - Phase 3 – Projektleitung:
+      - Projektphasen: projektleitung/08-projektphasen.md
+      - Anforderungen: projektleitung/09-anforderungen.md
+      - Evaluation: projektleitung/10-evaluation.md
+      - Change Management: projektleitung/11-change.md
   - Glossar: glossar.md

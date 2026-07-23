@@ -6,7 +6,6 @@ docs_dir: docs
 use_directory_urls: true
 exclude_docs: |
   superpowers/
-  glossar.md
 
 theme:
   name: material
@@ -56,3 +55,4 @@ nav:
   - Startseite: index.md
   - Lernpfad: lernpfad.md
   - Themenliste: themenliste.md
+  - Glossar: glossar.md

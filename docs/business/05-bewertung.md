@@ -33,7 +33,7 @@ Für jeden Use Case strukturiert beantworten:
 | Datenverfügbarkeit | 1 (fehlt) – 5 (vollständig) |
 | Risiko (rechtlich, Reputation) | 1 (hoch) – 5 (gering) |
 | Umsetzungsaufwand (klein = hoch) | 1 (groß) – 5 (klein) |
-| Time-to-Value (klein = hoch) | 1 (Jahre) – 5 (Wochen) |
+| [Time-to-Value](../glossar.md#time-to-value) (klein = hoch) | 1 (Jahre) – 5 (Wochen) |
 
 ## Beispiel-Matrix
 
@@ -41,10 +41,12 @@ Für jeden Use Case strukturiert beantworten:
 |----------|----|----|----|----|----|-----|-------|
 | Meeting-Zusammenfassung | 4 | 5 | 5 | 5 | 4 | 5 | **28** |
 | Vertragsanalyse | 5 | 3 | 4 | 2 | 2 | 3 | **19** |
-| Kundenservice-Agent | 4 | 3 | 3 | 3 | 2 | 3 | **18** |
-| Wissensassistent intern | 4 | 4 | 3 | 4 | 4 | 4 | **23** |
+| Kundenservice-[Agent](../glossar.md#agents) | 4 | 3 | 3 | 3 | 2 | 3 | **18** |
+| [Wissensassistent](../glossar.md#wissensassistent) intern | 4 | 4 | 3 | 4 | 4 | 4 | **23** |
 
 Score = Summe (max. 30). Höher = besser priorisiert.
+
+Bei modellbasierten Use Cases ergänzen [Accuracy](../glossar.md#accuracy), [Precision](../glossar.md#precision), [Recall](../glossar.md#recall) und eine Prüfung auf [Bias](../glossar.md#bias) die qualitative Priorisierung.
 
 ## Praxis-Übung
 

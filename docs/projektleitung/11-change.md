@@ -4,7 +4,7 @@
 
 ## Lernziel
 
-Eine AI-Einführung so kommunizieren, dass sie als Unterstützung und nicht als Bedrohung wahrgenommen wird.
+Eine AI-Einführung mit [Change Management](../glossar.md#change-management) so kommunizieren, dass sie als Unterstützung und nicht als Bedrohung wahrgenommen wird.
 
 ## Ängste und Widerstände
 
@@ -15,6 +15,8 @@ Eine AI-Einführung so kommunizieren, dass sie als Unterstützung und nicht als 
 - **Rechtliche Unsicherheit** — „wer haftet, wenn die AI irrt?"
 
 ## AI als Unterstützung, nicht Personalabbau
+
+Gerade bei der Einführung eines [Copiloten](../glossar.md#copilot) muss die Kommunikation den unterstützenden Charakter klar machen.
 
 Kommunikationsregeln:
 
@@ -28,10 +30,10 @@ Wer nur Chancen verkauft, verliert Glaubwürdigkeit beim ersten Fehler. Wer beid
 
 ## Schulung verschiedener Nutzergruppen
 
-- **Power-User** — Prompting, Tool-Verständnis
+- **Power-User** — [Prompt Engineering](../glossar.md#prompt-engineering), Tool-Verständnis
 - **Gelegenheitsnutzer** — was kann die AI, was nicht
 - **Manager** — Output-Bewertung, Risikointerpretation
-- **Datenschutz-Belegschaft** — Compliance-Pflichten
+- **Datenschutz-Belegschaft** — [Compliance](../glossar.md#compliance)-Pflichten
 
 ## AI Champions und Multiplikatoren
 
@@ -39,7 +41,7 @@ Pro Team eine Person, die:
 
 - Neue Use Cases vorschlägt
 - Kolleg:innen coacht
-- Feedback an die AI-Verantwortlichen gibt
+- Feedback an Rollen mit klar geregelter [Verantwortlichkeit](../glossar.md#verantwortlichkeit) weitergibt
 
 ## Nutzungsrichtlinien
 
@@ -49,7 +51,7 @@ Klar dokumentieren:
 - Welche Ausgaben dürfen wie verwendet werden
 - Welche KI-Tools dürfen genutzt werden
 
-## Shadow AI
+## [Shadow AI](../glossar.md#shadow-ai)
 
 Mitarbeiter:innen nutzen **heimlich** KI-Tools. Drei Gegenmaßnahmen:
 
@@ -70,11 +72,11 @@ Die AI ist Mittel, nicht Zweck. Frage: Welcher **Prozess** ändert sich — und 
 
 Wenn Metriken stagnieren: nicht das Tool ist gescheitert, sondern das Change-Programm.
 
-## Verantwortungsbewusste AI-Kultur
+## [Responsible-AI](../glossar.md#responsible-ai)-Kultur
 
 - Lernen aus Fehlern statt Schuldzuweisung
 - Offenheit über Unsicherheiten
-- Zeit und Budget für Evaluation
+- Zeit und Budget für [Evaluation](../glossar.md#evaluation)
 - Ethische Diskussion als regelmäßiger Termin
 
 !!! tip "Praxistipp"

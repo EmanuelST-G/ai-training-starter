@@ -10,7 +10,7 @@ Statt „Die AI muss immer richtig sein" messbare Qualitätsziele formulieren.
 
 Eine Anforderung beschreibt, **was** erreicht werden soll. Nicht **wie**.
 
-❌ „Wir nehmen GPT-4 mit RAG und einer Pinecone-Vektor-DB."
+❌ „Wir nehmen GPT-4 mit [RAG](../glossar.md#rag-retrieval-augmented-generation) und einer Pinecone-[Vektor-DB](../glossar.md#vektor-datenbank)."
 ✅ „Unsere Vertriebsmitarbeiter können Vertragsfragen in 30 s mit Quellenangabe beantworten lassen."
 
 ## Funktionale Anforderungen
@@ -24,10 +24,10 @@ Eine Anforderung beschreibt, **was** erreicht werden soll. Nicht **wie**.
 
 | Kategorie | Beispiel |
 |-----------|----------|
-| Genauigkeit | Recall ≥ 0,9 auf Gold-Set |
+| Genauigkeit | [Recall](../glossar.md#recall) ≥ 0,9 auf [Gold-Set](../glossar.md#gold-set) |
 | Antwortzeit | p95 ≤ 5 s |
 | Kosten | ≤ 0,05 € pro Anfrage |
-| Verfügbarkeit | 99,5 % monatlich |
+| Verfügbarkeit | [SLO](../glossar.md#slo-service-level-objective) von 99,5 % monatlich; bei vertraglicher Zusage als [SLA](../glossar.md#sla-service-level-agreement) |
 | Datenschutz | DSGVO-konform, keine PII zu externen Anbietern |
 | Nachvollziehbarkeit | jede Antwort mit Quellenangabe |
 | Skalierbarkeit | 50.000 Anfragen / Tag ohne Performance-Einbruch |
@@ -36,7 +36,7 @@ Eine Anforderung beschreibt, **was** erreicht werden soll. Nicht **wie**.
 
 > Als **Vertriebsmitarbeiter:in** möchte ich **eine Vertragsanfrage in natürlicher Sprache stellen können**, damit **ich Kundenfragen sofort beantworten kann, ohne in drei Systemen zu suchen**.
 >
-> **Akzeptanzkriterien:**
+> **[Akzeptanzkriterien](../glossar.md#akzeptanzkriterien):**
 > - Antwort enthält Quellenangabe mit Dokumentenname und Abschnitt
 > - Antwortzeit ≤ 5 s (p95)
 > - Mindestens 80 % der Antworten werden vom Nutzer ohne Nachfrage akzeptiert
@@ -76,7 +76,7 @@ Welche Informationen sollen beigefügt werden?
 - Direktes Zitat bei paraphrasierter Antwort
 - Link auf Originalquelle (wenn intern verfügbar)
 
-## Human-in-the-Loop-Anforderungen
+## [Human-in-the-Loop](../glossar.md#human-in-the-loop)-Anforderungen
 
 Definieren:
 

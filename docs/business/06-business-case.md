@@ -10,12 +10,12 @@ Einen Business Case mit mehreren Szenarien erstellen, statt nur Lizenzkosten zu 
 
 - Modellentwicklung (Custom-Entwicklung)
 - Lizenzen (Plattformgebühren pro Nutzer/Monat)
-- API-Nutzung / Tokens
-- Infrastruktur (Compute, Storage, Vektor-DB)
+- API-Nutzung / [Tokens](../glossar.md#token)
+- Infrastruktur (Compute, Storage, [Vektor-DB](../glossar.md#vektor-datenbank))
 - Datenaufbereitung (manuell + Tools)
 - Integration (in Bestandssysteme)
-- Evaluation (interne Tests, Gold-Set-Pflege)
-- Betrieb und Monitoring (LLMOps)
+- [Evaluation](../glossar.md#evaluation) (interne Tests, Gold-Set-Pflege)
+- Betrieb und Monitoring ([LLMOps](../glossar.md#llmops))
 - Change Management (Schulungen, Kommunikation)
 
 ## Cloud vs. On-Premises
@@ -25,7 +25,7 @@ Einen Business Case mit mehreren Szenarien erstellen, statt nur Lizenzkosten zu 
 | Time-to-Market | Tage | Monate |
 | Datenschutz | abhängig vom Anbieter | maximal |
 | Kostenverlauf | OPEX, skalierend | CAPEX + OPEX |
-| Vendor Lock-in | hoch | gering |
+| [Vendor Lock-in](../glossar.md#vendor-lock-in) | hoch | gering |
 
 ## Kleine vs. große Modelle
 
@@ -34,7 +34,7 @@ Einen Business Case mit mehreren Szenarien erstellen, statt nur Lizenzkosten zu 
 
 ## Kosten pro Anfrage
 
-Beispiel: RAG-Anfrage mit 2k Input + 500 Output Tokens.
+Beispiel: [RAG](../glossar.md#rag-retrieval-augmented-generation)-Anfrage mit 2k Input + 500 Output Tokens.
 
 - GPT-4o: ca. $0,01
 - Claude Haiku: ca. $0,003
@@ -42,7 +42,7 @@ Beispiel: RAG-Anfrage mit 2k Input + 500 Output Tokens.
 
 Bei 50.000 Anfragen / Monat: **$500 vs. $150 vs. $15**. Auch bei niedrigem Stückpreis summieren sich Volumen.
 
-## ROI und Total Cost of Ownership
+## [ROI](../glossar.md#roi-return-on-investment) und [Total Cost of Ownership](../glossar.md#tco-total-cost-of-ownership)
 
 ROI = (Nutzen − Kosten) / Kosten
 

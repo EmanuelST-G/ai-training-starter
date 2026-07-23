@@ -13,11 +13,11 @@ Large Language Models sind KI-Modelle, die auf riesigen Mengen an Text trainiert
 
 ## Grundprinzip "nächstes wahrscheinliches Wort"
 
-Ein LLM zerlegt Text in **Tokens** (häufig Wortteile, ca. 0,5–1 Token pro Wort) und sagt für jeden nächsten Token eine Wahrscheinlichkeitsverteilung vorher. Die Auswahl aus dieser Verteilung — gesteuert durch die **Temperatur** — ergibt den Text.
+Ein LLM zerlegt Text in **[Tokens](../glossar.md#token)** (häufig Wortteile, ca. 0,5–1 Token pro Wort) und sagt für jeden nächsten Token eine Wahrscheinlichkeitsverteilung vorher. Die Auswahl aus dieser Verteilung — gesteuert durch die **[Temperatur](../glossar.md#temperatur)** — ergibt den Text.
 
 ## Kontextfenster
 
-Das **Kontextfenster** ist die maximale Länge an Eingabe + Ausgabe, die ein Modell gleichzeitig verarbeiten kann. Typische Werte 2026:
+Das **[Kontextfenster](../glossar.md#kontextfenster)** ist die maximale Länge an Eingabe + Ausgabe, die ein Modell gleichzeitig verarbeiten kann. Typische Werte 2026:
 
 - GPT-4-Klasse: 128k bis 1M Tokens
 - Claude Opus / Sonnet: 200k bis 1M Tokens
@@ -27,7 +27,7 @@ Was nicht ins Fenster passt, "weiß" das Modell nicht.
 
 ## System-Prompt, User-Prompt, Assistant-Response
 
-- **System-Prompt:** Rollen- und Verhaltensanweisungen (vom Entwickler)
+- **[System-Prompt](../glossar.md#system-prompt):** Rollen- und Verhaltensanweisungen (vom Entwickler)
 - **User-Prompt:** die eigentliche Anfrage
 - **Assistant-Response:** die Antwort des Modells
 
@@ -43,7 +43,7 @@ Was nicht ins Fenster passt, "weiß" das Modell nicht.
 
 ## Halluzinationen
 
-Eine Halluzination ist eine **falsche Aussage, die das Modell sicher präsentiert**. Quellen:
+Eine [Halluzination](../glossar.md#halluzination) ist eine **falsche Aussage, die das Modell sicher präsentiert**. Quellen:
 
 - Trainingsdaten enthalten den Fakt nicht
 - Verteilung erlaubt plausible Lügen
@@ -53,7 +53,7 @@ Erkennung: Quellen verlangen, Cross-Check, gesundes Misstrauen.
 
 ## Temperatur und Determinismus
 
-**Temperatur** regelt, wie "kreativ" oder "konservativ" das Modell antwortet:
+**[Temperatur](../glossar.md#temperatur)** regelt, wie "kreativ" oder "konservativ" das Modell antwortet:
 
 - **T = 0**: greedy decoding, sehr deterministisch
 - **T ≈ 0,7**: ausgewogen (typisch)
@@ -67,9 +67,9 @@ Modelle können gezwungen werden, valide JSON- oder XML-Strukturen zu liefern �
 
 ## Multimodale Modelle
 
-Aktuelle Modelle verarbeiten nicht nur Text, sondern auch Bilder, Audio und teilweise Video. Das erweitert die Use Cases erheblich (Rechnungsscan, Diagrammanalyse, Audio-Transkription).
+Aktuelle [multimodale Modelle](../glossar.md#multimodal) verarbeiten nicht nur Text, sondern auch Bilder, Audio und teilweise Video. Das erweitert die Use Cases erheblich (Rechnungsscan, Diagrammanalyse, Audio-Transkription).
 
-## Reasoning-Modelle
+## [Reasoning-Modelle](../glossar.md#reasoning-modelle)
 
 Modelle wie OpenAI o1/o3 oder Claude mit "Extended Thinking" zerlegen Aufgaben intern in Zwischenschritte. Sie sind langsamer und teurer, liefern aber bei Mathematik, Logik und mehrstufiger Planung oft deutlich bessere Ergebnisse.
 

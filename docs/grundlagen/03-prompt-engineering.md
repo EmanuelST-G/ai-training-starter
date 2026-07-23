@@ -21,10 +21,10 @@ Aus einem schlechten Prompt schrittweise einen stabilen Business-Prompt entwicke
 
 ## Zero-Shot und Few-Shot
 
-- **Zero-Shot:** nur die Aufgabe, keine Beispiele
-- **Few-Shot:** 1–5 Beispiele für das gewünschte Schema
+- **[Zero-Shot](../glossar.md#zero-shot-prompting):** nur die Aufgabe, keine Beispiele
+- **[Few-Shot](../glossar.md#few-shot-prompting):** 1–5 Beispiele für das gewünschte Schema
 
-Few-Shot ist robuster für strukturierte Aufgaben, kostet aber Tokens.
+Few-Shot ist robuster für strukturierte Aufgaben, kostet aber [Tokens](../glossar.md#token).
 
 ## Iteratives Prompting
 
@@ -32,7 +32,7 @@ Ein guter Prompt entsteht fast nie im ersten Versuch. Vorgehen:
 
 1. Ersten Wurf schreiben
 2. An 5–10 Beispielen ausführen
-3. Schwächen identifizieren (Halluzinationen, falsches Format, fehlender Kontext)
+3. Schwächen identifizieren ([Halluzinationen](../glossar.md#halluzination), falsches Format, fehlender Kontext)
 4. Prompt präzise anpassen
 5. Wiederholen, bis Stabilität erreicht ist
 
@@ -64,8 +64,8 @@ Modelle dürfen (und sollen) Rückfragen stellen, wenn die Aufgabe mehrdeutig is
 - **Zu lange Prompts** mit redundantem Kontext
 
 !!! warning "Praxisfalle"
-    Prompt Engineering allein ergibt **keine** zuverlässige AI-Anwendung. Dafür braucht es:
+    [Prompt Engineering](../glossar.md#prompt-engineering) allein ergibt **keine** zuverlässige AI-Anwendung. Dafür braucht es:
     - Evaluation (qualifizierte Testfälle)
-    - Vordefinierte Tools / Function-Calling
-    - Quellen (RAG) statt freier Erfindung
-    - Human-in-the-Loop bei Konsequenzen
+    - Vordefinierte Tools / [Function Calling](../glossar.md#function-calling)
+    - Quellen ([RAG](../glossar.md#rag-retrieval-augmented-generation)) statt freier Erfindung
+    - [Human-in-the-Loop](../glossar.md#human-in-the-loop) bei Konsequenzen

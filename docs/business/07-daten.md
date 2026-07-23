@@ -28,13 +28,13 @@ Beide sind relevant — viele AI-Projekte leben davon, unstrukturierte Daten zug
 
 ## Trainings-, Test- und Validierungsdaten
 
-- **Trainingsdaten** sind die Beispiele, aus denen das Modell lernt
-- **Validierungsdaten** werden während der Entwicklung zur Hyperparameter-Abstimmung genutzt
-- **Testdaten** sind unsichtbar bis zur finalen Abnahme
+- **[Trainingsdaten](../glossar.md#training)** sind die Beispiele, aus denen das Modell lernt
+- **[Validierungsdaten](../glossar.md#validierung)** werden während der Entwicklung zur Hyperparameter-Abstimmung genutzt
+- **[Testdaten](../glossar.md#testset)** sind unsichtbar bis zur finalen Abnahme
 
 Werden diese vermischt, ist jede Genauigkeitsangabe wertlos.
 
-## Labels und Ground Truth
+## Labels und [Ground Truth](../glossar.md#ground-truth)
 
 Ground Truth = "was die richtige Antwort ist". Wer legt sie fest? Wer prüft sie?
 
@@ -50,7 +50,7 @@ Projektleiterinnen sollten darauf bestehen, dass Ground Truth von **Fachexperten
 | Konsistenz | Gleicher Kunde, mehrere Schreibweisen? |
 | Repräsentativität | Spiegeln die Daten die Realität der Anwendung? |
 
-## Bias in Daten
+## [Bias](../glossar.md#bias) in Daten
 
 Wenn die historischen Daten bestimmte Gruppen unterrepräsentieren, lernt das Modell die Diskriminierung mit. Beispiele: Bewerbungsdaten mit gender-tendenziösen Erfolgsmustern, Kreditdaten mit verzerrten Annahmen.
 
@@ -62,10 +62,10 @@ Gegenmaßnahmen:
 
 ## Personenbezug und sensible Daten
 
-Datenschutz beginnt bei der Frage: „Welche Daten **kommen rein**, welche dürfen **verarbeitet** werden, was darf das Modell daraus **ableiten**?"
+Datenschutz im Sinne der [DSGVO](../glossar.md#dsgvo) beginnt bei der Frage: „Welche Daten **kommen rein**, welche dürfen **verarbeitet** werden, was darf das Modell daraus **ableiten**?"
 
 - Klare Zweckbindung
-- Datenminimierung
+- [Datenminimierung](../glossar.md#datenminimierung)
 - Zugriffskontrolle
 - Aufbewahrung und Löschung
 

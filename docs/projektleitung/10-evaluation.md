@@ -36,9 +36,9 @@ Ground Truth ist das **menschlich festgelegt richtige Ergebnis**. Pro Testfall:
 
 | Anwendung | Metriken |
 |-----------|----------|
-| Klassifikation | Accuracy, Precision, Recall, F1 |
+| Klassifikation | [Accuracy](../glossar.md#accuracy), [Precision](../glossar.md#precision), [Recall](../glossar.md#recall), F1 |
 | Extraktion | Token-F1, Exact-Match |
-| Generative Antwort | BLEU / ROUGE (Schwäche), LLM-as-a-Judge, manuelle Bewertung |
+| Generative Antwort | BLEU / ROUGE (Schwäche), [LLM-as-a-Judge](../glossar.md#llm-as-a-judge), manuelle Bewertung |
 | RAG | Quellenkorrektheit, Antwort-Korrektheit, Halluzinationsrate |
 | Konversation | Task Completion Rate, Nutzerzufriedenheit, Bearbeitungszeit |
 
@@ -67,12 +67,12 @@ Für generative Antworten helfen strukturierte Bewertungsrubriken:
 Ein LLM kann ein anderes LLM bewerten — ist aber **nicht** neutral. Probleme:
 
 - Bevorzugt eloquente Antworten
-- Hat eigene Bias
+- Hat eigenen [Bias](../glossar.md#bias)
 - Übersieht fachliche Fehler
 
 Nur als **eine** von mehreren Methoden einsetzen, nicht als einzige.
 
-## A/B-Tests
+## [A/B-Tests](../glossar.md#ab-test)
 
 Vergleich zweier Modellversionen oder Promptvarianten mit echtem Traffic. Achtung:
 
@@ -84,7 +84,7 @@ Vergleich zweier Modellversionen oder Promptvarianten mit echtem Traffic. Achtun
 
 Unverzichtbar: **Fachexperte** gibt endgültig frei. Wer das nicht einplant, baut Produkte, die niemand verantworten will.
 
-## Red Teaming
+## [Red Teaming](../glossar.md#red-teaming)
 
  gezielte Suche nach Schwachstellen:
 
@@ -94,7 +94,7 @@ Unverzichtbar: **Fachexperte** gibt endgültig frei. Wer das nicht einplant, bau
 - Falsche Quellenangaben
 - Verhalten bei Out-of-Scope-Fragen
 
-## Regressionstests
+## [Regressionstests](../glossar.md#regressionstest)
 
 Nach jeder Modell- oder Prompt-Änderung: vollständiges Gold-Set erneut durchlaufen. Sonst wandern Fehler unbemerkt zurück.
 

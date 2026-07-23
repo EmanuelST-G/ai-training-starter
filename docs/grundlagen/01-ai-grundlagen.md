@@ -8,7 +8,7 @@ Erklären können, wann AI sinnvoll ist und wann klassische Software die bessere
 
 ## Was ist künstliche Intelligenz?
 
-Künstliche Intelligenz (AI) bezeichnet Software, die Aufgaben übernimmt, für die Menschen typischerweise Intelligenz benötigen — Sprache verstehen, Muster erkennen, Entscheidungen treffen. Heute meint „AI" in der Praxis fast immer **Machine Learning**: Modelle, die aus Daten generalisieren, statt explizit programmiert zu werden.
+Künstliche Intelligenz (AI) bezeichnet Software, die Aufgaben übernimmt, für die Menschen typischerweise Intelligenz benötigen — Sprache verstehen, Muster erkennen, Entscheidungen treffen. Heute meint „AI" in der Praxis fast immer **[Machine Learning](../glossar.md#machine-learning)**: Modelle, die aus Daten generalisieren, statt explizit programmiert zu werden.
 
 ## Abgrenzung
 
@@ -22,8 +22,8 @@ Künstliche Intelligenz (AI) bezeichnet Software, die Aufgaben übernimmt, für 
 
 ## Training, Inferenz und Modelle
 
-- **Training:** Modell lernt aus Daten (einmalig oder fortlaufend)
-- **Inferenz:** Modell liefert Vorhersagen für neue Eingaben
+- **[Training](../glossar.md#training):** Modell lernt aus Daten (einmalig oder fortlaufend)
+- **[Inferenz](../glossar.md#inferenz):** Modell liefert Vorhersagen für neue Eingaben
 - **Modell:** gespeichertes Ergebnis des Trainings — die "kompilierte Erfahrung"
 
 ## Strukturierte und unstrukturierte Daten
@@ -42,9 +42,9 @@ Anders als klassische Software gibt AI eine **Wahrscheinlichkeitsverteilung** ü
 
 ## Warum AI Fehler macht
 
-- **Bias in den Trainingsdaten** — das Modell erbt Vorurteile
+- **[Bias](../glossar.md#bias) in den Trainingsdaten** — das Modell erbt Vorurteile
 - **Distribution Shift** — die Welt verändert sich, das Modell nicht
-- **Halluzinationen** — das Modell "erfindet" Inhalte, die plausibel klingen
+- **[Halluzinationen](../glossar.md#halluzination)** — das Modell "erfindet" Inhalte, die plausibel klingen
 - **Fehlende Aktualität** — das Modell kennt nichts nach seinem Trainingsstand
 
 ## Überblick über wichtige AI-Arten
@@ -53,8 +53,8 @@ Anders als klassische Software gibt AI eine **Wahrscheinlichkeitsverteilung** ü
 - **Prognose** — Verkaufszahlen nächste Woche?
 - **Clustering** — welche Kunden sind ähnlich?
 - **Empfehlungssysteme** — welcher Film passt?
-- **Computer Vision** — was ist auf dem Bild?
-- **Sprachverarbeitung (NLP)** — Text verstehen, generieren, übersetzen
+- **[Computer Vision](../glossar.md#computer-vision)** — was ist auf dem Bild?
+- **[Sprachverarbeitung (NLP)](../glossar.md#natural-language-processing-nlp)** — Text verstehen, generieren, übersetzen
 - **Generative AI** — neue Inhalte erzeugen
 
 !!! tip "Praxisbezug"

@@ -9,23 +9,29 @@ Alphabetisches Verzeichnis der wichtigsten AI-Begriffe für die Projektleitung.
 
 ## A
 
+### A/B-Test
+Kontrollierter Vergleich zweier Varianten mit vergleichbaren Nutzergruppen oder Traffic-Anteilen, um Unterschiede in Wirkung und Qualität zu messen.
+
+### Accuracy
+Anteil korrekter Vorhersagen an allen Vorhersagen. Mehr in [Evaluation](projektleitung/10-evaluation.md).
+
 ### Agents
 AI-Systeme, die eigenständig planen und Aktionen über Tools ausführen. Mehr in [Generative AI & LLMs](grundlagen/02-llms.md).
 
 ### AI Act (EU)
 Europäische Verordnung zur Regulierung von KI-Systemen, 2024 in Kraft, gestaffelte Anwendung ab 2025. Mehr in `verantwortung/16-datenschutz.md` (Folgeplan).
 
+### AI Literacy
+Fähigkeit, AI-Konzepte zu verstehen, AI-Tools kritisch zu nutzen und gesellschaftliche Implikationen einzuordnen. Mehr in `verantwortung/19-governance.md` (Folgeplan).
+
+### Akzeptanzkriterien
+Messbare Bedingungen, die eine Lösung erfüllen muss, damit Fachbereich und Auftraggeber sie abnehmen können.
+
 ### Annotation
 Manuelle Markierung von Beispielen, um Trainingsdaten oder Ground Truth aufzubauen.
 
 ### Anweisungs-Prompt
 Vom Entwickler gesetzter Prompt, der das Verhalten des Modells über die gesamte Konversation hinweg beeinflusst. Synonym: System-Prompt.
-
-### Accuracy
-Anteil korrekter Vorhersagen an allen Vorhersagen. Mehr in [Evaluation](projektleitung/10-evaluation.md).
-
-### AI Literacy
-Fähigkeit, AI-Konzepte zu verstehen, AI-Tools kritisch zu nutzen und gesellschaftliche Implikationen einzuordnen. Mehr in `verantwortung/19-governance.md` (Folgeplan).
 
 ### Assistenz vs. Automatisierung
 Assistenz = Mensch prüft jede AI-Ausgabe. Automatisierung = AI handelt autonom.
@@ -51,8 +57,14 @@ Aufteilen einer Aufgabe in mehrere parallele Bearbeitungspfade (z. B. durch mehr
 
 ## C
 
+### Canary Deployment
+Rollout-Strategie, bei der eine neue Version zunächst an einem kleinen Anteil des Traffics ausgerollt wird, bevor sie breit verfügbar wird.
+
 ### Chain-of-Thought (CoT)
 Prompting-Technik, die das Modell anleitet, Zwischenschritte explizit zu zeigen. Mehr in [Prompt Engineering](grundlagen/03-prompt-engineering.md).
+
+### Change Management
+Geplante Begleitung organisatorischer Veränderungen durch Kommunikation, Beteiligung, Schulung und Erfolgsmessung.
 
 ### Chat-Modus
 Interaktive Konversation ohne persistenter Anwendungslogik (Beispiel: ChatGPT).
@@ -69,13 +81,13 @@ Maximale Token-Anzahl, die ein Modell gleichzeitig verarbeiten kann.
 ### Copilot
 AI-System, das Vorschläge macht, während der Mensch die Kontrolle behält.
 
-### Canary Deployment
-Rollout-Strategie, bei der eine neue Version zunächst an einem kleinen Anteil des Traffics ausgerollt wird, bevor sie breit verfügbar wird.
-
 ### Cosine Similarity
 Ähnlichkeitsmaß zwischen zwei Embedding-Vektoren, gemessen als Kosinus des Winkels zwischen ihnen.
 
 ## D
+
+### Datenminimierung
+DSGVO-Grundsatz, nach dem nur die für einen klaren Zweck erforderlichen personenbezogenen Daten verarbeitet werden dürfen.
 
 ### Datenschutz-Folgenabschätzung (DSFA)
 Prozess zur Bewertung von Risiken für Personen bei Datenverarbeitungen.
@@ -143,6 +155,9 @@ Manuell kuratiertes Testset mit bekannten korrekten Antworten.
 ### Governance
 Strukturen und Regeln zur Steuerung von AI-Systemen im Unternehmen.
 
+### Ground Truth
+Fachlich festgelegte Referenzantwort oder korrekte Kennzeichnung, gegen die Modell-Ausgaben bewertet werden.
+
 ### Grounding
 Verankerung von AI-Antworten in nachweisbaren Quellen (typisch für RAG).
 
@@ -195,6 +210,9 @@ Zeit zwischen Anfrage und Antwort.
 ### Lernrate
 Hyperparameter, der die Schrittgröße beim Training bestimmt.
 
+### LLM-as-a-Judge
+Evaluationsmethode, bei der ein Sprachmodell Antworten anhand eines vorgegebenen Bewertungsrasters beurteilt; menschliche Kontrolle bleibt erforderlich.
+
 ### LLMOps
 Betriebspraktiken für LLM-basierte Systeme.
 
@@ -242,6 +260,15 @@ Modell passt sich zu stark an Trainingsdaten an und generalisiert schlecht.
 
 ## P
 
+### Pilot
+Begrenzter Einsatz einer AI-Lösung mit echten Nutzer:innen und realen Prozessen, bevor über den breiten Rollout entschieden wird.
+
+### Plan
+Schritt eines Agenten, in dem aus einem Ziel eine strukturierte Aktionsfolge abgeleitet wird.
+
+### PoC
+Proof of Concept: zeitlich begrenzter Machbarkeitsnachweis, der prüft, ob ein Ansatz grundsätzlich funktioniert.
+
 ### Precision
 Anteil korrekter positiver Vorhersagen an allen positiven Vorhersagen.
 
@@ -259,9 +286,6 @@ Angriff, der schädliche Anweisungen in den Prompt einschleust.
 
 ### Provenienz
 Herkunft und Bearbeitungshistorie von Daten oder Outputs.
-
-### Plan
-Schritt eines Agenten, in dem aus einem Ziel eine strukturierte Aktionsfolge abgeleitet wird.
 
 ## Q
 
@@ -288,6 +312,9 @@ Anteil gefundener relevanter Fälle an allen relevanten Fällen.
 ### Red Teaming
 Gezielte Suche nach Schwachstellen durch simulierte Angriffe.
 
+### Regressionstest
+Wiederholung eines festgelegten Testsets nach Änderungen, um erneut auftretende oder neu eingeführte Fehler zu erkennen.
+
 ### Re-Plan
 Erneutes Erstellen eines Plans, wenn ein Agent feststellt, dass der ursprüngliche Plan nicht mehr zielführend ist.
 
@@ -310,6 +337,9 @@ Letzte Anweisung im Prompt, die das Ausgabeformat festlegt.
 
 ### Self-Consistency
 Technik, mehrere Antworten zu generieren und die häufigste zu wählen.
+
+### Shadow AI
+Nicht freigegebene oder unbekannte Nutzung von AI-Werkzeugen durch Beschäftigte außerhalb der vorgesehenen Governance- und Sicherheitsprozesse.
 
 ### Shadow Traffic
 Verkehrsanfragen, die parallel zu Produktion an eine neue Modellversion gespiegelt werden, ohne dass Antworten an Endnutzer:innen ausgeliefert werden.

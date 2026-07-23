@@ -33,7 +33,7 @@ Was AI schlecht kann: kausale Begründung über kontrafaktische Szenarien, physi
 - Marketing & Content
 - Softwareentwicklung (Code-Vorschläge, Tests, Refactoring)
 
-## Assistenz vs. vollständige Automatisierung
+## [Assistenz vs. vollständige Automatisierung](../glossar.md#assistenz-vs-automatisierung)
 
 | Grad | Beispiel | Risiko |
 |------|----------|--------|
@@ -41,27 +41,27 @@ Was AI schlecht kann: kausale Begründung über kontrafaktische Szenarien, physi
 | Assistenz | Copilot für Kundenservice-Antwort | Mittel — Mensch prüft |
 | Vollautonom | AI-Agent beantwortet Kunden ohne Prüfung | Hoch — rechtlich und qualitativ |
 
-## Human-in-the-Loop
+## [Human-in-the-Loop](../glossar.md#human-in-the-loop)
 
 Wo Fehler Folgen haben, **muss** ein Mensch die Ausgabe prüfen oder freigeben. Das hat zwei Effekte:
 
 - Qualität wird messbar besser
-- Time-to-Value sinkt (Mensch liest trotzdem)
+- [Time-to-Value](../glossar.md#time-to-value) sinkt (Mensch liest trotzdem)
 
 ## AI als Copilot, Reviewer oder autonomer Agent
 
-- **Copilot:** Vorschlag, Mensch entscheidet
+- **[Copilot](../glossar.md#copilot):** Vorschlag, Mensch entscheidet
 - **Reviewer:** Mensch macht, AI prüft
-- **Autonomer Agent:** AI entscheidet und handelt
+- **[Autonomer Agent](../glossar.md#agents):** AI entscheidet und handelt
 
 ## Ungeeignete Use Cases erkennen
 
 - Wenn klassische Regel-Software billiger und zuverlässiger ist
 - Wenn die Fehlerrate unter 0,1 % liegen muss
-- Wenn Trainingsdaten fehlen oder Bias-dominiert sind
+- Wenn Trainingsdaten fehlen oder [Bias](../glossar.md#bias)-dominiert sind
 - Wenn ethische, regulatorische oder reputationsrelevante Konsequenzen drohen
 
-## Build vs. Buy
+## [Build vs. Buy](../glossar.md#make-or-buy)
 
 | Faktor | Build | Buy |
 |--------|-------|-----|

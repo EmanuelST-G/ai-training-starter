@@ -19,19 +19,19 @@ Den Verlauf eines AI-Projekts realistisch planen und kommunizieren.
 1. **Problemdefinition** — welches konkrete Problem, welches Ziel
 2. **Use-Case-Auswahl** — Selektion aus dem Portfolio
 3. **Datenprüfung** — was haben wir, was fehlt
-4. **Proof of Concept (PoC)** — funktioniert es prinzipiell?
-5. **Pilot** — wie verhält es sich im Realbetrieb mit echten Nutzern?
-6. **Evaluation** — erreicht es die Qualitätsziele?
+4. **[Proof of Concept (PoC)](../glossar.md#poc)** — funktioniert es prinzipiell?
+5. **[Pilot](../glossar.md#pilot)** — wie verhält es sich im Realbetrieb mit echten Nutzern?
+6. **[Evaluation](../glossar.md#evaluation)** — erreicht es die Qualitätsziele?
 7. **Integration** — Anbindung an Bestandssysteme
 8. **Produktiver Betrieb** — Go-Live mit Monitoring
-9. **Monitoring und Verbesserung** — Drift, Updates, neue Use Cases
+9. **Monitoring und Verbesserung** — [Drift](../glossar.md#drift), Updates, neue Use Cases
 
 ## Anforderungen als überprüfbare Kriterien
 
 Eine AI-Anforderung ist nur dann nützlich, wenn sie **messbar** ist.
 
 ❌ „Das Modell soll Vertragsrisiken erkennen."
-✅ „Das Modell erkennt 90 % der in Gold-Set definierten Vertragsrisiken (Recall 0,9) bei einer False-Positive-Rate ≤ 0,1."
+✅ „Das Modell erkennt 90 % der im [Gold-Set](../glossar.md#gold-set) definierten Vertragsrisiken ([Recall](../glossar.md#recall) 0,9) bei einer False-Positive-Rate ≤ 0,1."
 
 ## Erwartungsmanagement
 
@@ -62,7 +62,7 @@ Jede Phase braucht **harte Kriterien**, wann es weitergeht und wann nicht.
 Beispiel: PoC → Pilot
 - Recall ≥ 0,7 im Gold-Set
 - Antwortzeit < 5 s
-- Keine kritischen Halluzinationen in 50 Testfällen
+- Keine kritischen [Halluzinationen](../glossar.md#halluzination) in 50 Testfällen
 
 ## Umgang mit Experimenten und Fehlschlägen
 
@@ -73,7 +73,7 @@ AI-Projekte sind Forschungsprojekte. 30–40 % der Pilotprojekte erreichen nicht
 - **AI Product Owner:** priorisiert Use Cases, definiert Akzeptanz
 - **AI-Projektleitung:** steuert Phasen, Risiken, Stakeholder, Budget
 - **Data Engineer / ML Engineer:** baut und betreibt
-- **Fachexperte:** liefert Ground Truth, bewertet Qualität
+- **Fachexperte:** liefert [Ground Truth](../glossar.md#ground-truth), bewertet Qualität
 
 !!! warning "Der wichtigste Satz"
     Ein erfolgreicher PoC ist noch kein produktionsfähiges System. Wer früh „funktioniert" ruft, gefährdet die spätere Qualität.

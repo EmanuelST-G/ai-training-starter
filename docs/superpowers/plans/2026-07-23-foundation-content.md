@@ -1803,11 +1803,28 @@ source .venv/bin/activate && mkdocs build --strict
 
 Erwartet: keine Warnungen.
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 3: Glossar auf 100+ Begriffe erweitern (Spec-Ziel) und Commit**
+
+Die obige Vorlage enthält ~80 Begriffe. Erweitere das Glossar um **mindestens 20 weitere fehlende Begriffe**, sodass die Spec-Zielgröße (100–150 Begriffe) erreicht wird. Besonders sinnvoll:
+
+- **Datenschutz/Governance-Begriffe** (Phase 5, im Folge-Plan): DSGVO, Auftragsverarbeitung, Hochrisiko-System, AI Literacy, Roherhebung, Verantwortlicher
+- **RAG/Agents-Begriffe** (Phase 4): Vektor-Datenbank, Ähnlichkeitssuche, Cosine Similarity, Tool-Aufruf, Reasoning Chain, Memory/Episodic Memory, Plan/Re-Plan
+- **Operations-Begriffe**: Latenz, Throughput, Rate Limit, SLO/SLA, Canary Deployment, Shadow Traffic, Drift Detection
+- **Business-Begriffe**: ROI, TCO, Time-to-Value, Vendor Lock-in, Make-or-Buy, Opportunitätskosten
+
+Geprüft mit:
+
+```bash
+grep -cE '^### [A-ZÄÖÜa-zäöüß-]+' docs/glossar.md
+```
+
+Erwartet: ≥ 100.
+
+Dann committen:
 
 ```bash
 git add docs/glossar.md
-git commit -m "feat(docs): glossar mit 80+ alphabetisch sortierten begriffen"
+git commit -m "feat(docs): glossar mit 100+ alphabetisch sortierten begriffen"
 ```
 
 ---
@@ -1820,57 +1837,7 @@ git commit -m "feat(docs): glossar mit 80+ alphabetisch sortierten begriffen"
 
 - [ ] **Step 1: Workflow-Datei anlegen**
 
-Verzeichnis und Datei `.github/workflows/deploy.yml` mit folgendem Inhalt anlegen:
-
-```yaml
-name: Deploy MkDocs to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-jobs:
-  build:
-    name: Build site
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Build site (strict)
-        run: mkdocs build --strict
-
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-Hinweis: GitHub empfiehlt seit 2024 die `actions/deploy-pages`-Action. Diese erwartet ein `site/`-Verzeichnis, das bereits im `build`-Job via `mkdocs build` erzeugt und über `actions/upload-pages-artifact` weitergereicht wird. Daher muss der `build`-Job erweitert werden.
-
-Datei ersetzen:
+Verzeichnis `.github/workflows/` und Datei `.github/workflows/deploy.yml` mit folgendem Inhalt anlegen (dies ist die korrekte, finale Version — GitHub Actions `actions/deploy-pages` braucht `actions/configure-pages` + `actions/upload-pages-artifact`):
 
 ```yaml
 name: Deploy MkDocs to GitHub Pages

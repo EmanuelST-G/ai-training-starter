@@ -11,3 +11,13 @@ Thumbs.db
 # Build artifacts
 *.pdf
 !docs/**/*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# MkDocs build output
+/site/

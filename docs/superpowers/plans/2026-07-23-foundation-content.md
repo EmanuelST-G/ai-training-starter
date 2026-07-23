@@ -1468,9 +1468,18 @@ git commit -m "feat(docs): phase 3 - projektleitung (4 themenbloecke)"
 
 **Files:**
 - Modify: `docs/glossar.md`
-- Modify: `mkdocs.yml` (Navigation ergänzen, falls Glossar nicht schon eingebunden ist)
+- Modify: `mkdocs.yml` — `glossar.md` aus `exclude_docs` entfernen und `Glossar: glossar.md` zur `nav`-Sektion hinzufügen
 
-- [ ] **Step 1: Glossar mit initialen 30 Begriffen füllen**
+- [ ] **Step 1: `mkdocs.yml` aktualisieren — Glossar einbinden**
+
+In `mkdocs.yml`:
+1. In der `exclude_docs`-Zeile `glossar.md` entfernen (sodass nur `superpowers/` stehen bleibt).
+2. In der `nav`-Sektion (am Ende, vor `nav` schließt) folgenden Eintrag hinzufügen:
+   ```yaml
+      - Glossar: glossar.md
+   ```
+
+- [ ] **Step 2: Glossar mit initialen 30 Begriffen füllen**
 
 `docs/glossar.md` mit folgendem Inhalt überschreiben:
 
@@ -1794,16 +1803,16 @@ AI-System, das Mitarbeiter:innen beim Zugriff auf Unternehmenswissen unterstütz
 Prompting ohne Beispiele.
 ```
 
-- [ ] **Step 2: Build prüfen**
+- [ ] **Step 3: Build prüfen**
 
 Run:
 ```bash
 source .venv/bin/activate && mkdocs build --strict
 ```
 
-Erwartet: keine Warnungen.
+Erwartet: keine Warnungen. `Glossar` taucht in der Seitenleiste und auf der Startseite-Suche auf.
 
-- [ ] **Step 3: Glossar auf 100+ Begriffe erweitern (Spec-Ziel) und Commit**
+- [ ] **Step 4: Glossar auf 100+ Begriffe erweitern (Spec-Ziel) und Commit**
 
 Die obige Vorlage enthält ~80 Begriffe. Erweitere das Glossar um **mindestens 20 weitere fehlende Begriffe**, sodass die Spec-Zielgröße (100–150 Begriffe) erreicht wird. Besonders sinnvoll:
 

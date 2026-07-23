@@ -86,7 +86,7 @@ Unverzichtbar: **Fachexperte** gibt endgültig frei. Wer das nicht einplant, bau
 
 ## [Red Teaming](../glossar.md#red-teaming)
 
- gezielte Suche nach Schwachstellen:
+Gezielte Suche nach Schwachstellen:
 
 - Prompt-Injection
 - Jailbreaks

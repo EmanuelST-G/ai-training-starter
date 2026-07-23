@@ -67,7 +67,7 @@ Prompting-Technik, die das Modell anleitet, Zwischenschritte explizit zu zeigen.
 Geplante Begleitung organisatorischer Veränderungen durch Kommunikation, Beteiligung, Schulung und Erfolgsmessung.
 
 ### Chat-Modus
-Interaktive Konversation ohne persistenter Anwendungslogik (Beispiel: ChatGPT).
+Interaktive Konversation ohne persistente Anwendungslogik (Beispiel: ChatGPT).
 
 ### Compliance
 Einhaltung gesetzlicher, regulatorischer und interner Vorschriften.

@@ -9,7 +9,7 @@ Nach der Ausbildung kann die Projektleiterin:
 - AI-Projekte fachlich beurteilen und steuern
 - sinnvolle Use Cases identifizieren
 - Anforderungen zwischen Business und Technik übersetzen
-- Aufwand, Risiken und Nutzen realistisch einsätzen
+- Aufwand, Risiken und Nutzen realistisch einschätzen
 - mit Entwicklern, Data Scientists, Management und Datenschutz auf Augenhöhe sprechen
 - AI-Ergebnisse kritisch hinterfragen
 

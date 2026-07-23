@@ -21,3 +21,6 @@ venv/
 
 # MkDocs build output
 /site/
+
+# Subagent-driven development artifacts (per-task briefs, reports, review diffs)
+/.superpowers/

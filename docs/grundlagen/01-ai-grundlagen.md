@@ -63,4 +63,4 @@ Anders als klassische Software gibt AI eine **Wahrscheinlichkeitsverteilung** ü
 ## Verwandte Begriffe
 
 - [Generative AI & LLMs](02-llms.md)
-- `business/07-daten.md` (folgt in Phase 2)
+- [Datenverständnis](../business/07-daten.md)

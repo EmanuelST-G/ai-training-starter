@@ -7,7 +7,7 @@ Schulungsunterlagen und Materialien für die Projektleiterin im Bereich AI & Man
 ## Inhalte
 
 - **Lernpfad** — 5-Tage-Schulungsplan mit Lernzielen
-- **Themenliste** — 18 Themenblöcke mit Lernzielen und Praxisübungen
+- **Themenliste** — Übersicht über 18 Themenblöcke; Phasen 1–3 sind bereits verfügbar
 - **Glossar** — alphabetisches Verzeichnis aller wichtigen AI-Begriffe
 
 ## Struktur

@@ -25,7 +25,7 @@ Sie muss **nicht selbst Modelle programmieren**, aber verstehen, was technisch m
 
 - :material-book-open-variant:{ .lg .middle } **[Themenliste](themenliste.md)**
 
-    18 Themenblöcke mit Lernzielen und Praxisübungen.
+    Übersicht über 18 Themenblöcke; Phasen 1–3 sind bereits verfügbar.
 
 - :material-format-list-bulleted-square:{ .lg .middle } **[Glossar](glossar.md)**
 

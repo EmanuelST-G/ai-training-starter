@@ -307,24 +307,24 @@ git commit -m "feat(docs): startseite mit zielbild und schnellzugriff"
 
 ## Phase 1 – Grundlagen (Tag 1)
 
-1. AI-Grundlagen → [grundlagen/01-ai-grundlagen.md](grundlagen/01-ai-grundlagen.md)
-2. Generative AI & LLMs → [grundlagen/02-llms.md](grundlagen/02-llms.md)
-3. Prompt Engineering → [grundlagen/03-prompt-engineering.md](grundlagen/03-prompt-engineering.md)
+1. AI-Grundlagen — `grundlagen/01-ai-grundlagen.md`
+2. Generative AI & LLMs — `grundlagen/02-llms.md`
+3. Prompt Engineering — `grundlagen/03-prompt-engineering.md`
 4. Grenzen und Halluzinationen (Teil von LLMs)
 
 ## Phase 2 – Business (Tag 2)
 
-5. AI-Anwendungsfälle im Business → [business/04-use-cases.md](business/04-use-cases.md)
-6. Use-Case-Bewertung und Priorisierung → [business/05-bewertung.md](business/05-bewertung.md)
-7. Business Case und ROI → [business/06-business-case.md](business/06-business-case.md)
-8. Datenverständnis → [business/07-daten.md](business/07-daten.md)
+5. AI-Anwendungsfälle im Business — `business/04-use-cases.md`
+6. Use-Case-Bewertung und Priorisierung — `business/05-bewertung.md`
+7. Business Case und ROI — `business/06-business-case.md`
+8. Datenverständnis — `business/07-daten.md`
 
 ## Phase 3 – Projektleitung (Tag 3)
 
-9. AI-Projektmanagement → [projektleitung/08-projektphasen.md](projektleitung/08-projektphasen.md)
-10. Anforderungen & User Stories → [projektleitung/09-anforderungen.md](projektleitung/09-anforderungen.md)
-11. Evaluation und Qualitätsmessung → [projektleitung/10-evaluation.md](projektleitung/10-evaluation.md)
-12. Stakeholder- und Change-Management → [projektleitung/11-change.md](projektleitung/11-change.md)
+9. AI-Projektmanagement — `projektleitung/08-projektphasen.md`
+10. Anforderungen & User Stories — `projektleitung/09-anforderungen.md`
+11. Evaluation und Qualitätsmessung — `projektleitung/10-evaluation.md`
+12. Stakeholder- und Change-Management — `projektleitung/11-change.md`
 
 ## Phase 4 – Technikverständnis (Tag 4)
 
@@ -341,7 +341,7 @@ git commit -m "feat(docs): startseite mit zielbild und schnellzugriff"
 20. AI Governance
 
 !!! info "Spätere Plan-Phasen"
-    Phase 4 und 5 werden in einem Folge-Plan als `docs/technik/` und `docs/verantwortung/` ausgeliefert.
+    Phase 4 und 5 werden in einem Folge-Plan als `docs/technik/` und `docs/verantwortung/` ausgeliefert. Phase-1–3-Themendetails entstehen in Tasks 6, 7 und 8 des laufenden Plans.
 
 ## Priorisierung bei knapper Zeit
 
@@ -365,7 +365,7 @@ Run:
 source .venv/bin/activate && mkdocs build --strict
 ```
 
-Erwartet: keine Warnungen (tote Links auf noch nicht vorhandene Phase-4/5-Dateien sind hier NICHT enthalten, sondern werden im Folge-Plan ergänzt).
+Erwartet: keine Warnungen. (Die Themen-Pfade werden als Code-Format ohne Markdown-Link aufgeführt, damit kein strict-Mode-Broken-Link entsteht; die Hyperlinks baut Tasks 6, 7 und 8 in den Themenübersicht.)
 
 - [ ] **Step 3: Commit**
 
@@ -390,26 +390,26 @@ git commit -m "feat(docs): lernpfad mit 5 phasen und prioritierung"
 
 Übersicht aller 18 Themenblöcke des Curriculums, gruppiert nach Lernphase.
 
+!!! note "Hinweis"
+    Die Themen 6 (Business Case) und 11 (Change Management) sowie Phase 4 (Technik) und Phase 5 (Verantwortung) folgen in separaten Implementierungs-Plänen. Vollständige Inhalts-Vorlage: siehe `AI-Themenliste-fuer-Projektleitung.md` im Repository-Root.
+
 ## Phase 1 – Grundlagen
 
-- [AI-Grundlagen](grundlagen/01-ai-grundlagen.md)
-- [Generative AI & Large Language Models](grundlagen/02-llms.md)
-- [Prompt Engineering](grundlagen/03-prompt-engineering.md)
+- AI-Grundlagen — `grundlagen/01-ai-grundlagen.md`
+- Generative AI & Large Language Models — `grundlagen/02-llms.md`
+- Prompt Engineering — `grundlagen/03-prompt-engineering.md`
 
 ## Phase 2 – Business
 
-- [AI-Anwendungsfälle im Business](business/04-use-cases.md)
-- [Use-Case-Bewertung und Priorisierung](business/05-bewertung.md)
-- [Datenverständnis](business/07-daten.md)
+- AI-Anwendungsfälle im Business — `business/04-use-cases.md`
+- Use-Case-Bewertung und Priorisierung — `business/05-bewertung.md`
+- Datenverständnis — `business/07-daten.md`
 
 ## Phase 3 – Projektleitung
 
-- [AI-Projektmanagement](projektleitung/08-projektphasen.md)
-- [Anforderungen & User Stories für AI](projektleitung/09-anforderungen.md)
-- [Evaluation und Qualitätsmessung](projektleitung/10-evaluation.md)
-
-!!! note "Hinweis"
-    Die Themen 6 (Business Case), 11 (Change Management) und Phase 4/5 sind im aktuellen Plan noch nicht enthalten und folgen in separaten Implementierungs-Plänen. Vollständige Inhalts-Vorlage: siehe `AI-Themenliste-fuer-Projektleitung.md` im Repository-Root.
+- AI-Projektmanagement — `projektleitung/08-projektphasen.md`
+- Anforderungen & User Stories für AI — `projektleitung/09-anforderungen.md`
+- Evaluation und Qualitätsmessung — `projektleitung/10-evaluation.md`
 ```
 
 - [ ] **Step 2: Build prüfen**
@@ -419,7 +419,7 @@ Run:
 source .venv/bin/activate && mkdocs build --strict
 ```
 
-Erwartet: keine Warnungen.
+Erwartet: keine Warnungen. (Die Themen-Pfade werden als Code-Format ohne Markdown-Link aufgeführt, damit kein strict-Mode-Broken-Link entsteht; die Hyperlinks baut Tasks 6, 7 und 8 in den Themenübersicht.)
 
 - [ ] **Step 3: Commit**
 

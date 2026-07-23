@@ -104,10 +104,15 @@ ai-training-starter/
 │   │   └── 03-agent-email.md
 │   ├── slides/                      # Reveal.js-Folien
 │   │   ├── index.md                 # Übersicht der Folien
+│   │   ├── _template.html           # Kopier-Vorlage für neue Folien
 │   │   ├── phase-1/
 │   │   │   ├── 01-ai-grundlagen.html
 │   │   │   └── ...
+│   │   ├── assets/                  # Bilder, SVGs, Diagramme
+│   │   │   ├── images/
+│   │   │   └── diagrams/
 │   │   ├── reveal.js/               # Lokale Reveal.js-Bibliothek
+│   │   ├── LICENSE-credits.md       # Bild-/Inhaltsnachweise
 │   │   └── theme.css                # Eigenes Branding-CSS
 │   └── stylesheets/
 │       └── print.css                # Druckoptimierung
@@ -133,10 +138,12 @@ Jede Themenblock-Folie folgt diesem Schema:
 | N+1 | Praxisaufgabe |
 | N+2 | Reflexion / Take-aways |
 
-- **Volumen:** 18 Themen × 8–12 Folien ≈ 150–220 Folien
+- **Volumen:** 18 Themen × 8–12 Folien ≈ 150–220 Folien — **vollständige Umsetzung**
 - **Iterative Umsetzung:** zunächst 2–3 Themen als Vorlage, dann Rest
 - **Template-Datei:** `docs/slides/_template.html` als Kopier-Vorlage
 - **Branding:** `slides/theme.css` für konsistente Farben (Material Indigo als Akzent)
+- **Inhaltsrecherche:** aktuelle Zahlen, Anbieter, Regulierung (z. B. EU AI Act Stand 2026) und Best Practices werden per Internet-Recherche verifiziert und mit Quellenangabe in den Folien zitiert (Stand-Datum nicht vergessen)
+- **Bilder:** wo sinnvoll ergänzend Diagramme/Schaubilder/Fotos aus frei verfügbaren Quellen (z. B. Unsplash, Wikimedia Commons, selbst erstellte SVG). Speicherung unter `docs/slides/assets/`, korrekte Quellen-/Lizenzangabe pro Bild, ggf. Alt-Text für Barrierefreiheit
 
 ### 2. Übungsaufgaben mit Lösungen
 
@@ -370,7 +377,7 @@ nav:
 3. **Suche** findet Glossar-Begriffe, Themeninhalte und Übungen
 4. **18 Themenblöcke** sind aus der Themenliste v1.0 übernommen
 5. **12+ Übungen, 5 Cheat-Sheets, 3 Fallstudien, 1 Glossar** sind verfügbar
-6. **Reveal.js-Folien** sind für mindestens 3 Themenblöcke erstellt (Template-Vorlage)
+6. **Reveal.js-Folien** sind vollständig erstellt für alle 18 Themenblöcke (≈ 150–220 Folien), mit Internet-verifizierten Inhalten, Quellenangaben und passenden Bildern/Diagrammen
 7. **README** verweist korrekt auf `docs/themenliste.md`, die Live-URL und die lokale Build-Anleitung
 
 ---
@@ -380,6 +387,8 @@ nav:
 | Risiko | Gegenmaßnahme |
 |--------|---------------|
 | Reveal.js wird nicht heruntergeladen (kein Internet) | Lokale Kopie im Repo (`docs/slides/reveal.js/`) |
+| Bilder unter falscher Lizenz | Nur frei verwendbare Quellen (CC0, CC-BY, Public Domain) + Quellenangabe in `docs/slides/LICENSE-credits.md` |
+| Recherche liefert veraltete Zahlen (z. B. EU AI Act ändert sich) | Jede Folie mit Stand-Datum im Footer; Quartalsweise Review im Repository-Wiki vermerken |
 | Python/mkdocs nicht installiert | Build-Anleitung in README, alternative: statische HTML-Site direkt ausliefern |
 | Volumen zu groß für eine Iteration | Phasenweiser Rollout: erst Phase 1–3, dann 4–5 |
 | Inkonsistente Markenfarbe | Theme-CSS einmal definieren, von allen Folien referenziert |

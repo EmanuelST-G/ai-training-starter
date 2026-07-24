@@ -2,7 +2,7 @@
 
 [← zurück zur Übungsübersicht](index.md)
 
-**Phase:** 5
+**Phase:** 3
 **Dauer:** 60 Minuten
 **Voraussetzung:** [Datenschutz, Recht und EU AI Act](../verantwortung/16-datenschutz.md)
 **Format:** Einzelarbeit

@@ -2,7 +2,7 @@
 
 [← zurück zur Übungsübersicht](index.md)
 
-**Phase:** 3
+**Phase:** 2
 **Dauer:** 30 Minuten
 **Voraussetzung:** [Anforderungen und User Stories für AI](../projektleitung/09-anforderungen.md)
 **Format:** Partnerarbeit

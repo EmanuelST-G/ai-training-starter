@@ -2,7 +2,7 @@
 
 [← zurück zur Übungsübersicht](index.md)
 
-**Phase:** 5
+**Phase:** 3
 **Dauer:** 45 Minuten
 **Voraussetzung:** [Responsible AI](../verantwortung/18-responsible-ai.md)
 **Format:** Gruppenarbeit
@@ -23,16 +23,16 @@ Recherchiert zwei aktuelle Primärrahmen, zum Beispiel eine Rechtsquelle und ein
 
 Ein einsetzbarer Leitliniensatz lautet:
 
-| Nr. | Verbindliche Leitlinie | Owner | Mindestkontrolle und Nachweis |
-|-----|------------------------|-------|-------------------------------|
-| 1 | Jeder AI-Einsatz muss einen dokumentierten legitimen Zweck und klare Nicht-Ziele haben. | AI Product Owner | Eintrag im Systeminventar und genehmigter Use-Case-Canvas |
-| 2 | Für jedes System müssen fachliche, technische und rechtliche Verantwortung namentlich benannt sein. | Sponsor | RACI mit Vertretung und datierter Freigabe |
-| 3 | Es dürfen nur erforderliche, rechtmäßig nutzbare Daten verarbeitet werden. | Data Owner, DSB | Dateninventar, Rechtsgrundlage, Lösch- und Berechtigungskonzept |
-| 4 | Systeme mit Wirkung auf Personen müssen auf Benachteiligung getestet und anfechtbar sein. | Fachbereich, Responsible-AI-Review | stratifizierte Metriken, Beschwerde- und Korrekturweg |
-| 5 | Nutzer:innen müssen AI-Beteiligung, Grenzen, Datenverwendung und verantwortliche Stelle erkennen. | Product Owner | freigegebener Transparenztext und Oberflächentest |
-| 6 | Außenwirksame oder irreversible Aktionen müssen risikogerecht menschlich freigegeben werden. | Process Owner | technische Freigabesperre und Audit-Log |
-| 7 | Sicherheit, Robustheit und sichere Ablehnung müssen vor Go-live und nach Änderungen getestet werden. | CISO, Eval Lead | versioniertes Gold-Set, Red-Team- und Regressionsergebnis |
-| 8 | Betrieb, Vorfälle, Änderungen und Abschaltung müssen überwacht und regelmäßig neu bewertet werden. | Service Owner | Dashboard, Incident-Runbook, Reviewprotokoll und getesteter Not-Aus |
+| Nr. | Verbindliche Leitlinie | Geltungsbereich | Owner | Mindestkontrolle und Nachweis |
+|-----|------------------------|-----------------|-------|-------------------------------|
+| 1 | Jeder AI-Einsatz muss einen dokumentierten legitimen Zweck und klare Nicht-Ziele haben. | alle AI-Projekte, von Pilot bis Betrieb | AI Product Owner | Eintrag im Systeminventar und genehmigter Use-Case-Canvas |
+| 2 | Für jedes System müssen fachliche, technische und rechtliche Verantwortung namentlich benannt sein. | alle AI-Projekte, auch reine interne Assistenten | Sponsor | RACI mit Vertretung und datierter Freigabe |
+| 3 | Es dürfen nur erforderliche, rechtmäßig nutzbare Daten verarbeitet werden. | alle AI-Projekte mit Personen- oder Geschäftsdaten | Data Owner, DSB | Dateninventar, Rechtsgrundlage, Lösch- und Berechtigungskonzept |
+| 4 | Systeme mit Wirkung auf Personen müssen auf Benachteiligung getestet und anfechtbar sein. | nur Kunden-LLM, Bewerbungs- und CV-Modelle sowie andere Systeme mit Personenwirkung | Fachbereich, Responsible-AI-Review | stratifizierte Metriken, Beschwerde- und Korrekturweg |
+| 5 | Nutzer:innen müssen AI-Beteiligung, Grenzen, Datenverwendung und verantwortliche Stelle erkennen. | nur Kunden-LLM und kundennahe Systeme, nicht rein interne Assistenten | Product Owner | freigegebener Transparenztext und Oberflächentest |
+| 6 | Außenwirksame oder irreversible Aktionen müssen risikogerecht menschlich freigegeben werden. | nur Systeme mit Außenwirkung oder irreversiblen Folgeaktionen | Process Owner | technische Freigabesperre und Audit-Log |
+| 7 | Sicherheit, Robustheit und sichere Ablehnung müssen vor Go-live und nach Änderungen getestet werden. | alle AI-Projekte, verstärkt für Systeme mit Personenwirkung | CISO, Eval Lead | versioniertes Gold-Set, Red-Team- und Regressionsergebnis |
+| 8 | Betrieb, Vorfälle, Änderungen und Abschaltung müssen überwacht und regelmäßig neu bewertet werden. | alle produktiven AI-Systeme, auch interne Assistenten | Service Owner | Dashboard, Incident-Runbook, Reviewprotokoll und getesteter Not-Aus |
 
 Die Kontrolldichte folgt der Risikoklasse. Ein interner Formulierungsvorschlag kann mit Standardprüfung starten; Bewerberbewertung oder autonomer Kundenkontakt benötigt unabhängige Prüfung, strengere Gates und kontinuierliche Überwachung.
 

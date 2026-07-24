@@ -109,7 +109,7 @@ Eine wirksame Governance verteilt Verantwortung über mehrere Rollen:
 
 - **AI Product Owner:** verantwortet ein konkretes System fachlich und operativ, pflegt das Dossier und steuert die Freigaben.
 - **AI-Steuerungsgremium:** entscheidet über Portfolioprioritäten, Standards, Eskalationen und übergreifende Risiken.
-- **Datenschutzbeauftragte:r (DPO / DSB):** überwacht die Einhaltung der DSGVO im Unternehmen (Art. 37–39 DSGVO, gesetzliche Pflichtrolle ab 20 Mitarbeitern mit personenbezogener Datenverarbeitung) und bewertet DSFA, Verzeichnis der Verarbeitungstätigkeiten und AI-Act-Konformität.
+- **Datenschutzbeauftragte:r (DPO / DSB):** überwacht die Einhaltung der DSGVO im Unternehmen und bewertet DSFA, Verzeichnis der Verarbeitungstätigkeiten sowie AI-Act-Konformität (Art. 37–39 DSGVO). Die Bestellung ist gesetzlich vorgeschrieben, sobald mindestens 20 Personen ständig mit automatisierter Verarbeitung personenbezogener Daten befasst sind **oder** besondere Datenkategorien, umfangreiche Verarbeitungen bzw. systematische Überwachung im Spiel sind (Art. 37 DSGVO, § 38 BDSG).
 - **Chief Data Officer (CDO):** verantwortet die unternehmensweite Datenstrategie, Datenqualität, Datenarchitektur und Data-Governance – eine Geschäftsrolle, nicht zu verwechseln mit dem Datenschutz.
 - **CISO / IT-Security:** verantwortet Informationssicherheit inklusive AI-spezifischer Risiken wie Prompt Injection, RAG-Poisoning und Supply-Chain (siehe [Security](17-security.md)).
 - **Fachbereich:** definiert Akzeptanzkriterien, schult Anwender:innen, meldet Auffälligkeiten.

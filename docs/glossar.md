@@ -18,6 +18,12 @@ Anteil korrekter Vorhersagen an allen Vorhersagen. Mehr in [Evaluation](projektl
 ### Agents
 AI-Systeme, die eigenständig planen und Aktionen über Tools ausführen. Mehr in [Generative AI & LLMs](grundlagen/02-llms.md).
 
+### Agent-Drift
+Verschlechterung der Agent-Leistung über Zeit durch Änderungen im Kontext oder der Tool-Verfügbarkeit.
+
+### Agent-Loop
+Wiederholte Ausführung von Tool-Aufrufen durch ein Agentic-System.
+
 ### AI Act (EU)
 Europäische Verordnung zur Regulierung von KI-Systemen, 2024 in Kraft, gestaffelte Anwendung ab 2025. Mehr in `verantwortung/16-datenschutz.md` (Folgeplan).
 
@@ -33,11 +39,17 @@ Manuelle Markierung von Beispielen, um Trainingsdaten oder Ground Truth aufzubau
 ### Anweisungs-Prompt
 Vom Entwickler gesetzter Prompt, der das Verhalten des Modells über die gesamte Konversation hinweg beeinflusst. Synonym: System-Prompt.
 
+### Anhang III (EU AI Act)
+Liste von AI-Anwendungsfällen, die laut EU AI Act als hochriskant gelten.
+
 ### Assistenz vs. Automatisierung
 Assistenz = Mensch prüft jede AI-Ausgabe. Automatisierung = AI handelt autonom.
 
 ### Auftragsverarbeitung
 Verarbeitung personenbezogener Daten im Auftrag des Verantwortlichen durch einen Auftragsverarbeiter (DSGVO-Begriff).
+
+### Audit-Trail
+Vollständige, unveränderliche Aufzeichnung von Systemereignissen für Compliance und Forensik.
 
 ## Ä
 
@@ -48,6 +60,9 @@ Suche nach den Embeddings in einer Vektor-Datenbank, die einer Anfrage am nächs
 
 ### Bias
 Systematische Verzerrung in Daten oder Modellen, die zu unfairen Ergebnissen führt. Mehr in [Datenverständnis](business/07-daten.md).
+
+### Bias-Audit
+Systematische Prüfung eines AI-Systems auf statistische Diskriminierung gegenüber geschützten Gruppen.
 
 ### BLEU
 Metrik für maschinelle Übersetzung und Textgenerierung, misst n-Gram-Überlappung mit Referenztexten.
@@ -78,6 +93,9 @@ AI-Fachgebiet, das Bilder und Videos interpretiert.
 ### Context Window
 Maximale Token-Anzahl, die ein Modell gleichzeitig verarbeiten kann.
 
+### Context Drift
+Verschlechterung der Modellqualität durch veränderte Verteilung der Eingabedaten.
+
 ### Copilot
 AI-System, das Vorschläge macht, während der Mensch die Kontrolle behält.
 
@@ -101,6 +119,9 @@ Veränderung der Daten- oder Modellverteilung über Zeit, die zu Qualitätsverlu
 ### Drift Detection
 Automatisierte Überwachung, die Verteilungsverschiebungen in Eingabedaten oder Modell-Outputs erkennt.
 
+### Drittlandtransfer
+Übermittlung personenbezogener Daten in Länder außerhalb des EWR.
+
 ### DSGVO
 Datenschutz-Grundverordnung der EU, in Kraft seit 2018, regelt Verarbeitung personenbezogener Daten.
 
@@ -123,11 +144,17 @@ Strukturierte Messung der Modellqualität auf Testdaten. Mehr in [Evaluation und
 
 ## F
 
+### Fallback-Modell
+Sekundäres Modell, das bei Ausfall oder Qualitätsverlust des primären Modells aktiviert wird.
+
 ### False Negative
 Tatsächlich relevanter Fall, der vom Modell übersehen wurde.
 
 ### False Positive
-Vom Modell als relevant markierter Fall, der irrelevant ist.
+Vom Modell als relevanter markierter Fall, der irrelevant ist.
+
+### Federated Learning
+Trainingsverfahren, bei dem Modelle lokal aktualisiert und nur Parameter aggregiert werden.
 
 ### Few-Shot-Prompting
 Prompting mit 1–5 Beispielen im Prompt.
@@ -138,6 +165,9 @@ Nachtraining eines Modells auf domänenspezifischen Daten.
 ### Function Calling
 Mechanismus, mit dem Modelle strukturierte Tool-Aufrufe auslösen können.
 
+### Forgetting (Recht auf Vergessenwerden)
+DSGVO-Pflicht, personenbezogene Daten auf Anfrage zu löschen.
+
 ## G
 
 ### Genauigkeit
@@ -145,6 +175,9 @@ Siehe [Accuracy](#accuracy).
 
 ### Generative AI
 AI-Systeme, die neue Inhalte erzeugen (Text, Bilder, Code, Audio).
+
+### General-Purpose AI
+AI-Modelle, die für eine breite Palette von Aufgaben eingesetzt werden können (z. B. LLMs).
 
 ### GFM
 GitHub Flavored Markdown — Erweiterung von CommonMark um Tabellen, Tasklisten etc.
@@ -173,6 +206,12 @@ Kategorie im AI Act, die Anwendungen umfasst, die erhebliche Risiken für Gesund
 Menschliche Prüfung oder Freigabe als Teil des AI-Workflows.
 
 ## I
+
+### Incident Response
+Strukturierte Reaktion auf Sicherheitsvorfälle, oft mit definierten Rollen und Eskalationsstufen.
+
+### Indirect Prompt Injection
+Angriff, bei dem schädliche Anweisungen über externe Inhalte (Dokumente, Webseiten) an das Modell gelangen.
 
 ### Inferenz
 Anwendung eines trainierten Modells auf neue Eingaben.
@@ -210,6 +249,9 @@ Zeit zwischen Anfrage und Antwort.
 ### Lernrate
 Hyperparameter, der die Schrittgröße beim Training bestimmt.
 
+### Least-Privilege
+Sicherheitsprinzip, jedem Akteur nur die minimal nötigen Berechtigungen zu geben.
+
 ### LLM-as-a-Judge
 Evaluationsmethode, bei der ein Sprachmodell Antworten anhand eines vorgegebenen Bewertungsrasters beurteilt; menschliche Kontrolle bleibt erforderlich.
 
@@ -219,10 +261,16 @@ Betriebspraktiken für LLM-basierte Systeme.
 ### Logging
 Strukturierte Aufzeichnung von Systemereignissen.
 
+### Lieferantenmanagement
+Prozess zur Bewertung und laufenden Kontrolle von AI-Anbietern.
+
 ## M
 
 ### Machine Learning
 Teilgebiet von AI: Modelle lernen aus Daten statt durch explizite Regeln.
+
+### Mandantenfähigkeit
+Fähigkeit einer AI-Lösung, Daten mehrerer Kunden oder Abteilungen isoliert zu verarbeiten.
 
 ### Make-or-Buy
 Entscheidung, eine AI-Fähigkeit selbst zu entwickeln oder als Dienstleistung/Produkt zuzukaufen.
@@ -235,6 +283,9 @@ Komponente eines Agenten, die Informationen über mehrere Konversations- oder Ar
 
 ### Modell-Drift
 Veränderung der Modellqualität über Zeit durch veränderte Eingabedaten.
+
+### Model Card
+Standardisiertes Dokument, das Fähigkeiten, Grenzen und Trainingsbedingungen eines Modells beschreibt.
 
 ### Multimodal
 Modelle, die mehrere Datenarten verarbeiten (Text, Bild, Audio, Video).
@@ -297,6 +348,9 @@ Reduktion der numerischen Präzision eines Modells (für Edge-Deployment).
 ### RAG (Retrieval-Augmented Generation)
 Architektur, bei der das Modell vor der Antwort Quellen aus einer Wissensbasis abruft.
 
+### RAG-Poisoning
+Angriff, bei dem die Wissensbasis eines RAG-Systems mit manipulierten Inhalten kontaminiert wird.
+
 ### Rate Limit
 Begrenzung der Anzahl an Anfragen, die ein Client innerhalb eines Zeitfensters an einen AI-Service stellen darf.
 
@@ -356,6 +410,9 @@ Auslieferung der Antwort in Echtzeit-Token, statt auf die komplette Antwort zu w
 ### Strukturierte Ausgabe
 Ausgabe in einem definierten Format (z. B. JSON-Schema).
 
+### Supply-Chain-Risiko
+Risiko durch kompromittierte Komponenten in der AI-Lieferkette (Modelle, Daten, Tools).
+
 ### System-Prompt
 Siehe [Anweisungs-Prompt](#anweisungs-prompt).
 
@@ -412,6 +469,9 @@ DSGVO-Begriff: natürliche oder juristische Person, die über Zwecke und Mittel 
 
 ### Verantwortlichkeit
 Klar geregelte Person oder Rolle, die für ein AI-System zuständig ist.
+
+### Verzeichnis der Verarbeitungstätigkeiten
+DSGVO-Pflicht-Dokumentation aller Datenverarbeitungen.
 
 ### Vendor Lock-in
 Abhängigkeit von einem einzelnen Anbieter, die Wechsel oder Migration zu Alternativen erschwert.

@@ -39,11 +39,11 @@ Sie muss **nicht selbst Modelle programmieren**, aber verstehen, was technisch m
 
     Eine Druckseite pro Phase, A4-optimiert zum Mitnehmen.
 
-- :material-case-study-alt:{ .lg .middle } **[Fallstudien](fallstudien/index.md)**
+- :material-briefcase:{ .lg .middle } **[Fallstudien](fallstudien/index.md)**
 
     Drei kompakte Cases aus Mittelstand und Konzern — inklusive Lessons Learned.
 
-- :material-presentation:{ .lg .middle } **[Folien](slides/index.md)**
+- :material-presentation-play:{ .lg .middle } **[Folien](slides/index.md)**
 
     18 Reveal.js-Slides über alle 5 Phasen, lokal gebundelt und druckfähig.
 

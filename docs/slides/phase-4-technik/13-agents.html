@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agents &amp; Automatisierung</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>AI Agents &amp; Automatisierung</h1>
+        <p class="slide-subtitle">Phase 4 — vom Chatbot zum autonomen Workflow</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Chatbot, Workflow und Agent abgrenzen.</li>
+          <li>Function Calling als Werkzeugschnittstelle verstehen.</li>
+          <li>Autonomiegrade bewusst wählen.</li>
+          <li>Speicher, Plan und Sicherheit eines Agenten entwerfen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Chatbot vs. Workflow vs. Agent</h2>
+        <table>
+          <thead>
+            <tr><th>Form</th><th>Ablauf</th><th>Nächster Schritt</th><th>Beispiel</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Chatbot</td><td>Frage → Antwort</td><td>Nutzer:in gibt die nächste Frage ein</td><td>FAQ-Chat</td></tr>
+            <tr><td>Workflow</td><td>festgelegte Schritte und Regeln</td><td>Anwendungs- / Prozesslogik</td><td>Rechnung prüfen → verbuchen</td></tr>
+            <tr><td>Agent</td><td>Ziel → Plan → Tool → Beobachtung → weiter</td><td>Modell entscheidet innerhalb gesetzter Grenzen</td><td>Recherche mit Rückfragen und Quellen</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Ein Agent ist kein Synonym für „gute AI". Er ist eine Orchestrierung aus Modell, Werkzeugen, Kontext und Kontrolllogik.</p>
+      </section>
+
+      <section>
+        <h2>Function Calling</h2>
+        <p>Über Function Calling fordert ein Modell einen strukturierten <strong>Tool-Aufruf</strong> an. Die Anwendung führt die Funktion aus und sendet das Ergebnis zurück.</p>
+        <ul>
+          <li>Das Modell erhält dadurch keine direkten Datenbankrechte.</li>
+          <li>Kann nicht eigenmächtig beliebige Befehle ausführen.</li>
+          <li>Pro Tool: Zweck, typisierte Eingaben, Ergebnisformat dokumentieren.</li>
+          <li>Schreibende oder irreversible Tools brauchen Freigaben.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Der Agentenzyklus (ASCII)</h2>
+        <pre><code class="language-plaintext">Ziel erhalten
+   │
+   ▼
+Kontext prüfen ──► Plan erstellen
+   │                  │
+   │                  ▼
+   │              Tool auswählen
+   │                  │
+   │                  ▼
+   ◄──────── Ergebnis prüfen
+   │
+   ├── Ziel erreicht? ── Ja ──► Antwort / Ergebnis
+   │
+   └── Nein ──► Re-Plan oder Abbruch</code></pre>
+        <p class="fragment">Die Anwendung muss maximale Schleifenanzahl, erlaubte Tools und Zeit pro Schritt <strong>technisch durchsetzen</strong> — ein Prompt reicht nicht.</p>
+      </section>
+
+      <section>
+        <h2>Single-Agent vs. Multi-Agent</h2>
+        <table>
+          <thead>
+            <tr><th>Aspekt</th><th>Single-Agent</th><th>Multi-Agent</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Komplexität</td><td>gering</td><td>hoch</td></tr>
+            <tr><td>Übergaben</td><td>keine</td><td>viele — neue Fehlerquelle</td></tr>
+            <tr><td>Kontexte</td><td>ein gemeinsamer</td><td>pro Rolle getrennt</td></tr>
+            <tr><td>Verantwortung</td><td>klar</td><td>zwischen Rollen verschwommen</td></tr>
+            <tr><td>Geeignet für</td><td>überschaubare Toolsets, klare Aufgaben</td><td>echt unabhängige Teilaufgaben oder Fachdomänen</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Delegation nur, wenn die Teilaufgaben wirklich unabhängig sind oder unterschiedliche Fachkompetenz erfordern.</p>
+      </section>
+
+      <section>
+        <h2>Speicher, Kontext und Planung</h2>
+        <table>
+          <thead>
+            <tr><th>Stufe</th><th>Inhalt</th><th>Lebensdauer</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Kurzzeitkontext</td><td>aktuelle Anfrage, offene Arbeitsschritte</td><td>eine Konversation / ein Lauf</td></tr>
+            <tr><td>Arbeitsgedächtnis</td><td>Zwischenstände, Beobachtungen, offene Punkte</td><td>ein Agentenlauf</td></tr>
+            <tr><td>Langzeitspeicher</td><td>bewusst ausgewählte, überprüfte Informationen</td><td>mehrere Läufe, mit Löschregeln</td></tr>
+          </tbody>
+        </table>
+        <p>Sensible Daten, Zugangsdaten und Modell-Annahmen gehören <strong>nicht</strong> in einen persistenten Speicher.</p>
+        <p class="fragment">Beim <strong>Plan</strong> wird ein Ziel in überprüfbare Schritte zerlegt; jeder Schritt braucht ein erwartetes Ergebnis. Ein <strong>Re-Plan</strong> ist nötig bei Tool-Fehler, widersprüchlichen Daten oder verändertem Ziel — Änderungen am Ziel oder an Berechtigungen brauchen neue Freigabe.</p>
+      </section>
+
+      <section>
+        <h2>Autonomiegrade</h2>
+        <table>
+          <thead>
+            <tr><th>Grad</th><th>Verhalten</th><th>Geeignet für</th><th>Kontrolle</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Assistenz</td><td>schlägt Schritte und Entwürfe vor</td><td>Recherche, Textentwürfe</td><td>Mensch prüft alles</td></tr>
+            <tr><td>Genehmigt</td><td>arbeitet vor, Aktionen werden bestätigt</td><td>Ticket- / Bestellvorbereitung</td><td>Freigabe pro Aktion</td></tr>
+            <tr><td>Eingeschränkt</td><td>definierte, reversible Aktionen autonom</td><td>Statuspflege, interne Abfragen</td><td>Rollen, Regeln, Stichproben</td></tr>
+            <tr><td>Vollautonom</td><td>innerhalb festgelegtem Rahmen selbstständig</td><td>eng begrenzte, gut messbare Prozesse</td><td>Not-Aus, Budget, Monitoring</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Freigabeschritte</h2>
+        <ul>
+          <li>Freigaben an konkrete Risiken binden (Empfänger, Betrag, Datensätze, Änderung).</li>
+          <li>Freigabe <strong>vor</strong> dem Tool-Aufruf, im Audit-Log nachvollziehbar.</li>
+          <li>Lesewerkzeuge standardmäßig erlauben, Schreibwerkzeuge standardmäßig sperren.</li>
+          <li>Erlaubte Ziele, Betragsgrenzen und Datenbereiche technisch beschränken.</li>
+          <li>Aktionen idempotent machen — Timeout darf keine Doppelbuchung erzeugen.</li>
+          <li>Hohe Risiken: Vier-Augen-Prinzip.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Fehlerbehandlung und Abbruch</h2>
+        <p>Abbruchbedingungen sind zum Beispiel:</p>
+        <ul>
+          <li>Zeit-, Token- oder Kostenbudget überschritten.</li>
+          <li>Maximale Anzahl von Tool-Aufrufen erreicht.</li>
+          <li>Berechtigung fehlt oder Datenquelle nicht erreichbar.</li>
+          <li>Ergebnis widerspricht einer fachlichen Regel.</li>
+          <li>Notwendige Nutzerfreigabe bleibt aus.</li>
+          <li>Anzeichen für Prompt Injection oder unerwartete Tool-Eingabe.</li>
+        </ul>
+        <p class="fragment">Ein Abbruch mit verständlicher Begründung ist ein Qualitätsmerkmal, kein Versagen.</p>
+      </section>
+
+      <section>
+        <h2>Stand der Agent-Frameworks — 23.07.2026</h2>
+        <p>Auswahl aktueller Frameworks und Plattformen, Stand Juli 2026.</p>
+        <table>
+          <thead>
+            <tr><th>Framework / Plattform</th><th>Charakter</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>LangChain / LangGraph</td><td>Open-Source-Bausteine; LangGraph 1.0 GA für produktive Agenten, LangSmith als „Agent Engineering Platform"</td></tr>
+            <tr><td>Microsoft Agent Framework</td><td>Nachfolger von AutoGen + Semantic Kernel; 1.0 GA am 02.04.2026, BUILD-2026-Features (Agent Harness, Hosted)</td></tr>
+            <tr><td>CrewAI</td><td>Multi-Agent-Kollaboration mit Rollen, Tasks, Crews, sequentiellen / hierarchischen Prozessen</td></tr>
+            <tr><td>Anthropic Computer Use</td><td>Modell steuert Browser / Desktop direkt (Claude 4.x); Stärke in OSWorld-Benchmarks</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Quellen: langchain.com, devblogs.microsoft.com/agent-framework, docs.crewai.com, docs.anthropic.com (Juli 2026). <strong>Ohne Gewähr.</strong></p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>Nicht jeder Prozess braucht einen Agenten — eine Pipeline ist oft die bessere Wahl.</li>
+          <li>Autonomie ist eine Prozessentscheidung, keine Modell-Eigenschaft.</li>
+          <li>Werkzeuge klein, typisiert, reversibel — Schreibwerkzeuge default sperren.</li>
+          <li>Abbruch ist ein Feature, kein Versagen — solange er begründet ist.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

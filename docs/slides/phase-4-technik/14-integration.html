@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrationen &amp; APIs</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Integrationen &amp; APIs</h1>
+        <p class="slide-subtitle">Phase 4 — AI in Bestandssysteme einbinden</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Den passenden Integrationspfad auswählen (API, Embedded UI, Side-by-Side, Batch).</li>
+          <li>Auth, Datenflüsse und Berechtigungen sauber trennen.</li>
+          <li>Latenz, Throughput und Cost per Request realistisch planen.</li>
+          <li>Pilot und Skalierung mit klaren Kriterien verbinden.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Integrationspfade</h2>
+        <table>
+          <thead>
+            <tr><th>Pfad</th><th>Beschreibung</th><th>Stärke</th><th>Typische Grenze</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>API</td><td>Anwendung ruft AI- oder Fachsystem über definierte Schnittstelle</td><td>kontrollierbar, automatisierbar, testbar</td><td>Entwicklung und Betrieb nötig</td></tr>
+            <tr><td>Embedded UI</td><td>AI-Funktion in bestehende Oberfläche eingebettet</td><td>vertrauter Kontext, geringe Wechselkosten</td><td>Abhängigkeit von UI- und Lizenz</td></tr>
+            <tr><td>Side-by-Side</td><td>eigenständige AI-Oberfläche neben Bestandssystem</td><td>schneller Pilot, flexible Gestaltung</td><td>Kontextwechsel für Nutzer:innen</td></tr>
+            <tr><td>Batch</td><td>große Mengen zeitversetzt verarbeitet</td><td>günstig planbar, kein Echtzeitdruck</td><td>keine sofortige Antwort</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Der Pfad sollte vom Arbeitsprozess ausgehen — nicht von der Technik.</p>
+      </section>
+
+      <section>
+        <h2>Authentifizierung &amp; Autorisierung</h2>
+        <p>Authentifizierung beantwortet <em>„Wer ruft auf?"</em>, Autorisierung <em>„Was darf diese Identität sehen oder tun?"</em>. Beides muss zwischen UI, Integrationsservice, AI-Anbieter und Bestandssystem konsistent sein.</p>
+        <ul>
+          <li>Service-zu-Service-Zugriffe mit kurzlebigen Tokens oder Identitätsdienst absichern.</li>
+          <li>Secrets nicht in Prompts, Quellcode, Logs oder Browser-JavaScript.</li>
+          <li>Least Privilege: ein Zusammenfassungsdienst braucht Leserechte, keine Schreibrechte.</li>
+          <li>Nutzeridentität und Mandant bis zum Datenabruf durchreichen.</li>
+          <li>Externe Antworten als <em>untrusted data</em> behandeln.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Datenflüsse: Pull, Push, Events</h2>
+        <table>
+          <thead>
+            <tr><th>Muster</th><th>Ablauf</th><th>Geeignet für</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Pull</td><td>AI-Service fragt Daten bei Bedarf ab</td><td>aktuelle Einzelanfrage</td></tr>
+            <tr><td>Push</td><td>Bestandssystem übermittelt Daten an AI-Service</td><td>geplante Synchronisation, Batch</td></tr>
+            <tr><td>Event-getrieben</td><td>Änderung löst Verarbeitung aus</td><td>zeitnahe Aktualisierung und Automatisierung</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Bei Push und Events nur tatsächlich benötigte Felder übertragen. Idempotenz und Verarbeitungsstatus sind Pflicht.</p>
+      </section>
+
+      <section>
+        <h2>Latenz, Throughput &amp; Rate Limits</h2>
+        <p>Die wahrgenommene Latenz umfasst Netzwerk, Authentifizierung, Datenabfrage, Retrieval, Modellantwort und Darstellung.</p>
+        <ul>
+          <li>Streaming verkürzt die Zeit bis zum ersten sichtbaren Text, ändert aber nicht automatisch die Gesamtzeit.</li>
+          <li><strong>Throughput</strong>: Anfragen pro Zeiteinheit — das Bestandssystem kann der Engpass sein.</li>
+          <li><strong>Rate Limit</strong> des Anbieters mit eigenen Quoten und Datenbankgrenzen abstimmen.</li>
+          <li>Schutz: Backoff, Queue, Batch, Circuit Breaker, Bulkheads, definierte Antwort bei Nichtverfügbarkeit.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Kosten, Stückpreis &amp; SLA</h2>
+        <p>Der Stückpreis ist mehr als der Modellpreis:</p>
+        <ul>
+          <li>Eingabe- und Ausgabetokens</li>
+          <li>Embedding- und Suchkosten</li>
+          <li>Infrastruktur, Überwachung, Support</li>
+          <li>Lizenzen (Plattform, Premium-Modelle)</li>
+        </ul>
+        <p class="fragment">Für einen belastbaren Business Case: typische <strong>und</strong> maximale Kontextgrößen sowie Fehlversuche messen.</p>
+        <p class="fragment">SLA (vertraglich) und SLO (intern) müssen zu den Erwartungen des Fachprozesses passen — eine Recherche toleriert mehr Wartezeit als eine Hotline.</p>
+      </section>
+
+      <section>
+        <h2>Cost per Request (Beispielrechnung)</h2>
+        <p>Annahme: 2 000 Input-Tokens, 500 Output-Tokens, RAG mit Embedding- und Vektor-DB-Kosten.</p>
+        <table>
+          <thead>
+            <tr><th>Modell</th><th>Modell-Kosten</th><th>+ Infra &amp; Suche</th><th>Effektiv pro Anfrage</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Gemini 2.5 Flash-Lite</td><td>$0,0004</td><td>~$0,0006</td><td>≈ 0,0006 €</td></tr>
+            <tr><td>Claude Haiku 4.5</td><td>$0,0045</td><td>~$0,0050</td><td>≈ 0,0047 €</td></tr>
+            <tr><td>GPT-5.4-mini</td><td>$0,0038</td><td>~$0,0043</td><td>≈ 0,0040 €</td></tr>
+            <tr><td>Eigenes 7B on-prem</td><td>$0,0003</td><td>~$0,0010</td><td>≈ 0,0009 €</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Bei 50 000 Anfragen / Monat: zwischen ≈ 30 € und ≈ 235 € reine Modellkosten — Infra, Suche und Support kommen oben drauf.</p>
+      </section>
+
+      <section>
+        <h2>Standard, Custom und Pilot-Skalierung</h2>
+        <p><strong>Standard-Produkte</strong> (M365 Copilot, Salesforce Einstein, ServiceNow AI) bringen Konnektoren, Rollenmodelle und Betrieb mit. Trotzdem prüfen: Datenresidenz, Lizenz, synchronisierte Quellen, Berechtigungsvererbung, Exportierbarkeit, Qualitätsmessbarkeit.</p>
+        <p class="fragment"><strong>Custom-Integration</strong> lohnt, wenn Produkte Prozess, Datenhoheit oder Steuerung nicht abbilden — vorausgesetzt, Team, Budget und Wartungsplan stehen.</p>
+        <p><strong>Pilot → Skalierung:</strong> Vor der Skalierung muss feststehen — Qualitätsziele erreicht, Datenflüsse bekannt, Kosten pro Fall beziffert, Fehlerverantwortliche benannt, Rollback getestet. Erst danach Nutzerzahl, Datenvolumen und Autonomie schrittweise erhöhen.</p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>Der Integrationspfad folgt dem Arbeitsprozess, nicht der Lieblings-Technologie.</li>
+          <li>Auth, Autorisierung und Datenminimierung müssen durchgängig sein — sonst entstehen Lücken.</li>
+          <li>Cost per Request ist mehr als der Modellpreis — Infra, Suche und Support einkalkulieren.</li>
+          <li>Standard-Produkte sind kein Beweis, dass ein konkreter Prozessfall unterstützt wird.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

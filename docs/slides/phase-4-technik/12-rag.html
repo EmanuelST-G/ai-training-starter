@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG &amp; Unternehmenswissen</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>RAG &amp; Unternehmenswissen</h1>
+        <p class="slide-subtitle">Phase 4 — Wissensassistenten mit Quellenbindung</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Den RAG-Grundablauf in eigenen Worten erklären.</li>
+          <li>Die Pipeline-Schritte Aufbereitung, Chunking, Embedding, Retrieval, Antwort unterscheiden.</li>
+          <li>RAG und Fine-Tuning gezielt auswählen.</li>
+          <li>Berechtigungen auf Dokumentebene durchsetzen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Was ist Retrieval-Augmented Generation?</h2>
+        <p>Ein <strong>RAG-System</strong> verbindet ein Sprachmodell mit einer durchsuchbaren Wissensbasis.</p>
+        <p>Vor jeder Antwort sucht das System passende interne Inhalte und gibt die gefundenen Textstellen zusammen mit der Frage an das Modell.</p>
+        <p class="fragment">Die Antwort wird dadurch in konkreten Quellen <strong>verankert</strong> (Grounding).</p>
+      </section>
+
+      <section>
+        <h2>Warum LLMs Unternehmenswissen nicht kennen</h2>
+        <ul>
+          <li>Interne Richtlinien, Verträge und Projektdokumente waren meist nicht Teil des Trainings.</li>
+          <li>Trainingswissen hat einen Stichtag und wird nicht bei jeder Dokumentänderung aktualisiert.</li>
+          <li>Modellgewichte sind kein Dokumentenarchiv und liefern keine verlässliche Quellenreferenz.</li>
+          <li>Zugriffsrechte aus SharePoint, DMS oder Intranet werden nicht automatisch übernommen.</li>
+        </ul>
+        <p class="fragment">RAG schließt diese Lücke, indem aktuelle, kontrollierte Inhalte zur Antwortzeit beigezogen werden — Antworten werden nicht automatisch wahr, aber <strong>überprüfbarer</strong>.</p>
+      </section>
+
+      <section>
+        <h2>RAG-Pipeline (Überblick)</h2>
+        <pre><code class="language-plaintext">Dokumente
+   │
+   ▼
+Aufbereitung (Texte extrahieren, Metadaten, OCR)
+   │
+   ▼
+Chunking (fachliche Abschnitte, kleine Überlappung)
+   │
+   ▼
+Embedding (Vektor je Chunk + Metadaten)
+   │
+   ▼
+Vektor-Datenbank (Index, Suche, Filter)
+   │
+   ▼
+Retrieval (Top-K + Re-Rank + ACL-Filter)
+   │
+   ▼
+Antwortgenerierung (LLM mit Quellen, System-Prompt)</code></pre>
+      </section>
+
+      <section>
+        <h2>Aufbereitung &amp; Chunking</h2>
+        <ul>
+          <li>Text extrahieren, bei Scans mit OCR.</li>
+          <li>Navigation, Fußzeilen und Dubletten entfernen.</li>
+          <li>Sprache, Dokumenttyp, Eigentümer:in, Gültigkeit und Vertraulichkeit als Metadaten erfassen.</li>
+          <li>Chunks: groß genug für Zusammenhang, klein genug für präzises Retrieval.</li>
+          <li>Fachliche Grenzen (Überschriften, Absätze) statt starrer Zeichenanzahl.</li>
+          <li>Kleine Überlappung erhält Übergänge.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Embedding, semantische Suche &amp; Vektor-Datenbank</h2>
+        <p>Ein <strong>Embedding</strong> übersetzt einen Textabschnitt in eine Zahlenfolge, die seine Bedeutung repräsentiert — ähnliche Inhalte liegen im Vektorraum näher beieinander.</p>
+        <p class="fragment">Produktnummern, Paragrafen oder exakte Namen werden oft besser lexikalisch gefunden. <strong>Hybride Suche</strong> kombiniert beide Verfahren.</p>
+        <p>Die <strong>Vektor-Datenbank</strong> speichert Embeddings und sucht effizient nach ähnlichen Vektoren — zusätzlich pro Vektor: Textabschnitt, Dokument-ID, Titel, Abschnitt, Version, Gültigkeit, Herkunft, Link, Berechtigungs- und Mandanteninfos.</p>
+        <p class="fragment">Die Vektor-DB ist nicht zwingend das führende Dokumentensystem — das DMS bleibt verbindliche Quelle, der Index eine erneuerbare Suchstruktur.</p>
+      </section>
+
+      <section>
+        <h2>Retrieval &amp; Antwortgenerierung</h2>
+        <ul>
+          <li>Frage in eine Suchanfrage überführen, mehrere Kandidaten holen.</li>
+          <li>Metadaten- und Berechtigungsfilter anwenden.</li>
+          <li>Re-Ranker kann die fachlich besten Passagen auswählen.</li>
+          <li>System-Prompt verpflichtet das Modell auf Quellenbindung.</li>
+        </ul>
+        <p class="fragment">„Dazu liegen mir keine ausreichenden Quellen vor" ist ein korrektes Ergebnis — und oft wertvoller als eine plausible Vermutung.</p>
+      </section>
+
+      <section>
+        <h2>RAG vs. Fine-Tuning</h2>
+        <table>
+          <thead>
+            <tr><th>Ansatz</th><th>Vorteile</th><th>Nachteile</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>RAG</td><td>Wissen schnell aktualisierbar; Quellen sichtbar; Dokumentrechte anwendbar</td><td>Retrieval kann falsche Passagen wählen; zusätzliche Infrastruktur</td></tr>
+            <tr><td>Fine-Tuning</td><td>Verhalten, Stil und Format stabiler</td><td>Wissen schwer aktualisierbar; Quellen fehlen; Trainingsaufwand</td></tr>
+            <tr><td>Kombination</td><td>Fachwissen per RAG, Verhalten per Fine-Tuning</td><td>Höhere Komplexität und Betriebsaufwand</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Faustregel: <strong>Wissen nachschlagen → RAG. Verhalten anpassen → Fine-Tuning.</strong></p>
+      </section>
+
+      <section>
+        <h2>Berechtigungen auf Dokumentebene</h2>
+        <p>Die Suche darf nur Inhalte berücksichtigen, die die anfragende Person lesen darf.</p>
+        <ul>
+          <li>ACLs aus dem Quellsystem in den Index übernehmen und synchronisieren.</li>
+          <li>Nutzeridentität und Gruppenmitgliedschaften bei jeder Anfrage prüfen.</li>
+          <li>Caches, Suchprotokolle und Quellen-Vorschauen ebenfalls rechtegetrennt.</li>
+          <li>Gelöschte Freigaben zeitnah aus dem Index entfernen.</li>
+        </ul>
+        <p class="fragment">Ein nachträgliches Ausblenden der Quellen reicht nicht — das Modell hat den Inhalt eventuell schon in die Antwort aufgenommen.</p>
+      </section>
+
+      <section>
+        <h2>Stand der Vektor-DB-Anbieter — 23.07.2026</h2>
+        <p>Marktüberblick ausgewählter Vektor-Datenbanken, Stand Juli 2026.</p>
+        <table>
+          <thead>
+            <tr><th>Anbieter</th><th>Typ</th><th>Stärken</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Pinecone</td><td>Managed (Serverless)</td><td>End-to-end Retrieval, Storage/Compute getrennt, Rust-Performance, BYOC verfügbar</td></tr>
+            <tr><td>Qdrant</td><td>OSS + Cloud</td><td>Rust, bis 64-fache Quantisierung, Hybrid Search (BM25/SPLADE++/ColBERT), Edge-Variante</td></tr>
+            <tr><td>Weaviate</td><td>OSS + Cloud</td><td>Query Agent, integrierte Embeddings, Multi-Tenancy (50k+ Tenants), RBAC/SOC2/HIPAA</td></tr>
+            <tr><td>pgvector</td><td>PostgreSQL-Extension</td><td>v0.8.5, ACID + Vektoren, HNSW/IVFFlat, iterative Index Scans, keine zusätzliche Infra</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Quellen: pinecone.io, qdrant.tech, weaviate.io, github.com/pgvector/pgvector (Juli 2026). <strong>Ohne Gewähr.</strong></p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>RAG macht Antworten nicht automatisch wahr, aber überprüfbarer.</li>
+          <li>Chunking-Qualität schlägt Modellqualität.</li>
+          <li>Hybride Suche und Re-Ranking sind in den meisten Use Cases Pflicht.</li>
+          <li>Berechtigungen müssen vor dem Retrieval wirken, nicht erst in der UI.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

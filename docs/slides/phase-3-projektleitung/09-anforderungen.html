@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anforderungen &amp; User Stories</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Anforderungen &amp; User Stories</h1>
+        <p class="slide-subtitle">Phase 3 — messbare Akzeptanzkriterien für probabilistische Systeme</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Funktionale und nichtfunktionale Anforderungen unterscheiden.</li>
+          <li>User Stories für AI-Systeme formulieren.</li>
+          <li>Akzeptanzkriterien für probabilistische Systeme schreiben.</li>
+          <li>Golden Datasets als Testbasis aufbauen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Business-Anforderung vs. technische Lösung</h2>
+        <p>Eine Anforderung beschreibt <strong>was</strong> erreicht werden soll, nicht <strong>wie</strong>.</p>
+        <p>❌ „Wir nehmen GPT-4 mit RAG und einer Pinecone-Vektor-DB."</p>
+        <p>✅ „Unsere Vertriebsmitarbeiter:innen können Vertragsfragen in 30 s mit Quellenangabe beantworten lassen."</p>
+      </section>
+
+      <section>
+        <h2>Funktionale Anforderungen</h2>
+        <ul>
+          <li>Beantwortet bestimmte Fragetypen.</li>
+          <li>Liefert Quellenangaben mit Dokumentname und Abschnitt.</li>
+          <li>Erlaubt Rückfragen, wenn die Antwort unsicher ist.</li>
+          <li>Übernimmt Folgeaktionen (z. B. E-Mail-Entwurf, Ticket-Erstellung).</li>
+          <li>Spricht die Sprache der Nutzer:innen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Nichtfunktionale Anforderungen</h2>
+        <table>
+          <thead>
+            <tr><th>Kategorie</th><th>Beispiel</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Genauigkeit</td><td>Recall ≥ 0,9 auf Gold-Set</td></tr>
+            <tr><td>Antwortzeit</td><td>p95 ≤ 5 s</td></tr>
+            <tr><td>Kosten</td><td>≤ 0,05 € pro Anfrage</td></tr>
+            <tr><td>Verfügbarkeit</td><td>SLO 99,5 % monatlich</td></tr>
+            <tr><td>Datenschutz</td><td>keine PII zu externen Anbietern</td></tr>
+            <tr><td>Nachvollziehbarkeit</td><td>jede Antwort mit Quellenangabe</td></tr>
+            <tr><td>Skalierbarkeit</td><td>50 000 Anfragen / Tag ohne Einbruch</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Beispiel-User-Story</h2>
+        <p style="font-style: italic;">Als <strong>Vertriebsmitarbeiter:in</strong> möchte ich <strong>eine Vertragsanfrage in natürlicher Sprache stellen können</strong>, damit ich Kundenfragen sofort beantworten kann, ohne in drei Systemen zu suchen.</p>
+        <p><strong>Akzeptanzkriterien:</strong></p>
+        <ul>
+          <li>Antwort enthält Quellenangabe mit Dokumentname und Abschnitt.</li>
+          <li>Antwortzeit ≤ 5 s (p95).</li>
+          <li>Mindestens 80 % der Antworten werden ohne Nachfrage akzeptiert.</li>
+          <li>Bei Unsicherheit stellt die AI eine Rückfrage statt zu antworten.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Akzeptanzkriterien für probabilistische Systeme</h2>
+        <p>Probabilistische Systeme können nie „immer richtig" sein. Stattdessen:</p>
+        <ul>
+          <li><strong>Mindest-Recall</strong> auf einem Gold-Set.</li>
+          <li><strong>Maximal-False-Positive-Rate</strong>.</li>
+          <li><strong>Quote unsicherer Antworten</strong> (Rückfragen statt Antwort).</li>
+          <li><strong>Feedback-Quote</strong> der Nutzer:innen (Korrektheit aus Nutzersicht).</li>
+          <li><strong>Halluzinationsrate</strong> auf einer Stichprobe von N Antworten.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Definition erlaubter und nicht erlaubter Antworten</h2>
+        <table>
+          <thead>
+            <tr><th>Status</th><th>Beispielkategorie</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>❌ Verboten</td><td>Rechtsverbindliche Auskünfte</td></tr>
+            <tr><td>❌ Verboten</td><td>Medizinische Diagnosen</td></tr>
+            <tr><td>❌ Verboten</td><td>Spekulation über Personen</td></tr>
+            <tr><td>✅ Erlaubt</td><td>Wissensfragen im definierten Themenbereich</td></tr>
+            <tr><td>✅ Erlaubt</td><td>Operative Anweisungen aus Handbüchern</td></tr>
+            <tr><td>🔁 Eskalation</td><td>Grauzone → an Fachexperte weiterleiten</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Golden Datasets</h2>
+        <p>Mindestens <strong>20–50 Testfälle</strong> je Use Case. Pro Fall:</p>
+        <ul>
+          <li>Frage / Aufgabe</li>
+          <li>Erwartete Antwort</li>
+          <li>Erlaubte Quellen (bei RAG)</li>
+          <li>Erforderliche Rolle / Berechtigung</li>
+        </ul>
+        <p class="fragment">Testfälle müssen den Normalfall, Edge Cases, reproduzierbare Fehler und domänenspezifische Begriffe abdecken — und von <strong>Fachexperten</strong> stammen, nicht von Entwicklern.</p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>„Messen" oder „nachweisen" — wenn das fehlt, ist es keine Anforderung, sondern Hoffnung.</li>
+          <li>Akzeptanzkriterien für AI brauchen Schwellenwerte, keine Garantien.</li>
+          <li>Ein gepflegtes Gold-Set ist die einzige verlässliche Antwort auf „funktioniert das noch?".</li>
+          <li>Erlaubte vs. verbotene Antworten explizit definieren — die AI kennt keine Selbstzensur.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

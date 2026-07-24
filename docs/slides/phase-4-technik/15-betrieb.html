@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produktiver Betrieb &amp; LLMOps</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Produktiver Betrieb &amp; LLMOps</h1>
+        <p class="slide-subtitle">Phase 4 — Monitoring, Drift, Fallback, Incident Management</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Umgebungen, Versionierung und Konfiguration trennen.</li>
+          <li>Monitoring für Qualität, Kosten und Latenz aufbauen.</li>
+          <li>Drift erkennen und gezielt behandeln.</li>
+          <li>Fallback-Modelle und Incident-Management planen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Go-live ist kein Endpunkt</h2>
+        <p>Eine AI-Anwendung verändert sich, auch wenn kein eigener Code geändert wurde:</p>
+        <ul>
+          <li>Quelldaten werden aktualisiert.</li>
+          <li>Nutzer:innen stellen neue Fragen.</li>
+          <li>Anbieter ändern Modelle und Kosten.</li>
+          <li>Berechtigungen laufen aus.</li>
+        </ul>
+        <p class="fragment">Betrieb umfasst Qualität, Sicherheit, Aktualität, Kosten und fachliche Verantwortung — nicht nur Serververfügbarkeit.</p>
+      </section>
+
+      <section>
+        <h2>Umgebungen</h2>
+        <table>
+          <thead>
+            <tr><th>Umgebung</th><th>Zweck</th><th>Daten &amp; Zugriff</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Entwicklung</td><td>Schnittstellen, Prompts, Tool-Aufrufe bauen</td><td>synthetische / anonymisierte Daten; weitgehende Logs</td></tr>
+            <tr><td>Test / Staging</td><td>reproduzierbare Abnahme und Regressionstests</td><td>repräsentative Testdaten; kontrollierte Rollen</td></tr>
+            <tr><td>Produktion</td><td>echter Prozess mit echten Nutzer:innen</td><td>produktive Daten; minimale Rechte; geschützte Logs</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Getrennte Zugangsdaten, Datenbanken und Konfigurationen — ein Test darf nicht versehentlich eine produktive E-Mail senden.</p>
+      </section>
+
+      <section>
+        <h2>Versionierung als zusammengehöriges Paket</h2>
+        <p>Für eine reproduzierbare AI-Anwendung werden mehr Dinge versioniert als Quellcode:</p>
+        <ul>
+          <li>Modell-ID, Anbieter, Modellparameter</li>
+          <li>System- und Nutzer-Prompts einschließlich Vorlagen</li>
+          <li>Tool-Schemas, Berechtigungen, Geschäftsregeln</li>
+          <li>Wissensquellen, Parser, Chunking, Embedding-Modell</li>
+          <li>Testdatensatz, erwartete Antworten, Bewertungsrubrik</li>
+          <li>Routing, Limits, Filter, Fallbacks</li>
+        </ul>
+        <p class="fragment">Ein Rollback muss dieses Paket wiederherstellen — nicht nur die letzte Container-Version.</p>
+      </section>
+
+      <section>
+        <h2>Monitoring: Was muss sichtbar sein?</h2>
+        <table>
+          <thead>
+            <tr><th>Bereich</th><th>Kennzahlen</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Qualität</td><td>Antworttreue, Quellenabdeckung, Retrieval-Recall, Akzeptanzquote</td></tr>
+            <tr><td>Kosten</td><td>Kosten pro Anfrage, Tokenvolumen, Anteil teurer Fallbacks</td></tr>
+            <tr><td>Antwortzeit</td><td>TTFT, p95-Latenz, Timeout-Quote</td></tr>
+            <tr><td>Fehler</td><td>HTTP-Fehler, Tool-Fehler, leere Treffer, Abbrüche, Wiederholungen</td></tr>
+            <tr><td>Nutzung</td><td>aktive Nutzer:innen, Fälle pro Prozess, Eskalationsquote</td></tr>
+            <tr><td>Feedback</td><td>hilfreich / nicht hilfreich, Korrekturen, Beschwerden</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Filterbar nach Modellversion, Mandant, Prozess und Umgebung. Traces erklären das <em>Warum</em>.</p>
+      </section>
+
+      <section>
+        <h2>Drift erkennen und behandeln</h2>
+        <p><strong>Drift</strong> = relevante Veränderung der Daten-, Anfrage- oder Modellverteilung gegenüber dem getesteten Zustand.</p>
+        <ul>
+          <li><strong>Data Drift</strong>: Eingaben oder Quelldaten ändern sich (neue Sprache, neue Produkte).</li>
+          <li><strong>Concept Drift</strong>: Beziehung zwischen Eingabe und gewünschter Antwort ändert sich (Prozessreform).</li>
+          <li><strong>Model Drift</strong>: Anbieter- oder Modellupdate verändert Qualität, Stil, Tool-Verhalten.</li>
+        </ul>
+        <p class="fragment">Alarm braucht Schwelle, verantwortliche Rolle und Maßnahme — sonst bleibt es ein Diagramm.</p>
+      </section>
+
+      <section>
+        <h2>Fallback-Modelle</h2>
+        <p>Ein Fallback springt bei Überlastung, Timeout oder temporärem Anbieterfehler ein.</p>
+        <ul>
+          <li>Kleineres Modell kann andere Formate, Quellenbindung oder Tool-Aufrufe liefern — kein automatischer Qualitätsersatz.</li>
+          <li>Fallbacks mit den wichtigsten Testfällen vorab prüfen.</li>
+          <li>Antworten kennzeichnen, wenn Qualität oder Datenschutz sich unterscheiden.</li>
+          <li>Fallback darf keine Berechtigungsprüfung umgehen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Rate Limits, Verfügbarkeit &amp; Incident Management</h2>
+        <p>Rate Limits &amp; Verfügbarkeit:</p>
+        <ul>
+          <li>Quoten für Nutzer:innen, Mandanten und Gesamtservice gemeinsam denken.</li>
+          <li>Throughput kann sinken, obwohl der Anbieter erreichbar ist (eigene DB- oder Queue-Grenzen).</li>
+          <li>Exponentielles Backoff mit zufälliger Streuung, Queueing, harte Timeouts, Circuit Breaker statt endloser Wiederholungen.</li>
+        </ul>
+        <p class="fragment"><strong>Incident- &amp; Change-Management:</strong> Ein AI-Incident kann Ausfall, falsche Antwort, Datenleck oder unerlaubter Tool-Aufruf sein. Das Runbook benennt Bereitschaft, Sofortmaßnahme, Beweissicherung, Kommunikation.</p>
+        <p class="fragment">Nach einer Störung klären: betroffene Nutzer:innen, Daten und Entscheidungen; verwendete Version und Quellen; Reproduzierbarkeit; Rollback oder Pause; Übernahme in Testset und Monitoring.</p>
+      </section>
+
+      <section>
+        <h2>Canary, Shadow &amp; Rollback</h2>
+        <ul>
+          <li><strong>Canary Deployment</strong>: neue Version erhält zunächst kleinen Anteil echter Anfragen.</li>
+          <li><strong>Shadow Traffic</strong>: parallel auf Kopien ausführen, ohne Antwort an Nutzer:innen auszuliefern.</li>
+          <li>Beide brauchen Datenschutzprüfung und klare Abbruchschwelle.</li>
+          <li>Rollback vor dem Rollout üben — bei nicht-deterministischen Antworten nach fachlichen Kriterien entscheiden, nicht nach Textgleichheit.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Stand der LLMOps-Plattformen — 23.07.2026</h2>
+        <p>Auswahl aktueller Observability- und LLMOps-Plattformen, Stand Juli 2026.</p>
+        <table>
+          <thead>
+            <tr><th>Plattform</th><th>Charakter</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Langfuse</td><td>Open-Source-LLMOps (LLM-Tracking, Evaluations, Prompt-Versionierung, Datasets, Self-Hosting möglich)</td></tr>
+            <tr><td>Datadog LLM Observability</td><td>Enterprise-APM + LLM-spezifisches Tracing (OpenAI, Anthropic, Bedrock, LangChain), AI-Guard-Integrationen</td></tr>
+            <tr><td>Helicone</td><td>AI Gateway + Observability; Routing über viele Provider, Sessions, Rate-Limit-Alerts, Open Source</td></tr>
+            <tr><td>OpenLLMetry</td><td>OpenTelemetry-basierte LLM-Instrumentierung (portabel, herstellerneutral, ergänzt bestehende OTel-Stacks)</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Quellen: langfuse.com, docs.datadoghq.com, helicone.ai, github.com/traceloop/openllmetry (Juli 2026). <strong>Ohne Gewähr.</strong></p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>Erstellt vor dem Go-live ein einseitiges Betriebs-Runbook — sonst ist die Lösung noch nicht produktionsbereit.</li>
+          <li>Versionierung umfasst Modell, Prompt, Quellen, Tools und Konfiguration — nicht nur Code.</li>
+          <li>Monitoring ohne Konsequenz ist nur ein Dashboard.</li>
+          <li>Fallback ist ein Sicherheitsnetz, kein Qualitätsersatz.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

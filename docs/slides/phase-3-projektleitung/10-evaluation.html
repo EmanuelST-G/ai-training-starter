@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation &amp; Qualitätsmessung</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Evaluation &amp; Qualitätsmessung</h1>
+        <p class="slide-subtitle">Phase 3 — Offline, Online, Red Teaming, Regression</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Offline- und Online-Evaluation unterscheiden.</li>
+          <li>Passende Metriken je Anwendungstyp wählen.</li>
+          <li>LLM-as-a-Judge sinnvoll einsetzen — mit Grenzen.</li>
+          <li>A/B-Tests, Red Teaming und Regressionstests kombinieren.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Warum Demo-Beispiele nicht reichen</h2>
+        <p>„Das Modell hat im Meeting gut ausgesehen" ist kein Beleg für Produktionstauglichkeit. „Funktioniert" muss <strong>reproduzierbar</strong> und <strong>messbar</strong> sein — mit strukturiertem Testset und quantitativen Metriken.</p>
+        <p class="fragment">Zwei komplementäre Modi: <strong>Offline</strong> (vor Rollout, mit Gold-Set) und <strong>Online</strong> (im Betrieb, mit echtem Feedback). Offline ist vergleichbar; Online zeigt realen Nutzen und Drift.</p>
+      </section>
+
+      <section>
+        <h2>Metriken je Anwendung</h2>
+        <table>
+          <thead>
+            <tr><th>Anwendung</th><th>Typische Metriken</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Klassifikation</td><td>Accuracy, Precision, Recall, F1</td></tr>
+            <tr><td>Extraktion</td><td>Token-F1, Exact-Match</td></tr>
+            <tr><td>Generative Antwort</td><td>LLM-as-a-Judge, manuelle Bewertung, BLEU/ROUGE (Schwäche)</td></tr>
+            <tr><td>RAG</td><td>Quellenkorrektheit, Antwort-Korrektheit, Halluzinationsrate</td></tr>
+            <tr><td>Konversation / Agent</td><td>Task Completion Rate, Nutzerzufriedenheit, Bearbeitungszeit</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Klassische Metriken: Accuracy, Precision, Recall, F1</h2>
+        <ul>
+          <li><strong>Accuracy</strong> = korrekt / gesamt. Irreführend bei unbalancierten Klassen.</li>
+          <li><strong>Precision</strong> = von den als „positiv" vorhergesagten Fällen, wie viele sind wirklich positiv?</li>
+          <li><strong>Recall</strong> = von allen wirklich positiven Fällen, wie viele wurden gefunden?</li>
+          <li><strong>F1</strong> = harmonisches Mittel aus Precision und Recall.</li>
+        </ul>
+        <p class="fragment">Was teurer ist — False Positive oder False Negative — hängt vom Use Case ab: Compliance vs. Werbung vs. Diagnose.</p>
+      </section>
+
+      <section>
+        <h2>Halluzinationsrate &amp; Task Completion Rate</h2>
+        <p><strong>Halluzinationsrate</strong> = Anteil Antworten mit falscher Aussage trotz verfügbarer richtiger Information.</p>
+        <ul>
+          <li>Gemessen auf 100–200 Antworten durch Fachexperten.</li>
+          <li>Unterschieden: Faktische Halluzination, Quellen-Halluzination, erfundene Details.</li>
+          <li>Faustregel: &gt; 5 % im produktiven Pilotbetrieb = rotes Flag.</li>
+        </ul>
+        <p><strong>Task Completion Rate</strong> = Anteil Konversationen, in denen das Nutzerziel erreicht wurde (manuell oder über Folgeaktionen).</p>
+        <p class="fragment">Beide kombiniert mit Nutzerzufriedenheit (Likert 1–5) und Bearbeitungszeit — als wichtigste Online-Metrik für Copiloten und Agenten.</p>
+      </section>
+
+      <section>
+        <h2>LLM-as-a-Judge — und seine Grenzen</h2>
+        <p>Ein LLM kann ein anderes LLM bewerten — ist aber <strong>nicht neutral</strong>.</p>
+        <ul>
+          <li>Bevorzugt eloquent klingende Antworten.</li>
+          <li>Hat eigenen Bias (bevorzugt bestimmte Modelle / Stile).</li>
+          <li>Übersieht fachliche Fehler, wenn sie plausibel klingen.</li>
+          <li>Halluziniert selbst beim Bewerten.</li>
+        </ul>
+        <p class="fragment">Regel: LLM-as-a-Judge als <strong>eine</strong> von mehreren Methoden, nie als einzige.</p>
+      </section>
+
+      <section>
+        <h2>A/B-Tests</h2>
+        <p>Vergleich zweier Modellversionen oder Promptvarianten mit echtem Traffic.</p>
+        <ul>
+          <li>Statistische Signifikanz vorab planen (Stichprobengröße, Effekt).</li>
+          <li>Carry-Over-Effekte beachten — Nutzer:innen lernen aus beiden Varianten.</li>
+          <li>Ethische Bedenken bei ungleicher Qualität (Patientensicherheit, Recht).</li>
+          <li>Klare Stop-Kriterien, sonst läuft der Test ewig.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Red Teaming</h2>
+        <p>Gezielte Suche nach Schwachstellen — adversarial und kreativ.</p>
+        <ul>
+          <li>Prompt Injection / Jailbreaks</li>
+          <li>Bias in der Ausgabe</li>
+          <li>Falsche oder erfundene Quellenangaben</li>
+          <li>Verhalten bei Out-of-Scope-Fragen</li>
+          <li>Datenlecks über Kontextfenster</li>
+        </ul>
+        <p class="fragment">Red Teaming ergänzt automatisierte Tests — es findet, was Skripte nicht sehen.</p>
+      </section>
+
+      <section>
+        <h2>Regressionstests</h2>
+        <p>Nach jeder Modell- oder Prompt-Änderung: vollständiges Gold-Set erneut durchlaufen.</p>
+        <ul>
+          <li>Versioniertes Testset, nicht „das Excel vom letzten Mal".</li>
+          <li>Vergleich gegen Baseline (vorherige Modellversion).</li>
+          <li>Schwelle für „regression" definieren (z. B. Recall-Drop &gt; 3 %).</li>
+          <li>In CI/CD-Pipeline verankern, sonst wird es beim ersten Sprint-Druck vergessen.</li>
+        </ul>
+        <p class="fragment">Sonst wandern Fehler unbemerkt zurück — und niemand merkt es bis zur Beschwerde.</p>
+      </section>
+
+      <section>
+        <h2>Stand der Benchmarks — 23.07.2026</h2>
+        <p>Öffentliche Leaderboards für LLMs entwickeln sich rasch. MMLU gilt als gesättigt; aktuelle Leaderboards nutzen <strong>HLE, GPQA Diamond, SWE-Bench, OSWorld, BrowseComp, Terminal-Bench</strong>.</p>
+        <table>
+          <thead>
+            <tr><th>Benchmark</th><th>Misst</th><th>Top-Modell (Juli 2026)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Humanity's Last Exam (HLE)</td><td>Wissens- &amp; Reasoning-Breite</td><td>Claude Mythos 5 — 64,5 %</td></tr>
+            <tr><td>GPQA Diamond</td><td>Reasoning in Naturwissenschaften</td><td>Claude Sonnet 5 — 96,2 %</td></tr>
+            <tr><td>SWE-Bench</td><td>Agentic Coding</td><td>GPT-5.6 Sol — 96,2 %</td></tr>
+            <tr><td>OSWorld</td><td>Computer Use</td><td>Claude Fable 5 — 85 %</td></tr>
+            <tr><td>Terminal-Bench 2.1</td><td>Terminal-Bedienung</td><td>GPT-5.6 Sol — 88,8 %</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Quelle: <em>Vellum LLM Leaderboard</em>, Juli 2026. <strong>Ohne Gewähr.</strong> Für eigene Use Cases bleiben Gold-Set-Evaluation und Online-Metriken maßgeblich.</p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>Eine Metrik reicht nie — Qualität ist mehrdimensional.</li>
+          <li>LLM-as-a-Judge ist bequem, aber nicht neutral.</li>
+          <li>Red Teaming findet, was Regressionstests übersehen.</li>
+          <li>Ohne Konsequenz („nicht bestanden → zurück auf Start") ist Evaluation Theater.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

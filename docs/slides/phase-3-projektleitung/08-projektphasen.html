@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projektphasen &amp; Entscheidungspunkte</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Projektphasen &amp; Entscheidungspunkte</h1>
+        <p class="slide-subtitle">Phase 3 — von der Idee zum Go-Live und darüber hinaus</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Ein realistisches Phasenmodell für AI-Projekte skizzieren.</li>
+          <li>An jedem Phasenübergang harte Entscheidungskriterien definieren.</li>
+          <li>Abbruchkriterien formulieren, bevor das Budget aufgebraucht ist.</li>
+          <li>Rollen von AI Product Owner und AI-Projektleitung abgrenzen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Unterschiede zu klassischen IT-Projekten</h2>
+        <ul>
+          <li><strong>Hohe Unsicherheit</strong> zu Beginn — Modell kann oder kann nicht funktionieren.</li>
+          <li><strong>Machbarkeit muss empirisch geprüft</strong> werden, nicht nur theoretisch.</li>
+          <li><strong>Datensituation</strong> ist oft der Show-Stopper.</li>
+          <li><strong>Iteration</strong> ist Standard, nicht Wasserfall.</li>
+          <li><strong>Fachabnahme</strong> ist schwieriger, weil Ausgaben probabilistisch sind.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Phasenmodell</h2>
+        <ol>
+          <li><strong>Problemdefinition</strong> — welches konkrete Problem, welches Ziel?</li>
+          <li><strong>Use-Case-Auswahl</strong> — Selektion aus dem Portfolio.</li>
+          <li><strong>Datenprüfung</strong> — was haben wir, was fehlt?</li>
+          <li><strong>Proof of Concept (PoC)</strong> — funktioniert es prinzipiell?</li>
+          <li><strong>Pilot</strong> — wie verhält es sich im Realbetrieb?</li>
+          <li><strong>Evaluation</strong> — erreicht es die Qualitätsziele?</li>
+          <li><strong>Integration</strong> — Anbindung an Bestandssysteme.</li>
+          <li><strong>Produktiver Betrieb</strong> — Go-Live mit Monitoring.</li>
+          <li><strong>Monitoring &amp; Verbesserung</strong> — Drift, Updates, neue Use Cases.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Entscheidungspunkte</h2>
+        <p>Jede Phase braucht ein formelles <strong>Gate</strong>: Was muss erfüllt sein, damit wir weitergehen?</p>
+        <table>
+          <thead>
+            <tr><th>Übergang</th><th>Typische Kriterien</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Idee → PoC</td><td>Daten vorhanden, Risiko vertretbar, Use Case klar</td></tr>
+            <tr><td>PoC → Pilot</td><td>Recall ≥ Schwelle, Antwortzeit im Ziel, keine kritischen Halluzinationen</td></tr>
+            <tr><td>Pilot → Integration</td><td>Akzeptanz der Pilotnutzer:innen, Stückkosten tragbar</td></tr>
+            <tr><td>Integration → Go-Live</td><td>Monitoring läuft, Fallback definiert, Verantwortliche benannt</td></tr>
+            <tr><td>Go-Live → Regelbetrieb</td><td>SLOs über mehrere Wochen erfüllt, keine P1-Incidents</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Abbruchkriterien</h2>
+        <p>Ein sauberer Abbruch ist <strong>kein Scheitern</strong>, sondern Risikomanagement.</p>
+        <ul>
+          <li>Gold-Set-Recall verfehlt nach drei Iterationen die Mindestschwelle.</li>
+          <li>Datengrundlage ist nicht DSGVO-konform beschaffbar.</li>
+          <li>Pilotakzeptanz &lt; 30 % nach vier Wochen.</li>
+          <li>Stückkosten überschreiten das 3-fache des Business-Case-Ansatzes.</li>
+          <li>Keine verantwortliche Fachabteilung will das System abnehmen.</li>
+        </ul>
+        <p class="fragment">Faustregel: Besser nach 6 Wochen mit klarer Erkenntnis stoppen als nach 6 Monaten mit halbem Pilot.</p>
+      </section>
+
+      <section>
+        <h2>Erwartungsmanagement vor Projektstart</h2>
+        <ul>
+          <li>Was ist „Erfolg" konkret? — messbar, nicht „funktioniert".</li>
+          <li>Welche Mindestqualität ist akzeptabel?</li>
+          <li>Was passiert, wenn die Mindestqualität verfehlt wird?</li>
+          <li>Welche Ressourcen für Evaluation sind eingeplant?</li>
+          <li>Wer entscheidet über Abbruch oder Skalierung?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Stakeholder frühzeitig einbinden</h2>
+        <table>
+          <thead>
+            <tr><th>Rolle</th><th>Bringt ein</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Fachbereich</td><td>Anforderungen, Akzeptanz, Ground Truth</td></tr>
+            <tr><td>IT</td><td>Integration, Infrastruktur, Betrieb</td></tr>
+            <tr><td>Datenschutz</td><td>DSGVO, EU AI Act, Datenflüsse</td></tr>
+            <tr><td>Recht</td><td>Verträge, IP, Haftung</td></tr>
+            <tr><td>Betriebsrat</td><td>Beschäftigtendatenschutz, Change</td></tr>
+            <tr><td>Management</td><td>Budget, Eskalation, Priorisierung</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Ein Use Case ohne Datenschutz-Freigabe ist kein fertiger Use Case.</p>
+      </section>
+
+      <section>
+        <h2>AI Product Owner vs. AI-Projektleitung</h2>
+        <table>
+          <thead>
+            <tr><th>Dimension</th><th>AI Product Owner</th><th>AI-Projektleitung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Fokus</td><td>Was &amp; Warum</td><td>Wann, Wer &amp; Womit</td></tr>
+            <tr><td>Hauptaufgabe</td><td>Use Cases priorisieren, Akzeptanz definieren</td><td>Phasen, Risiken, Budget steuern</td></tr>
+            <tr><td>Stakeholder</td><td>Fachbereich, Management</td><td>IT, Datenschutz, Betriebsrat, Recht</td></tr>
+            <tr><td>Erfolgskriterium</td><td>Fachlicher Nutzen, Adoption</td><td>Termin, Budget, Qualität, Risiko</td></tr>
+            <tr><td>Berichtet an</td><td>Fachseite / Sponsor</td><td>Steering Committee</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>AI-Projekte sind Forschungsprojekte — Phasen sind iterativ, nicht linear.</li>
+          <li>Ohne harte Gate-Kriterien wird jedes „läuft irgendwie" zum Dauerzustand.</li>
+          <li>Abbruchkriterien sind keine Schande — sie sind Budgetschutz.</li>
+          <li>Product Owner denkt vom Nutzer her, Projektleitung vom Risiko her.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

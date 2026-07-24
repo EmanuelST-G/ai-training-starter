@@ -45,3 +45,4 @@ Push auf `main` löst die GitHub Actions Workflow `.github/workflows/deploy.yml`
 | 1.0     | 23.07.2026  | Initiale Themenliste |
 | 1.1     | 23.07.2026  | MkDocs-Site mit Phase 1–3, Glossar, GitHub-Pages-Deploy |
 | 1.2     | 23.07.2026  | Phase 1–3 in `nav` ergänzt, Glossar-Querverweise, README-Push-Trigger |
+| 1.3     | 24.07.2026  | Phase 4 (Technik) + Phase 5 (Verantwortung) mit 8 neuen Themen, Glossar auf 144 Einträge erweitert |

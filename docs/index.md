@@ -31,6 +31,22 @@ Sie muss **nicht selbst Modelle programmieren**, aber verstehen, was technisch m
 
     Alle wichtigen AI-Begriffe zum Nachschlagen.
 
+- :material-school:{ .lg .middle } **[Übungen](uebungen/index.md)**
+
+    14 Übungsaufgaben mit ausgearbeiteten Lösungen für eigene Anwendung.
+
+- :material-printer:{ .lg .middle } **[Cheat-Sheets](cheatsheets/index.md)**
+
+    Eine Druckseite pro Phase, A4-optimiert zum Mitnehmen.
+
+- :material-case-study-alt:{ .lg .middle } **[Fallstudien](fallstudien/index.md)**
+
+    Drei kompakte Cases aus Mittelstand und Konzern — inklusive Lessons Learned.
+
+- :material-presentation:{ .lg .middle } **[Folien](slides/index.md)**
+
+    18 Reveal.js-Slides über alle 5 Phasen, lokal gebundelt und druckfähig.
+
 </div>
 
 ## Phasen im Überblick

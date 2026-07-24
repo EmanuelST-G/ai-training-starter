@@ -47,3 +47,4 @@ Push auf `main` löst die GitHub Actions Workflow `.github/workflows/deploy.yml`
 | 1.2     | 23.07.2026  | Phase 1–3 in `nav` ergänzt, Glossar-Querverweise, README-Push-Trigger |
 | 1.3     | 24.07.2026  | Phase 4 (Technik) + Phase 5 (Verantwortung) mit 8 neuen Themen, Glossar auf 144 Einträge erweitert |
 | 1.4     | 24.07.2026  | Plan C: Übungen, Cheat-Sheets, Fallstudien, print.css A4 |
+| 1.5     | 24.07.2026  | Plan D: 18 Reveal.js-Folien über alle 5 Phasen, lokal gebundelt, mit Internet-Recherche und Stand-23.07.2026-Quellenvermerken |

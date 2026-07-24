@@ -69,4 +69,14 @@ nav:
       - Anforderungen: projektleitung/09-anforderungen.md
       - Evaluation: projektleitung/10-evaluation.md
       - Change Management: projektleitung/11-change.md
+  - Phase 4 – Technik:
+      - RAG und Unternehmenswissen: technik/12-rag.md
+      - AI Agents und Automatisierung: technik/13-agents.md
+      - Integrationen und APIs: technik/14-integration.md
+      - Produktiver Betrieb und LLMOps: technik/15-betrieb.md
+  - Phase 5 – Verantwortung:
+      - Datenschutz und EU AI Act: verantwortung/16-datenschutz.md
+      - AI Security: verantwortung/17-security.md
+      - Responsible AI: verantwortung/18-responsible-ai.md
+      - AI Governance: verantwortung/19-governance.md
   - Glossar: glossar.md

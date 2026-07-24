@@ -3,7 +3,7 @@
 Übersicht aller 18 Themenblöcke des Curriculums, gruppiert nach Lernphase.
 
 !!! note "Hinweis"
-    Die elf Themen der Phasen 1–3 sind bereits verfügbar und unten direkt verlinkt. Die Themen der Phasen 4 und 5 folgen im Folge-Plan; ihre erwarteten Pfade sind zur Orientierung angegeben. Vollständige Inhalts-Vorlage: siehe `AI-Themenliste-fuer-Projektleitung.md` im Repository-Root.
+    Alle 18 Themen der fünf Phasen sind verfügbar und unten direkt verlinkt. Vollständige Inhalts-Vorlage: siehe `AI-Themenliste-fuer-Projektleitung.md` im Repository-Root.
 
 ## Phase 1 – Grundlagen
 
@@ -35,32 +35,18 @@
 
 ## Phase 4 – Technikverständnis
 
-### 12. RAG und Unternehmenswissen — `technik/12-rag.md`
+### 12. RAG und Unternehmenswissen — [technik/12-rag.md](technik/12-rag.md)
 
-*Folgt im Folge-Plan.*
+### 13. AI Agents und Automatisierung — [technik/13-agents.md](technik/13-agents.md)
 
-### 13. AI Agents und Automatisierung — `technik/13-agents.md`
+### 14. Integrationen und APIs — [technik/14-integration.md](technik/14-integration.md)
 
-*Folgt im Folge-Plan.*
-
-### 14. Integrationen und APIs — `technik/14-integration.md`
-
-*Folgt im Folge-Plan.*
-
-### 15. Produktiver Betrieb und LLMOps — `technik/15-betrieb.md`
-
-*Folgt im Folge-Plan.*
+### 15. Produktiver Betrieb und LLMOps — [technik/15-betrieb.md](technik/15-betrieb.md)
 
 ## Phase 5 – Verantwortung
 
-### 16. Datenschutz, Recht und EU AI Act — `verantwortung/16-datenschutz.md`
+### 16. Datenschutz, Recht und EU AI Act — [verantwortung/16-datenschutz.md](verantwortung/16-datenschutz.md)
 
-*Folgt im Folge-Plan.*
+### 17. AI Security — [verantwortung/17-security.md](verantwortung/17-security.md)
 
-### 17. AI Security — `verantwortung/17-security.md`
-
-*Folgt im Folge-Plan.*
-
-### 18. Responsible AI und AI Governance — `verantwortung/18-responsible-ai.md`
-
-*Folgt im Folge-Plan.*
+### 18. Responsible AI und AI Governance — [verantwortung/18-responsible-ai.md](verantwortung/18-responsible-ai.md) und [verantwortung/19-governance.md](verantwortung/19-governance.md)

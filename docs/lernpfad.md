@@ -26,20 +26,20 @@
 
 ## Phase 4 – Technikverständnis (Tag 4)
 
-13. RAG und Unternehmenswissen
-14. AI Agents und Automatisierung
-15. Integrationen und APIs
-16. Produktiver Betrieb und LLMOps
+13. RAG und Unternehmenswissen — [technik/12-rag.md](technik/12-rag.md)
+14. AI Agents und Automatisierung — [technik/13-agents.md](technik/13-agents.md)
+15. Integrationen und APIs — [technik/14-integration.md](technik/14-integration.md)
+16. Produktiver Betrieb und LLMOps — [technik/15-betrieb.md](technik/15-betrieb.md)
 
 ## Phase 5 – Verantwortung (Tag 5)
 
-17. Datenschutz, Recht und EU AI Act
-18. AI Security
-19. Responsible AI
-20. AI Governance
+17. Datenschutz, Recht und EU AI Act — [verantwortung/16-datenschutz.md](verantwortung/16-datenschutz.md)
+18. AI Security — [verantwortung/17-security.md](verantwortung/17-security.md)
+19. Responsible AI — [verantwortung/18-responsible-ai.md](verantwortung/18-responsible-ai.md)
+20. AI Governance — [verantwortung/19-governance.md](verantwortung/19-governance.md)
 
 !!! info "Spätere Plan-Phasen"
-    Phase 4 und 5 werden in einem Folge-Plan als `docs/technik/` und `docs/verantwortung/` ausgeliefert. Phase-1–3-Themendetails entstehen in Tasks 6, 7 und 8 des laufenden Plans.
+    Alle fünf Phasen sind jetzt online. Ergänzende Materialien und Folien sind für spätere Plan-Phasen vorgesehen.
 
 ## Priorisierung bei knapper Zeit
 

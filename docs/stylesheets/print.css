@@ -1,1 +1,53 @@
-/* print */
+/* A4 print styles for Cheat-Sheets and printable topic pages. */
+
+@page {
+  size: A4;
+  margin: 1.5cm;
+}
+
+@media print {
+  :root {
+    --md-typeset-font-size: 11pt;
+  }
+
+  /* Reduce chrome: hide nav, ToC, footer, edit links */
+  .md-sidebar,
+  .md-tabs,
+  .md-header,
+  .md-footer,
+  .md-source,
+  .md-content__inner::before {
+    display: none !important;
+  }
+
+  /* Page break behaviour */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  table, pre, figure, blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Force coloured backgrounds to print */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a, a:visited {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+/* Cheat-Sheet flag: pages can opt into extra-tight print style. */
+.md-content .cheatsheet h1 {
+  margin-top: 0;
+}
+
+.md-content .cheatsheet table {
+  font-size: 0.95em;
+}

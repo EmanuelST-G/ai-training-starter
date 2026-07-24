@@ -38,3 +38,6 @@ Nach dieser Phase kannst du RAG, Agents, Integration und produktiven Betrieb so 
 - Welche Drift-Signale werden überwacht, und wer reagiert auf welchen Alarm?
 - Wie sieht der Not-Aus-Hebel aus, und wurde der Rollback schon einmal geübt?
 - Welche Annahmen aus dem Pilot (Modell, Anbieter, Quellen) sind im Vertrag versioniert und exportierbar?
+
+!!! info "Druckhinweis"
+    Dieses Cheat-Sheet ist für A4 optimiert; via Browser-Druck oder `git clone` als PDF nutzbar.

@@ -38,3 +38,6 @@ Nach dieser Phase kannst du AI-Projekte phasenadäquat steuern, Anforderungen me
 - Welche Stakeholder-Gruppen müssen vor dem nächsten Meilenstein informiert, geschult oder eingebunden werden?
 - Welche organisatorischen Risiken (Widerstände, Shadow AI, Rollenunklarheit) sind im Pilot sichtbar geworden?
 - Wie ist die Eskalation geregelt, wenn Evaluation, Datenschutz oder Betrieb ein „nein" liefern?
+
+!!! info "Druckhinweis"
+    Dieses Cheat-Sheet ist für A4 optimiert; via Browser-Druck oder `git clone` als PDF nutzbar.

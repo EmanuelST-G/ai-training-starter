@@ -41,28 +41,28 @@
     color: inherit;
     text-decoration: underline;
   }
-}
 
-/* Cheat-Sheet flag: pages can opt into extra-tight print style. */
-.md-content .cheatsheet h1 {
-  margin-top: 0;
-}
+  /* Cheat-Sheet flag: pages can opt into extra-tight print style. */
+  .md-content .cheatsheet h1 {
+    margin-top: 0;
+  }
 
-.md-content .cheatsheet table {
-  font-size: 0.95em;
-}
+  .md-content .cheatsheet table {
+    font-size: 0.95em;
+  }
 
-/* Keep code samples on a Cheat-Sheet compact and unbroken. */
-.md-content .cheatsheet pre,
-.md-content .cheatsheet code {
-  font-size: 0.85em;
-  line-height: 1.4;
-}
+  /* Keep code samples on a Cheat-Sheet compact and unbroken. */
+  .md-content .cheatsheet pre,
+  .md-content .cheatsheet code {
+    font-size: 0.85em;
+    line-height: 1.4;
+  }
 
-/* Avoid splitting Cheat-Sheet blocks across pages when printing. */
-.md-content .cheatsheet > * {
-  break-inside: avoid;
-  page-break-inside: avoid;
+  /* Avoid splitting Cheat-Sheet blocks across pages when printing. */
+  .md-content .cheatsheet > * {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 }
 
 /* Print Cheat-Sheets on light backgrounds even when read in dark mode. */

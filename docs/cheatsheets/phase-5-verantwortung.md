@@ -38,3 +38,6 @@ Nach dieser Phase kannst du Datenschutz, Security, Responsible AI und Governance
 - Welche Bias-, Fairness- und Erklärbarkeitsanforderungen gelten für die nächste Auswertung?
 - Welche Freigaben (Lab / Pilot / Produktion) stehen aus, und wer entscheidet mit welcher Frist?
 - Wie ist der Not-Aus-Hebel pro System definiert, und wann wurde er zuletzt geübt?
+
+!!! info "Druckhinweis"
+    Dieses Cheat-Sheet ist für A4 optimiert; via Browser-Druck oder `git clone` als PDF nutzbar.

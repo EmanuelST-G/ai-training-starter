@@ -40,7 +40,7 @@ Mindestdaten pro Eintrag:
 - Aktuelle Phase (Pilot, Produktion, außer Betrieb)
 - Verknüpfte Prozesse, KPIs und Letzter Review
 
-`Systeminventar (folgt im Glossar mit Phase 4+5)` lebt von Disziplin: neue Systeme werden vor Produktivschaltung eingetragen, Stilllegungen ebenso.
+[Systeminventar](../glossar.md#systeminventar) lebt von Disziplin: neue Systeme werden vor Produktivschaltung eingetragen, Stilllegungen ebenso.
 
 ## Risikoklassifizierung
 
@@ -56,7 +56,7 @@ Die Klassifizierung entscheidet über Testtiefe, Freigaben, Dokumentation und Ü
 
 ## Fairness und Diskriminierung
 
-`Fairness (folgt im Glossar mit Phase 4+5)` bedeutet, dass ein System niemanden systematisch benachteiligt. Diskriminierung entsteht durch:
+[Fairness](../glossar.md#fairness) bedeutet, dass ein System niemanden systematisch benachteiligt. Diskriminierung entsteht durch:
 
 - Verzerrte Trainingsdaten (historische Diskriminierung, Unterrepräsentation)
 - Ungerechte Zielfunktionen (eine Metrik, die andere Schäden verdeckt)
@@ -77,7 +77,7 @@ Transparenz richtet sich an Nutzer:innen, Betroffene und Prüfende. Erklärbarke
 - **Für Betroffene:** Eine Antwort auf „warum wurde mir X zugewiesen?" – auch in nicht-technischer Sprache.
 - **Für Prüfende:** Dokumentation der Eingaben, Regeln, Schwellen und Beispielantworten.
 
-`Erklärbarkeit (folgt im Glossar mit Phase 4+5)` ist bei komplexen Modellen nur näherungsweise möglich. Entscheidend ist, dass die Erklärung das Vertrauen verdient: keine erfundenen Kausalitäten, kein Schönreden von Statistik.
+[Erklärbarkeit](../glossar.md#erklarbarkeit) ist bei komplexen Modellen nur näherungsweise möglich. Entscheidend ist, dass die Erklärung das Vertrauen verdient: keine erfundenen Kausalitäten, kein Schönreden von Statistik.
 
 ## Nachvollziehbarkeit
 
@@ -94,7 +94,7 @@ Aufbewahrungsfristen und Zugriff auf diese Daten sind im Voraus zu regeln, nicht
 
 ## Auditierbarkeit
 
-`Auditierbarkeit (folgt im Glossar mit Phase 4+5)` geht über Nachvollziehbarkeit hinaus: Ein Audit prüft, ob das System die vereinbarten Regeln einhält. Dazu gehören interne Kontrollen, externe Prüfungen und Aufsichtsbehörden.
+[Auditierbarkeit](../glossar.md#auditierbarkeit) geht über Nachvollziehbarkeit hinaus: Ein Audit prüft, ob das System die vereinbarten Regeln einhält. Dazu gehören interne Kontrollen, externe Prüfungen und Aufsichtsbehörden.
 
 Auditierbar ist ein System, wenn
 
@@ -138,6 +138,6 @@ Responsible AI wird ernst, wenn es operativ wird:
 - [Human-in-the-Loop](../glossar.md#human-in-the-loop)
 - [Bias](../glossar.md#bias)
 - [Compliance](../glossar.md#compliance)
-- `Fairness (folgt im Glossar mit Phase 4+5)`
-- `Erklärbarkeit (folgt im Glossar mit Phase 4+5)`
-- `Auditierbarkeit (folgt im Glossar mit Phase 4+5)`
+- [Fairness](../glossar.md#fairness)
+- [Erklärbarkeit](../glossar.md#erklarbarkeit)
+- [Auditierbarkeit](../glossar.md#auditierbarkeit)

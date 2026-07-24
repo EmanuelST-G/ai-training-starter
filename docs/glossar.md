@@ -42,8 +42,14 @@ Manuelle Markierung von Beispielen, um Trainingsdaten oder Ground Truth aufzubau
 ### Anweisungs-Prompt
 Vom Entwickler gesetzter Prompt, der das Verhalten des Modells über die gesamte Konversation hinweg beeinflusst. Synonym: System-Prompt.
 
+### API
+Programmierschnittstelle; in AI-Kontext meist LLM-Endpunkt, Embedding-API oder Tool-Definition.
+
 ### Assistenz vs. Automatisierung
 Assistenz = Mensch prüft jede AI-Ausgabe. Automatisierung = AI handelt autonom.
+
+### Auditierbarkeit
+Eigenschaft eines Systems, durch unabhängige Prüfungen verifizierbar zu sein; umfasst interne Kontrollen, externe Audits und Aufsichtsprüfungen.
 
 ### Audit-Trail
 Vollständige, unveränderliche Aufzeichnung von Systemereignissen für Compliance und Forensik.
@@ -133,6 +139,9 @@ Vektorielle Repräsentation von Text, Bildern oder anderen Daten, die semantisch
 ### End-to-End-Pipeline
 Datenverarbeitungskette von der Rohquelle bis zum Endprodukt ohne manuelle Zwischenschritte.
 
+### Erklärbarkeit
+Eigenschaft eines Modells, für eine gegebene Vorhersage nachvollziehbare Begründungen zu liefern (XAI); Trade-off gegen Modellkomplexität.
+
 ### Episodic Memory
 Gedächtnisteil eines Agenten, der vergangene Aktionen und Ergebnisse für spätere Entscheidungen speichert.
 
@@ -142,10 +151,16 @@ Siehe `verantwortung/18-responsible-ai.md` (Folgeplan).
 ### Evaluation
 Strukturierte Messung der Modellqualität auf Testdaten. Mehr in [Evaluation und Qualitätsmessung](projektleitung/10-evaluation.md).
 
+### Event-Streaming
+Architektur, in der Daten als kontinuierlicher Strom von Ereignissen verarbeitet werden (z. B. Apache Kafka, AWS Kinesis); Grundlage für Echtzeit-AI-Pipelines.
+
 ## F
 
 ### Fallback-Modell
 Sekundäres Modell, das bei Ausfall oder Qualitätsverlust des primären Modells aktiviert wird.
+
+### Fairness
+Eigenschaft eines Modells, keine systematische Diskriminierung gegen geschützte Gruppen zu erzeugen; messbar über Fairness-Metriken auf geschichteten Testdaten.
 
 ### False Negative
 Tatsächlich relevanter Fall, der vom Modell übersehen wurde.
@@ -287,6 +302,9 @@ Standardisiertes Dokument, das Fähigkeiten, Grenzen und Trainingsbedingungen ei
 ### Modell-Drift
 Veränderung der Modellqualität über Zeit durch veränderte Eingabedaten.
 
+### Modell-Registry
+Versionsverwaltung für ausgelieferte Modelle samt Trainingsdaten-Referenzen, Evaluationsmetriken und Freigabe-Status.
+
 ### Multimodal
 Modelle, die mehrere Datenarten verarbeiten (Text, Bild, Audio, Video).
 
@@ -413,6 +431,9 @@ Ausgabe in einem definierten Format (z. B. JSON-Schema).
 ### Supply-Chain-Risiko
 Risiko durch kompromittierte Komponenten in der AI-Lieferkette (Modelle, Daten, Tools).
 
+### Systeminventar
+Verzeichnis aller AI-Systeme einer Organisation mit Status, Eigentümer, Risikoklasse und Lebenszyklusphase; Pflichtelement jeder Governance.
+
 ### System-Prompt
 Siehe [Anweisungs-Prompt](#anweisungs-prompt).
 
@@ -460,6 +481,9 @@ Daten-Situation, in der wichtige Gruppen unterrepräsentiert sind.
 
 ### Validierung
 Bewertung der Modellleistung auf vom Training getrennten Daten während der Entwicklung.
+
+### Vendor Management
+Prozess zur Bewertung, Auswahl und laufenden Kontrolle externer AI-Anbieter; bewertet Sicherheit, Compliance, Lock-in-Risiko, Roadmap.
 
 ### Vektor-Datenbank
 Datenbank zur effizienten Suche nach ähnlichen Embeddings.

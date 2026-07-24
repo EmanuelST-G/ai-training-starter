@@ -14,7 +14,7 @@ Eine wirksame Governance ist schlank, klar und wird tatsächlich gelebt. Sie sch
 
 ## AI-Systeminventar als Register
 
-Das `Systeminventar (folgt im Glossar mit Phase 4+5)` ist der zentrale Bestandteil jeder Governance. Es enthält alle AI-Systeme – auch experimentelle und stillgelegte.
+Das [Systeminventar](../glossar.md#systeminventar) ist der zentrale Bestandteil jeder Governance. Es enthält alle AI-Systeme – auch experimentelle und stillgelegte.
 
 Pro Eintrag werden dokumentiert:
 
@@ -61,7 +61,7 @@ Die Dokumentation wird mit jeder signifikanten Änderung aktualisiert. Sie ist T
 
 ## Modell- und Prompt-Versionierung
 
-Eine reproduzierbare AI-Anwendung versioniert mehr als Quellcode. Die `Modell-Registry (folgt im Glossar mit Phase 4+5)` hält für jede ausgelieferte Version fest:
+Eine reproduzierbare AI-Anwendung versioniert mehr als Quellcode. Die [Modell-Registry](../glossar.md#modell-registry) hält für jede ausgelieferte Version fest:
 
 - Modell-ID, Anbieter, Parameter
 - System- und Nutzer-Prompts, Vorlagen
@@ -74,7 +74,7 @@ Jede Version bekommt eine eindeutige ID und einen Änderungsgrund. Ein Rollback 
 
 ## Lieferantenmanagement
 
-`Vendor Management (folgt im Glossar mit Phase 4+5)` für AI-Anbieter unterscheidet sich vom klassischen Einkauf. Geprüft werden:
+[Vendor Management](../glossar.md#vendor-management) für AI-Anbieter unterscheidet sich vom klassischen Einkauf. Geprüft werden:
 
 - AVV, SCC, TIA, Hosting-Region und Subunternehmer
 - Sicherheitszertifikate und Auditberichte (z. B. ISO 27001, SOC 2)
@@ -148,6 +148,6 @@ Governance funktioniert nicht als Kontrolle, sondern als gemeinsame Sprache. Dre
 - [Make-or-Buy](../glossar.md#make-or-buy)
 - [Pilot](../glossar.md#pilot)
 - [Red Teaming](../glossar.md#red-teaming)
-- `Modell-Registry (folgt im Glossar mit Phase 4+5)`
-- `Systeminventar (folgt im Glossar mit Phase 4+5)`
-- `Vendor Management (folgt im Glossar mit Phase 4+5)`
+- [Modell-Registry](../glossar.md#modell-registry)
+- [Systeminventar](../glossar.md#systeminventar)
+- [Vendor Management](../glossar.md#vendor-management)

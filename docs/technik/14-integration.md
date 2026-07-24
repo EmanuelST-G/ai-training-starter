@@ -103,5 +103,5 @@ Erst danach werden Nutzerzahl, Datenvolumen und Autonomie schrittweise erhöht. 
 - [Rate Limit](../glossar.md#rate-limit)
 - [SLA (Service Level Agreement)](../glossar.md#sla-service-level-agreement)
 - [SLO (Service Level Objective)](../glossar.md#slo-service-level-objective)
-- `API (folgt im Glossar mit Phase 4)`
-- `Event-Streaming (folgt im Glossar mit Phase 4)`
+- [API](../glossar.md#api)
+- [Event-Streaming](../glossar.md#event-streaming)

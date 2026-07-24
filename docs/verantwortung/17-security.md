@@ -102,7 +102,7 @@ Jede Komponente – Modell, Tool, Datenquelle, Nutzer:in – bekommt nur die Rec
 - Mehrere Tenants und Geschäftsbereiche strikt trennen.
 - Privilegierte Konten nicht im Produktivsystem, sondern in einem getrennten Verwaltungspfad halten.
 
-`Least-Privilege (folgt im Glossar mit Phase 4+5)` ist kein Optimierungsziel, sondern Architekturprinzip.
+[Least-Privilege](../glossar.md#least-privilege) ist kein Optimierungsziel, sondern Architekturprinzip.
 
 ## Secrets und API Keys
 
@@ -145,7 +145,7 @@ AI-Vorfälle haben eigene Forensik-Anforderungen. Typische Vorfälle:
 - Datenleck über Logs, Caches oder RAG-Quellen
 - Anbieter meldet Datenleck oder Modellfehlverhalten
 
-`Incident Response (folgt im Glossar mit Phase 4+5)` für AI umfasst:
+[Incident Response](../glossar.md#incident-response) für AI umfasst:
 
 1. **Erkennung und Triage:** Anomalien aus Monitoring, Nutzer:innen-Hinweisen, Anbieter-Meldungen. Feststellen, welche Version, welcher Kontext und welche Daten betroffen sind.
 2. **Eindämmung:** Agent in sicheren Modus schalten, betroffene Konten sperren, Cache und Logs sichern, Tool-Berechtigungen reduzieren.
@@ -173,6 +173,6 @@ Ein ausgewogenes Sicherheitsprogramm adressiert drei Schichten:
 - [Logging](../glossar.md#logging)
 - [Function Calling](../glossar.md#function-calling)
 - [Red Teaming](../glossar.md#red-teaming)
-- `Least-Privilege (folgt im Glossar mit Phase 4+5)`
-- `Supply-Chain (folgt im Glossar mit Phase 4+5)`
-- `Incident Response (folgt im Glossar mit Phase 4+5)`
+- [Least-Privilege](../glossar.md#least-privilege)
+- [Supply-Chain-Risiko](../glossar.md#supply-chain-risiko)
+- [Incident Response](../glossar.md#incident-response)

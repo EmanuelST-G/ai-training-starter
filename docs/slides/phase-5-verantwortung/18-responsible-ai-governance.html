@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsible AI &amp; Governance</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Responsible AI &amp; Governance</h1>
+        <p class="slide-subtitle">Phase 5 — Verantwortlichkeit, Inventar, Freigabe, Abschaltung</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Verantwortlichkeit, Fairness und Erklärbarkeit als operative Pflichten verstehen.</li>
+          <li>Ein AI-Systeminventar aufbauen und pflegen.</li>
+          <li>Risikoklassen, Freigaben und Audit-Trails verbinden.</li>
+          <li>Rollen (DPO, CDO, CISO, AI Product Owner, AI-Steuerungsgremium) zuordnen.</li>
+          <li>Lieferantenmanagement, Neubewertung und Abschaltung regeln.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Was Responsible AI bedeutet &amp; Verantwortlichkeit</h2>
+        <p>Responsible AI beschreibt Entwicklung und Nutzung von AI-Systemen unter Berücksichtigung ethischer, sozialer und rechtlicher Aspekte – keine Produkteigenschaft, sondern eine Haltung.</p>
+        <ul>
+          <li><strong>Verantwortlichkeit</strong>: Eine Person oder Rolle steht für jede Entscheidung gerade.</li>
+          <li><strong>Fairness</strong>: Niemand wird systematisch benachteiligt.</li>
+          <li><strong>Transparenz</strong>: Betroffene und Prüfende verstehen, wie eine Entscheidung zustande kommt.</li>
+          <li><strong>Nachvollziehbarkeit</strong>: Daten, Modell und Prozess lassen sich später rekonstruieren.</li>
+        </ul>
+        <p class="fragment">Ownership heißt: Pro System ein:e AI Product Owner mit Vertretungsregelung, getrennte fachliche und technische Verantwortung, dokumentierte Freigabe für Änderungen, Kenntnis der Pflichten aus DSGVO und EU AI Act. Die einseitige „Responsible-AI-Notiz" pro Projekt liefert im Audit den schnellen Einstieg.</p>
+      </section>
+
+      <section>
+        <h2>AI-Systeminventar</h2>
+        <p>Das Inventar beantwortet: Welche AI-Systeme haben wir überhaupt im Einsatz – auch experimentelle und stillgelegte?</p>
+        <table>
+          <thead>
+            <tr><th>Feld</th><th>Inhalt</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Identifikation</td><td>Name, eindeutige ID, Zweck in einem Satz</td></tr>
+            <tr><td>Verantwortliche</td><td>fachlich, technisch, datenschutzrechtlich (mit Vertretung)</td></tr>
+            <tr><td>Daten</td><td>Quellen, Rechtsgrundlage, Hosting-Region, betroffene Personengruppen</td></tr>
+            <tr><td>Modell</td><td>Anbieter, Modell-ID, Version, Wissensquellen</td></tr>
+            <tr><td>Phase &amp; Risiko</td><td>Lab / Pilot / Produktion / Außer Betrieb; Risikoklasse</td></tr>
+            <tr><td>Verknüpfungen</td><td>Geschäftsprozess, KPIs, DSFA, Freigabe, Notfallplan; letzte / nächste Prüfung</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Das Register gehört in eine zentrale, durchsuchbare Datenquelle – nicht in ein Excel-Tagewerk.</p>
+      </section>
+
+      <section>
+        <h2>Risikoklassifizierung</h2>
+        <p>Nicht jedes AI-System trägt das gleiche Risiko. Die Klassifizierung entscheidet über Testtiefe, Freigaben, Dokumentation und Überwachung.</p>
+        <table>
+          <thead>
+            <tr><th>Klasse</th><th>Beispiele</th><th>Pflichten</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Gering</td><td>Texte zusammenfassen, interne Recherche</td><td>Standardfreigabe, Monitoring, Logging</td></tr>
+            <tr><td>Mittel</td><td>Entscheidungsvorschläge mit Folgen für einzelne Personen</td><td>Bias-Tests, Erklärbarkeit, Human-in-the-Loop</td></tr>
+            <tr><td>Hoch</td><td>Bonität, Personaleinsatz, Gesundheit, kritische Infrastruktur</td><td>Eigene Freigabe, kontinuierliche Überwachung, Audit</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Die Klasse wird bei jeder größeren Änderung neu bewertet – und im Inventar dokumentiert.</p>
+      </section>
+
+      <section>
+        <h2>Fairness &amp; Bias</h2>
+        <p>Fairness bedeutet, dass ein System niemanden systematisch benachteiligt. Diskriminierung entsteht durch:</p>
+        <ul>
+          <li>Verzerrte Trainingsdaten (historische Diskriminierung, Unterrepräsentation)</li>
+          <li>Ungerechte Zielfunktionen (eine Metrik, die andere Schäden verdeckt)</li>
+          <li>Aggregierte Auswertungen, die Minderheiten verdecken</li>
+        </ul>
+        <p class="fragment">Gegenmaßnahmen: Daten-Audit vor Projektstart, stratifizierte Evaluation nach sensiblen Merkmalen, mehrere Fairness-Definitionen gegeneinander abwägen – es gibt keinen universellen Maßstab. Beschwerdekanal und Eskalation gehören dazu.</p>
+      </section>
+
+      <section>
+        <h2>Transparenz, Erklärbarkeit &amp; Audit-Trails</h2>
+        <p>Transparenz richtet sich an Nutzer:innen, Betroffene und Prüfende. Erklärbarkeit richtet sich an diejenigen, die eine Entscheidung nachvollziehen oder anfechten wollen. Audit-Trails verbinden beide.</p>
+        <ul>
+          <li><strong>Für Nutzer:innen</strong>: Klar, dass eine AI beteiligt ist, welche Daten sie nutzt und welche Rechte bestehen.</li>
+          <li><strong>Für Betroffene</strong>: Eine Antwort auf „warum wurde mir X zugewiesen?" – auch in nicht-technischer Sprache.</li>
+          <li><strong>Für Prüfende</strong>: Dokumentation der Eingaben, Regeln, Schwellen, Beispielantworten – inklusive Modell- und Versions-ID, RAG-Quellen, Tool-Aufrufe, Berechtigungsprüfungen und Freigaben.</li>
+        </ul>
+        <p class="fragment">Erklärbarkeit ist bei komplexen Modellen nur näherungsweise möglich. Entscheidend ist, dass die Erklärung das Vertrauen verdient – keine erfundenen Kausalitäten, kein Schönreden von Statistik. Aufbewahrungsfristen und Zugriff auf Audit-Daten sind im Voraus zu regeln.</p>
+      </section>
+
+      <section>
+        <h2>Model Cards — Hugging-Face-Standard (Stand 23.07.2026, ohne Gewähr)</h2>
+        <p>Eine Model Card ist eine Markdown-Datei (`README.md`) mit YAML-Metadaten – Industriestandard für Modell-Dokumentation auf Hugging Face.</p>
+        <table>
+          <thead>
+            <tr><th>Bereich</th><th>Inhalt</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>YAML-Metadaten</td><td>language, tags, license, datasets, base_model, library_name, pipeline_tag, model-index, CO2-Emissionen, evaluation results, new_version</td></tr>
+            <tr><td>Beschreibung</td><td>Modell, Zweck, Architektur, experimentelle Informationen</td></tr>
+            <tr><td>Intended Uses &amp; Limitations</td><td>Geplante Anwendungen, Biases, ethische Erwägungen, Ausschlüsse</td></tr>
+            <tr><td>Training</td><td>Trainingsparameter, Hyperparameter, experimentelles Tracking</td></tr>
+            <tr><td>Datasets</td><td>Verwendete Trainings- und Evaluierungsdatensätze (mit Hub-Identifier)</td></tr>
+            <tr><td>Evaluation Results</td><td>Strukturierte Ergebnisse (task, dataset, metrics, source) für HF-Widgets und Leaderboards</td></tr>
+            <tr><td>Environmental Impact</td><td>CO2-Bilanz und Compute-Ressourcen</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Quelle: huggingface.co/docs/hub/model-cards (Juli 2026). <strong>Ohne Gewähr.</strong> Model Cards sind die Grundlage für transparente Modellauswahl und Lieferantenprüfung.</p>
+      </section>
+
+      <section>
+        <h2>Freigabeprozesse in Stufen</h2>
+        <p>AI-Systeme durchlaufen typischerweise drei Stufen, bevor sie breit genutzt werden:</p>
+        <ol>
+          <li><strong>Lab</strong>: isolierte Experimente mit synthetischen oder anonymisierten Daten, eingeschränkte Nutzer:innen, kurze Wirkungszyklen.</li>
+          <li><strong>Pilot</strong>: Einsatz in einem klar abgegrenzten Prozess mit echten Nutzer:innen, gemessenen Akzeptanzkriterien und definierten Abbruchbedingungen.</li>
+          <li><strong>Produktion</strong>: breite Nutzung mit Monitoring, Freigaben, Dokumentation und Notfallplan.</li>
+        </ol>
+        <p class="fragment">Jede Stufe braucht eine dokumentierte Freigabe mit konkreten Kriterien: Qualität auf Gold-Set erfüllt, Datenschutz- und Sicherheitsprüfung abgeschlossen, Verantwortliche benannt, Rollback und Abschaltung vorbereitet, Schulungen erfolgt.</p>
+      </section>
+
+      <section>
+        <h2>Rollen in der AI Governance</h2>
+        <table>
+          <thead>
+            <tr><th>Rolle</th><th>Verantwortung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>AI Product Owner</td><td>verantwortet ein konkretes System fachlich und operativ, pflegt das Dossier, steuert Freigaben</td></tr>
+            <tr><td>AI-Steuerungsgremium</td><td>entscheidet über Portfolioprioritäten, Standards, übergreifende Risiken und Eskalationen</td></tr>
+            <tr><td>Datenschutzbeauftragte:r (DPO)</td><td>überwacht DSGVO-Einhaltung, bewertet DSFA, Verzeichnis und AI-Act-Konformität (Art. 37–39 DSGVO)</td></tr>
+            <tr><td>Chief Data Officer (CDO)</td><td>verantwortet unternehmensweite Datenstrategie, Datenqualität, Datenarchitektur, Data-Governance</td></tr>
+            <tr><td>CISO / IT-Security</td><td>verantwortet Informationssicherheit inkl. AI-spezifischer Risiken (Prompt Injection, RAG-Poisoning, Supply-Chain)</td></tr>
+            <tr><td>Fachbereich</td><td>definiert Akzeptanzkriterien, schult Anwender:innen, meldet Auffälligkeiten</td></tr>
+            <tr><td>Rechtsabteilung &amp; Betriebsrat</td><td>werden bei grenzüberschreitenden Vorhaben eingebunden</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Die Rollen sind ergänzend, nicht konkurrierend. Klare Übergaben und gemeinsame Termine verhindern Lücken.</p>
+      </section>
+
+      <section>
+        <h2>Lieferantenmanagement, Neubewertung &amp; Abschaltung</h2>
+        <p>Vendor Management für AI-Anbieter prüft mehr als Verträge:</p>
+        <ul>
+          <li>AVV, SCC, TIA, Hosting-Region, Subunternehmer; Sicherheitszertifikate (ISO 27001, SOC 2)</li>
+          <li>Verfügbarkeit, Vorfallsmeldungen, Mitwirkungspflichten, Exit-Strategie</li>
+          <li>Wirtschaftliche Stabilität und Roadmap des Anbieters</li>
+        </ul>
+        <p class="fragment">Die <strong>Modell-Registry</strong> versioniert Modell-ID, Anbieter, Prompts, Tool-Schemas, Wissensquellen, Testdatensatz und Konfiguration – ein Rollback stellt genau dieses Paket wieder her.</p>
+        <p class="fragment"><strong>Neubewertung</strong> regelmäßig (z. B. halbjährlich pro System) und anlassbezogen (Modellwechsel, neue Daten, Regulatorik, Vorfälle). <strong>Abschaltung</strong> braucht drei Hebel: reguläre Außerbetriebnahme, Not-Aus (Kill-Switch, API-Key deaktivieren) und Rückfalllösung (manueller Prozess). Wer noch nie das Not-Aus gedrückt hat, drückt es im Ernstfall nicht.</p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>Responsible AI wird operativ: Inventar, Dossier, Freigaben, Audit-Trails sind Pflicht-Bausteine.</li>
+          <li>Risikoklasse entscheidet über Testtiefe, Freigabe und Überwachung – bei jeder größeren Änderung neu bewerten.</li>
+          <li>Eine schriftliche Rollenmatrix (DPO, CDO, CISO, AI Product Owner, Steuerungsgremium) ist Voraussetzung für jede Freigabe.</li>
+          <li>Lieferantenmanagement umfasst mehr als Verträge – tatsächliche Praxis regelmäßig überprüfen.</li>
+          <li>Abschaltung gehört in jedes Design – Not-Aus und Rückfall werden vor dem Vorfall geübt.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz, Recht &amp; EU AI Act</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Datenschutz, Recht &amp; EU AI Act</h1>
+        <p class="slide-subtitle">Phase 5 — DSGVO, AVV, Drittland und AI Act</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>DSGVO-Grundlagen auf AI-Projekte anwenden.</li>
+          <li>Rechtsgrundlage, Zweckbindung und Datenminimierung umsetzen.</li>
+          <li>Auftragsverarbeitung und Drittlandtransfer korrekt absichern.</li>
+          <li>EU AI Act: Risikoklassen, Pflichten und Timeline kennen.</li>
+          <li>Rollen im eigenen Projekt klar zuordnen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>DSGVO gilt auch für Modelle</h2>
+        <p>Die DSGVO regelt jede Verarbeitung personenbezogener Daten in der EU – unabhängig davon, ob ein Mensch oder ein Modell sie verarbeitet.</p>
+        <ul>
+          <li><strong>Personenbezogene Daten</strong>: Name, E-Mail, Geräte-IDs, Standortdaten, freie Texte mit Personenbezug.</li>
+          <li><strong>Besondere Datenkategorien</strong> (Art. 9 DSGVO): Gesundheit, Biometrie, genetische Daten, ethnische Herkunft, politische Meinungen, Religion, Gewerkschaft, Sexualleben – grundsätzliches Verbot mit engen Ausnahmen.</li>
+          <li><strong>Pseudonymisierung</strong> bleibt personenbezogen, <strong>Anonymisierung</strong> hebt den Personenbezug auf – in der Praxis selten erreichbar.</li>
+        </ul>
+        <p class="fragment">Modelle können aus scheinbar anonymen Daten Personen rekonstruieren (Inferenz) – auch die Vorhersage-Wahrscheinlichkeit für ein Merkmal kann ein personenbezogenes Datum sein.</p>
+      </section>
+
+      <section>
+        <h2>Rechtsgrundlage und Zweckbindung</h2>
+        <p>Jede Verarbeitung braucht eine Rechtsgrundlage nach Art. 6 DSGVO: Einwilligung, Vertrag, rechtliche Verpflichtung, lebenswichtige Interessen, öffentliches Interesse oder berechtigtes Interesse.</p>
+        <ul>
+          <li>Zwecke sind <strong>vor</strong> der Verarbeitung festzulegen und zu dokumentieren.</li>
+          <li>Eine nachträgliche Zweckänderung ist nur unter engen Voraussetzungen zulässig.</li>
+          <li>Einwilligung muss freiwillig, spezifisch, informiert und unmissverständlich sein – Pauschal-Klauseln wie „AI-Consent" reichen nicht.</li>
+          <li>Eingaben in ein AI-Tool müssen denselben Zweck haben wie die zugrunde liegende Verarbeitung.</li>
+        </ul>
+        <p class="fragment">Vor dem ersten Training oder Prompt klären: Was ist der Zweck, welche Daten sind nötig, welche Rechtsgrundlage trägt die Verarbeitung?</p>
+      </section>
+
+      <section>
+        <h2>Datenminimierung als Designprinzip</h2>
+        <p>Nur die für den Zweck erforderlichen Daten dürfen verarbeitet werden. Datenminimierung ist keine Optimierung – sie ist eine frühe Designentscheidung.</p>
+        <ul>
+          <li>Vor jeder Eingabe fragen: Wird dieses Feld wirklich gebraucht?</li>
+          <li>Sensible Felder wie Geburtsdatum, Gesundheitsmerkmale oder interne IDs nicht standardmäßig an AI-Dienste übergeben.</li>
+          <li>Beispiel-Prompts mit echten Kundendaten sind tabu – auch intern.</li>
+          <li>Bei RAG nur Dokumente indexieren, die der jeweilige Nutzerkreis sehen darf.</li>
+        </ul>
+        <p class="fragment">Was nicht ins System gelangt, kann später nicht leaken.</p>
+      </section>
+
+      <section>
+        <h2>Auftragsverarbeitung (AVV)</h2>
+        <p>Klassische AI-SaaS-Anbieter sind fast immer <strong>Auftragsverarbeiter</strong> – auch wenn sie es im Marketing nicht so nennen.</p>
+        <ul>
+          <li>Schriftlicher AVV nach Art. 28 DSGVO mit Zweck, Dauer, Datenarten, Pflichten und Subunternehmern.</li>
+          <li>Anbieter verarbeitet ausschließlich auf dokumentierte Weisung.</li>
+          <li>Subunternehmer (Cloud, Embedding-Dienste) müssen offengelegt und genehmigt werden.</li>
+          <li>Nachweis technischer und organisatorischer Maßnahmen (TOMs).</li>
+          <li>Am Ende der Zusammenarbeit: Daten löschen oder zurückgeben.</li>
+        </ul>
+        <p class="fragment">Rechtsabteilung sollte den Anbieter-Standard-AVV vor Unterzeichnung gegen die eigenen Pflichten prüfen – gerade bei US-Anbietern.</p>
+      </section>
+
+      <section>
+        <h2>Drittlandtransfer &amp; Schrems-II</h2>
+        <p>Personenbezogene Daten in Länder außerhalb des EWR brauchen ein besonderes Schutzniveau.</p>
+        <ul>
+          <li><strong>Angemessenheitsbeschluss</strong>: Für wenige Länder (Schweiz, Kanada, Japan in Teilen) gilt ein gleichwertiges Schutzniveau.</li>
+          <li><strong>EU-Standardvertragsklauseln (SCC)</strong>: Vertragliche Module übertragen Pflichten – sie allein reichen nach Schrems-II nicht.</li>
+          <li><strong>Transfer Impact Assessment (TIA)</strong>: Bewertet die Rechtslage im Empfängerland und tatsächliche Schutzmaßnahmen.</li>
+          <li><strong>Ergänzende Maßnahmen</strong>: Verschlüsselung mit eigener Schlüsselhoheit, Pseudonymisierung, strenge Zugriffskontrolle.</li>
+        </ul>
+        <p class="fragment">Für typische US-Anbieter: SCC-Module, TIA, TOM-Nachweis und oft die Forderung nach EU-Hosting – Cloud-Konfigurationen müssen das abbilden.</p>
+      </section>
+
+      <section>
+        <h2>Nutzung von Eingaben zu Trainingszwecken</h2>
+        <p>Viele US-Anbieter behalten sich in Standard-AGB vor, Eingaben und Ausgaben zur Modellverbesserung zu verwenden – aus DSGVO-Sicht riskant.</p>
+        <ul>
+          <li><strong>Opt-out aktivieren</strong>: Die meisten großen Anbieter bieten ein Admin-Opt-out für Trainingszwecke. Es muss <strong>vor</strong> produktiver Nutzung gesetzt werden.</li>
+          <li><strong>Vertragliche Klarheit</strong>: AVV und Auftrag beschränken die Datenverwendung auf den konkreten Zweck.</li>
+          <li><strong>Trennung sensibler Workloads</strong>: Eigene Verträge, eigene Mandanten oder EU-Hosting bei erhöhtem Schutzbedarf.</li>
+          <li><strong>Self-Hosting / On-Premises</strong>: Wenn ein Anbieter die Nutzung nicht ausschließen kann, ist Eigenbetrieb die ehrlichere Antwort.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>EU AI Act — risikobasierter Ansatz</h2>
+        <p>Der EU AI Act verfolgt einen risikobasierten Ansatz: Je höher das Risiko, desto strenger die Pflichten.</p>
+        <ul>
+          <li><strong>Verbotene Praktiken</strong> (Kap. 2): Ausnutzen von Schutzbedürftigen, Social Scoring durch öffentliche Stellen, biometrische Echtzeit-Überwachung im öffentlichen Raum (mit engen Ausnahmen).</li>
+          <li><strong>Hochrisiko-Systeme</strong> (Anhang III): Personalentscheidungen, Kreditwürdigkeit, Bildung, Strafverfolgung, kritische Infrastruktur, Migration. Pflichten zu Risikomanagement, Daten-Governance, Dokumentation, Aufsicht durch Menschen, Genauigkeit, Robustheit, Cybersicherheit.</li>
+          <li><strong>Transparenzpflichten</strong>: Nutzer:innen müssen erkennen können, dass sie mit einer AI interagieren; bestimmte Inhalte (z. B. synthetische Medien) sind zu kennzeichnen.</li>
+          <li><strong>General-Purpose AI</strong>: Für Modelle mit „systemischen Risiken" gelten zusätzliche Pflichten zu Trainingsdaten, Dokumentation, Sicherheitstests, Vorfallsmanagement (Code of Practice der EU-Kommission).</li>
+          <li><strong>AI Literacy</strong> (Art. 4): Anbieter und Betreiber müssen sicherstellen, dass Mitarbeiter:innen ein angemessenes Verständnis von AI-Systemen haben – Schulung ist regulatorische Pflicht.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>EU AI Act — Timeline (Stand 23.07.2026, ohne Gewähr)</h2>
+        <p>Phasenweise Anwendung – gestaffelt nach Risiko und Systemtyp.</p>
+        <table>
+          <thead>
+            <tr><th>Datum</th><th>Anwendungsbereich</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>01.08.2024</td><td>Inkrafttreten</td></tr>
+            <tr><td>02.02.2025</td><td>Verbotene Praktiken (Kap. 2) und AI-Literacy-Pflichten (Art. 4) gelten</td></tr>
+            <tr><td>02.05.2025</td><td>Codes of Practice für GPAI bereit</td></tr>
+            <tr><td>02.08.2025</td><td>GPAI-Regeln (Kap. V), Governance (Kap. VII), Sanktionen, Notified Bodies</td></tr>
+            <tr><td>02.08.2026</td><td>Mehrheit der Regelungen gilt (außer Art. 6(1)); Mitgliedstaaten brauchen mindestens einen operativen Regulatory Sandbox</td></tr>
+            <tr><td>02.08.2027</td><td>Art. 6(1)-Hochrisiko-Klassifizierung; bereits auf dem Markt befindliche GPAI-Modelle müssen konform sein</td></tr>
+            <tr><td>02.08.2030</td><td>Öffentliche Stellen müssen Hochrisiko-Anforderungen erfüllen</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Quelle: artificialintelligenceact.eu (Juli 2026). <strong>Ohne Gewähr.</strong> Stichtage können sich durch delegierte Rechtsakte und Durchführungsbestimmungen verschieben.</p>
+      </section>
+
+      <section>
+        <h2>Dokumentationspflichten</h2>
+        <p>Art. 30 DSGVO verlangt ein Verzeichnis der Verarbeitungstätigkeiten. Für AI-Projekte enthält es typischerweise:</p>
+        <ul>
+          <li>Bezeichnung und Zweck der Verarbeitung</li>
+          <li>Verantwortliche:r, Ansprechperson, beteiligte Auftragsverarbeiter</li>
+          <li>Kategorien betroffener Personen und Daten</li>
+          <li>Empfänger und Drittlandtransfer mit Rechtsgrundlage</li>
+          <li>Löschfristen und TOMs</li>
+          <li>Rechtsgrundlage je Verarbeitungsschritt</li>
+        </ul>
+        <p class="fragment">Hochrisiko-Verarbeitungen brauchen zusätzlich eine <strong>Datenschutz-Folgenabschätzung (DSFA)</strong> nach Art. 35 DSGVO. Eingaben in öffentlich verfügbare AI-Tools ohne ausreichende Schutzmaßnahmen sind ein typischer DSFA-Anlass.</p>
+      </section>
+
+      <section>
+        <h2>Rollen und Verantwortlichkeiten</h2>
+        <table>
+          <thead>
+            <tr><th>Rolle</th><th>Verantwortung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Verantwortliche:r (DSGVO)</td><td>entscheidet über Zweck und Mittel</td></tr>
+            <tr><td>Auftragsverarbeiter</td><td>verarbeitet im Auftrag; AVV nach Art. 28</td></tr>
+            <tr><td>Anbieter / Betreiber (AI Act)</td><td>treffen die regulatorischen Pflichten je nach Rolle</td></tr>
+            <tr><td>AI Product Owner</td><td>verantwortet fachlich und operativ ein konkretes AI-System</td></tr>
+            <tr><td>Datenschutzbeauftragte:r (DPO)</td><td>berät, prüft; ab 20 MA oder besonderen Datenkategorien gesetzlich zu bestellen</td></tr>
+            <tr><td>CISO / CDO</td><td>tragen Sicherheits- bzw. Datenverantwortung</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Eine Rollenmatrix mit Namenszuordnung und Vertretungsregelung gehört in jedes AI-Projekt – sie ist die Grundlage für jede Prüfung.</p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>DSGVO gilt auch für Modelle – Rechtsgrundlage, Zweckbindung und Datenminimierung sind Designfragen.</li>
+          <li>AVV, SCC und TIA sind bei Drittland-Workloads Pflicht – Opt-out für Trainingszwecke vor Produktivstart setzen.</li>
+          <li>EU AI Act ist gestaffelt: Verbote gelten seit 02/2025, GPAI seit 08/2025, Hochrisiko-Hauptteil ab 08/2026.</li>
+          <li>AI Literacy nach Art. 4 ist regulatorische Schulungspflicht – nicht nur Good Practice.</li>
+          <li>Eine schriftliche Rollenmatrix mit Vertretungsregelung ist Voraussetzung für jede Freigabe.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

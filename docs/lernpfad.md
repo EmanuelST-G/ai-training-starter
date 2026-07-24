@@ -38,8 +38,8 @@
 19. Responsible AI — [verantwortung/18-responsible-ai.md](verantwortung/18-responsible-ai.md)
 20. AI Governance — [verantwortung/19-governance.md](verantwortung/19-governance.md)
 
-!!! info "Spätere Plan-Phasen"
-    Alle fünf Phasen sind jetzt online. Ergänzende Materialien und Folien sind für spätere Plan-Phasen vorgesehen.
+!!! tip "Curriculum vollständig"
+    Alle fünf Phasen, die Themenseiten, das Glossar, 14 Übungen mit Lösungen, 5 Cheat-Sheets, 3 Fallstudien und 18 Reveal.js-Folien-Decks sind online.
 
 ## Priorisierung bei knapper Zeit
 

@@ -3,11 +3,12 @@
 **Branche:** Industrieller Mittelstand (Maschinen- und Anlagenbau)
 **Unternehmensgröße:** ca. 600 Mitarbeitende, drei Produktionsstandorte in Süddeutschland
 **KI-Komponente:** Interner RAG-Wissensassistent über heterogene Maschinenbau-Dokumentation
-**Ausgangslage (Zeitpunkt):** Q3/2025 – nach 14 Monaten produktivem Einsatz
+**Ausgangslage (Zeitpunkt):** Q3/2025 – Stand der Re-Evaluation, 12 Monate nach produktivem Roll-out im Q3/2024 (PoC Q1/2024)
+**Ergebnis-KPIs:** 280 → 80 → 220 Anfragen/Woche (Akzeptanz-Verlauf nach Pflege-Disziplin); 4.200 €/Monat Betriebskosten; mittlere Antwortzeit <4 s; 96 % Quellenabdeckung bei Standardthemen (Drehmomenttabellen, Stücklisten); 17 % Drift-Alerts pro Quartal
 
 ## Ausgangslage
 
-Die Mayer & Rieger Werkzeugtechnik GmbH produziert Sondermaschinen und Sonderwerkzeuge für die Automobil- und Luftfahrtindustrie. Über Jahrzehnte sind rund 8.000 technische Dokumente entstanden: Konstruktionszeichnungen als PDF, Stücklisten in Excel, Inbetriebnahmeprotokolle, Serviceberichte, freigegebene Konstruktionsrichtlinien und zahlreiche Confluence-Seiten der Entwicklungsabteilung. Das Wissen liegt verstreut in drei DMS-Systemen, einem SharePoint und einem verwaisten Wiki. 60 Prozent der Belegschaft sind erfahrene Mitarbeitende in Produktion und Service; 40 Prozent sind seit 2020 neu eingestellt. Aussagen wie „das hat Herr Falk früher gemacht" häuften sich. Anfang 2024 startete die IT einen RAG-Assistenten auf Basis von Azure AI Search als Vektor-Index und GPT-4o für die Generierung. Ziel war, Wissen unabhängig von Einzelpersonen zugänglich zu machen und neue Mitarbeitende schneller produktiv zu bekommen.
+Die Mayer & Rieger Werkzeugtechnik GmbH produziert Sondermaschinen und Sonderwerkzeuge für die Automobil- und Luftfahrtindustrie. Über Jahrzehnte sind rund 8.000 technische Dokumente entstanden: Konstruktionszeichnungen als PDF, Stücklisten in Excel, Inbetriebnahmeprotokolle, Serviceberichte, freigegebene Konstruktionsrichtlinien und zahlreiche Confluence-Seiten der Entwicklungsabteilung. Das Wissen liegt verstreut in drei DMS-Systemen, einem SharePoint und einem verwaisten Wiki. 60 Prozent der Belegschaft sind erfahrene Mitarbeitende in Produktion und Service; 40 Prozent sind seit 2020 neu eingestellt. Aussagen wie „das hat Herr Falk früher gemacht" häuften sich. Im Q1/2024 startete die IT einen RAG-Pilotbetrieb auf Basis von Azure AI Search als Vektor-Index und GPT-4o für die Generierung; der produktive Roll-out erfolgte im Q3/2024, die hier beschriebene Re-Evaluation in Q3/2025. Ziel war, Wissen unabhängig von Einzelpersonen zugänglich zu machen und neue Mitarbeitende schneller produktiv zu bekommen.
 
 ## Problem / Opportunity
 
@@ -23,7 +24,7 @@ Zentral war die Erkenntnis aus Monat neun: Ohne definierte Pflege-Disziplin alte
 
 ## Was lief gut, was nicht
 
-Gut lief die initiale Akzeptanz: Die ersten 1.500 Nutzer:innen waren nach drei Wochen onboarded, die mittlere Antwortzeit lag unter vier Sekunden. Das Hybrid-Retrieval mit Re-Ranking lieferte bei Standardthemen wie Drehmomenttabellen und Stücklisten sehr präzise Treffer, die Quellenanzeige wurde von Service und Inbetriebnahme ausdrücklich gelobt. Ebenfalls positiv: die Kosten blieben im ersten Betriebsjahr mit etwa 4.200 Euro pro Monat deutlich unter dem Business-Case. Nicht funktioniert hat die Skalierung der Pflege: Von 142 Dokumenteneigentümer:innen hielten im ersten Halbjahr nur 38 den monatlichen Pflege-Slot ein, die Übrigen reagierten erst auf Eskalation. Drift-Detection schlug zwar bei 17 Prozent aller Quartalsauswertungen an, doch die Korrekturmaßnahmen verzögerten sich um Wochen. Folge: Drei sicherheitsrelevante Inkonsistenzen wurden erst durch Beinahe-Vorfälle in der Werkstatt entdeckt. Das Pilotprojekt gilt intern als Erfolg mit deutlichem Verbesserungspotenzial, eine zweite Ausbaustufe wurde für Q1/2026 budgetiert.
+Gut lief die initiale Akzeptanz: In den ersten drei Wochen nach Roll-out verzeichnete das System rund 1.500 Suchvorgänge pro Tag, die mittlere Antwortzeit lag unter vier Sekunden. Das Hybrid-Retrieval mit Re-Ranking lieferte bei Standardthemen wie Drehmomenttabellen und Stücklisten sehr präzise Treffer, die Quellenanzeige wurde von Service und Inbetriebnahme ausdrücklich gelobt. Ebenfalls positiv: die Kosten blieben im ersten Betriebsjahr mit etwa 4.200 Euro pro Monat deutlich unter dem Business-Case. Nicht funktioniert hat die Skalierung der Pflege: Von 142 Dokumenteneigentümer:innen hielten im ersten Halbjahr nur 38 den monatlichen Pflege-Slot ein, die Übrigen reagierten erst auf Eskalation. Drift-Detection schlug zwar bei 17 Prozent aller Quartalsauswertungen an, doch die Korrekturmaßnahmen verzögerten sich um Wochen. Folge: Drei sicherheitsrelevante Inkonsistenzen wurden erst durch Beinahe-Vorfälle in der Werkstatt entdeckt. Das Pilotprojekt gilt intern als Erfolg mit deutlichem Verbesserungspotenzial, eine zweite Ausbaustufe wurde für Q1/2026 budgetiert.
 
 ## Lessons Learned für Projektleiterinnen
 
@@ -32,3 +33,14 @@ Gut lief die initiale Akzeptanz: Die ersten 1.500 Nutzer:innen waren nach drei W
 - **Quellen und Gültigkeit gehören in die Antwort**, nicht nur ins Backend. Eine sichtbare Gültigkeitsanzeige („gültig bis 03/2024, ersetzt durch V2.1") macht Alterung für Anwender:innen erkennbar und stärkt das Vertrauen.
 - **Stichproben-Audits sind nicht delegierbar**. 50 zufällige Antworten pro Woche durch eine fachlich versierte Person sind billiger als ein Sicherheitsvorfall und liefern wertvolle Schulungsimpulse.
 - **Business-Case rechnet ohne Pflegeaufwand**. Realistische TCO-Modelle müssen den personellen Aufwand für Wissenspflege, Audits und Eskalationen ab Monat eins enthalten, sonst kippt die Wirtschaftlichkeit nach dem ersten Halbjahr.
+
+## Verlauf & Zahlen
+
+| Metrik | Vorher (vor Pflege-Disziplin) | Nachher (Stand Q3/2025) |
+|---|---|---|
+| Anfragen pro Woche (Akzeptanz) | 280 → 80 (Einbruch durch veraltete Inhalte) | 220 (nach Pflege-Slot + Stilllegungs-Workflow) |
+| Mittlere Antwortzeit | n/a (manuelle Suche, Ø 25 min) | <4 s |
+| Pflege-Disziplin (142 Dokumenteneigentümer:innen) | 38 hielten Pflege-Slot ein (27 %) | 89 hielten Pflege-Slot ein (63 %, nach Eskalations-Routine) |
+| Drift-Alerts pro Quartal | nicht erhoben | 17 % der Quartale schlugen Alarm |
+| Sicherheitsrelevante Inkonsistenzen | 3 Beinahe-Vorfälle in der Werkstatt entdeckt | 0 im letzten Quartal vor Re-Evaluation |
+| Betriebskosten | n/a | 4.200 €/Monat (GPT-4o + Azure AI Search + Cohere Rerank) |

@@ -116,11 +116,11 @@ Machine Learning mit tiefen neuronalen Netzen.
 ### Drift
 Veränderung der Daten- oder Modellverteilung über Zeit, die zu Qualitätsverlust führt.
 
-### Drittlandtransfer
-Übermittlung personenbezogener Daten in Länder außerhalb des EWR.
-
 ### Drift Detection
 Automatisierte Überwachung, die Verteilungsverschiebungen in Eingabedaten oder Modell-Outputs erkennt.
+
+### Drittlandtransfer
+Übermittlung personenbezogener Daten in Länder außerhalb des EWR.
 
 ### DSGVO
 Datenschutz-Grundverordnung der EU, in Kraft seit 2018, regelt Verarbeitung personenbezogener Daten.
@@ -207,11 +207,11 @@ Menschliche Prüfung oder Freigabe als Teil des AI-Workflows.
 
 ## I
 
-### Indirect Prompt Injection
-Angriff, bei dem schädliche Anweisungen über externe Inhalte (Dokumente, Webseiten) an das Modell gelangen.
-
 ### Incident Response
 Strukturierte Reaktion auf Sicherheitsvorfälle, oft mit definierten Rollen und Eskalationsstufen.
+
+### Indirect Prompt Injection
+Angriff, bei dem schädliche Anweisungen über externe Inhalte (Dokumente, Webseiten) an das Modell gelangen.
 
 ### Inferenz
 Anwendung eines trainierten Modells auf neue Eingaben.
@@ -354,9 +354,6 @@ Angriff, bei dem die Wissensbasis eines RAG-Systems mit manipulierten Inhalten k
 ### Rate Limit
 Begrenzung der Anzahl an Anfragen, die ein Client innerhalb eines Zeitfensters an einen AI-Service stellen darf.
 
-### Re-Plan
-Erneutes Erstellen eines Plans, wenn ein Agent feststellt, dass der ursprüngliche Plan nicht mehr zielführend ist.
-
 ### Reasoning-Modelle
 Modelle, die intern in Zwischenschritten denken, bevor sie antworten.
 
@@ -371,6 +368,9 @@ Gezielte Suche nach Schwachstellen durch simulierte Angriffe.
 
 ### Regressionstest
 Wiederholung eines festgelegten Testsets nach Änderungen, um erneut auftretende oder neu eingeführte Fehler zu erkennen.
+
+### Re-Plan
+Erneutes Erstellen eines Plans, wenn ein Agent feststellt, dass der ursprüngliche Plan nicht mehr zielführend ist.
 
 ### Responsible AI
 AI-Entwicklung und -Nutzung unter Berücksichtigung ethischer, sozialer und rechtlicher Aspekte.

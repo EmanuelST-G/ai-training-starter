@@ -51,3 +51,27 @@
 .md-content .cheatsheet table {
   font-size: 0.95em;
 }
+
+/* Keep code samples on a Cheat-Sheet compact and unbroken. */
+.md-content .cheatsheet pre,
+.md-content .cheatsheet code {
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+/* Avoid splitting Cheat-Sheet blocks across pages when printing. */
+.md-content .cheatsheet > * {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Print Cheat-Sheets on light backgrounds even when read in dark mode. */
+[data-md-color-scheme="slate"] .md-content .cheatsheet {
+  background: #ffffff;
+  color: #000000;
+}
+
+[data-md-color-scheme="slate"] .md-content .cheatsheet a,
+[data-md-color-scheme="slate"] .md-content .cheatsheet a:visited {
+  color: #1a237e;
+}

@@ -15,14 +15,14 @@ Kontrollierter Vergleich zweier Varianten mit vergleichbaren Nutzergruppen oder 
 ### Accuracy
 Anteil korrekter Vorhersagen an allen Vorhersagen. Mehr in [Evaluation](projektleitung/10-evaluation.md).
 
-### Agents
-AI-Systeme, die eigenständig planen und Aktionen über Tools ausführen. Mehr in [Generative AI & LLMs](grundlagen/02-llms.md).
-
 ### Agent-Drift
 Verschlechterung der Agent-Leistung über Zeit durch Änderungen im Kontext oder der Tool-Verfügbarkeit.
 
 ### Agent-Loop
 Wiederholte Ausführung von Tool-Aufrufen durch ein Agentic-System.
+
+### Agents
+AI-Systeme, die eigenständig planen und Aktionen über Tools ausführen. Mehr in [Generative AI & LLMs](grundlagen/02-llms.md).
 
 ### AI Act (EU)
 Europäische Verordnung zur Regulierung von KI-Systemen, 2024 in Kraft, gestaffelte Anwendung ab 2025. Mehr in `verantwortung/16-datenschutz.md` (Folgeplan).
@@ -33,23 +33,23 @@ Fähigkeit, AI-Konzepte zu verstehen, AI-Tools kritisch zu nutzen und gesellscha
 ### Akzeptanzkriterien
 Messbare Bedingungen, die eine Lösung erfüllen muss, damit Fachbereich und Auftraggeber sie abnehmen können.
 
+### Anhang III (EU AI Act)
+Liste von AI-Anwendungsfällen, die laut EU AI Act als hochriskant gelten.
+
 ### Annotation
 Manuelle Markierung von Beispielen, um Trainingsdaten oder Ground Truth aufzubauen.
 
 ### Anweisungs-Prompt
 Vom Entwickler gesetzter Prompt, der das Verhalten des Modells über die gesamte Konversation hinweg beeinflusst. Synonym: System-Prompt.
 
-### Anhang III (EU AI Act)
-Liste von AI-Anwendungsfällen, die laut EU AI Act als hochriskant gelten.
-
 ### Assistenz vs. Automatisierung
 Assistenz = Mensch prüft jede AI-Ausgabe. Automatisierung = AI handelt autonom.
 
-### Auftragsverarbeitung
-Verarbeitung personenbezogener Daten im Auftrag des Verantwortlichen durch einen Auftragsverarbeiter (DSGVO-Begriff).
-
 ### Audit-Trail
 Vollständige, unveränderliche Aufzeichnung von Systemereignissen für Compliance und Forensik.
+
+### Auftragsverarbeitung
+Verarbeitung personenbezogener Daten im Auftrag des Verantwortlichen durch einen Auftragsverarbeiter (DSGVO-Begriff).
 
 ## Ä
 
@@ -90,11 +90,11 @@ Einhaltung gesetzlicher, regulatorischer und interner Vorschriften.
 ### Computer Vision
 AI-Fachgebiet, das Bilder und Videos interpretiert.
 
-### Context Window
-Maximale Token-Anzahl, die ein Modell gleichzeitig verarbeiten kann.
-
 ### Context Drift
 Verschlechterung der Modellqualität durch veränderte Verteilung der Eingabedaten.
+
+### Context Window
+Maximale Token-Anzahl, die ein Modell gleichzeitig verarbeiten kann.
 
 ### Copilot
 AI-System, das Vorschläge macht, während der Mensch die Kontrolle behält.
@@ -116,11 +116,11 @@ Machine Learning mit tiefen neuronalen Netzen.
 ### Drift
 Veränderung der Daten- oder Modellverteilung über Zeit, die zu Qualitätsverlust führt.
 
-### Drift Detection
-Automatisierte Überwachung, die Verteilungsverschiebungen in Eingabedaten oder Modell-Outputs erkennt.
-
 ### Drittlandtransfer
 Übermittlung personenbezogener Daten in Länder außerhalb des EWR.
+
+### Drift Detection
+Automatisierte Überwachung, die Verteilungsverschiebungen in Eingabedaten oder Modell-Outputs erkennt.
 
 ### DSGVO
 Datenschutz-Grundverordnung der EU, in Kraft seit 2018, regelt Verarbeitung personenbezogener Daten.
@@ -162,22 +162,22 @@ Prompting mit 1–5 Beispielen im Prompt.
 ### Fine-Tuning
 Nachtraining eines Modells auf domänenspezifischen Daten.
 
-### Function Calling
-Mechanismus, mit dem Modelle strukturierte Tool-Aufrufe auslösen können.
-
 ### Forgetting (Recht auf Vergessenwerden)
 DSGVO-Pflicht, personenbezogene Daten auf Anfrage zu löschen.
+
+### Function Calling
+Mechanismus, mit dem Modelle strukturierte Tool-Aufrufe auslösen können.
 
 ## G
 
 ### Genauigkeit
 Siehe [Accuracy](#accuracy).
 
-### Generative AI
-AI-Systeme, die neue Inhalte erzeugen (Text, Bilder, Code, Audio).
-
 ### General-Purpose AI
 AI-Modelle, die für eine breite Palette von Aufgaben eingesetzt werden können (z. B. LLMs).
+
+### Generative AI
+AI-Systeme, die neue Inhalte erzeugen (Text, Bilder, Code, Audio).
 
 ### GFM
 GitHub Flavored Markdown — Erweiterung von CommonMark um Tabellen, Tasklisten etc.
@@ -207,11 +207,11 @@ Menschliche Prüfung oder Freigabe als Teil des AI-Workflows.
 
 ## I
 
-### Incident Response
-Strukturierte Reaktion auf Sicherheitsvorfälle, oft mit definierten Rollen und Eskalationsstufen.
-
 ### Indirect Prompt Injection
 Angriff, bei dem schädliche Anweisungen über externe Inhalte (Dokumente, Webseiten) an das Modell gelangen.
+
+### Incident Response
+Strukturierte Reaktion auf Sicherheitsvorfälle, oft mit definierten Rollen und Eskalationsstufen.
 
 ### Inferenz
 Anwendung eines trainierten Modells auf neue Eingaben.
@@ -246,11 +246,14 @@ Sprachmodell mit Milliarden von Parametern, trainiert auf riesigen Textmengen.
 ### Latenz
 Zeit zwischen Anfrage und Antwort.
 
+### Least-Privilege
+Sicherheitsprinzip, jedem Akteur nur die minimal nötigen Berechtigungen zu geben.
+
 ### Lernrate
 Hyperparameter, der die Schrittgröße beim Training bestimmt.
 
-### Least-Privilege
-Sicherheitsprinzip, jedem Akteur nur die minimal nötigen Berechtigungen zu geben.
+### Lieferantenmanagement
+Prozess zur Bewertung und laufenden Kontrolle von AI-Anbietern.
 
 ### LLM-as-a-Judge
 Evaluationsmethode, bei der ein Sprachmodell Antworten anhand eines vorgegebenen Bewertungsrasters beurteilt; menschliche Kontrolle bleibt erforderlich.
@@ -261,31 +264,28 @@ Betriebspraktiken für LLM-basierte Systeme.
 ### Logging
 Strukturierte Aufzeichnung von Systemereignissen.
 
-### Lieferantenmanagement
-Prozess zur Bewertung und laufenden Kontrolle von AI-Anbietern.
-
 ## M
 
 ### Machine Learning
 Teilgebiet von AI: Modelle lernen aus Daten statt durch explizite Regeln.
 
-### Mandantenfähigkeit
-Fähigkeit einer AI-Lösung, Daten mehrerer Kunden oder Abteilungen isoliert zu verarbeiten.
-
 ### Make-or-Buy
 Entscheidung, eine AI-Fähigkeit selbst zu entwickeln oder als Dienstleistung/Produkt zuzukaufen.
 
-### Mensch im Prozess
-Siehe [Human-in-the-Loop](#human-in-the-loop).
+### Mandantenfähigkeit
+Fähigkeit einer AI-Lösung, Daten mehrerer Kunden oder Abteilungen isoliert zu verarbeiten.
 
 ### Memory
 Komponente eines Agenten, die Informationen über mehrere Konversations- oder Arbeitsschritte hinweg speichert.
 
-### Modell-Drift
-Veränderung der Modellqualität über Zeit durch veränderte Eingabedaten.
+### Mensch im Prozess
+Siehe [Human-in-the-Loop](#human-in-the-loop).
 
 ### Model Card
 Standardisiertes Dokument, das Fähigkeiten, Grenzen und Trainingsbedingungen eines Modells beschreibt.
+
+### Modell-Drift
+Veränderung der Modellqualität über Zeit durch veränderte Eingabedaten.
 
 ### Multimodal
 Modelle, die mehrere Datenarten verarbeiten (Text, Bild, Audio, Video).
@@ -354,6 +354,9 @@ Angriff, bei dem die Wissensbasis eines RAG-Systems mit manipulierten Inhalten k
 ### Rate Limit
 Begrenzung der Anzahl an Anfragen, die ein Client innerhalb eines Zeitfensters an einen AI-Service stellen darf.
 
+### Re-Plan
+Erneutes Erstellen eines Plans, wenn ein Agent feststellt, dass der ursprüngliche Plan nicht mehr zielführend ist.
+
 ### Reasoning-Modelle
 Modelle, die intern in Zwischenschritten denken, bevor sie antworten.
 
@@ -368,9 +371,6 @@ Gezielte Suche nach Schwachstellen durch simulierte Angriffe.
 
 ### Regressionstest
 Wiederholung eines festgelegten Testsets nach Änderungen, um erneut auftretende oder neu eingeführte Fehler zu erkennen.
-
-### Re-Plan
-Erneutes Erstellen eines Plans, wenn ein Agent feststellt, dass der ursprüngliche Plan nicht mehr zielführend ist.
 
 ### Responsible AI
 AI-Entwicklung und -Nutzung unter Berücksichtigung ethischer, sozialer und rechtlicher Aspekte.
@@ -464,6 +464,9 @@ Bewertung der Modellleistung auf vom Training getrennten Daten während der Entw
 ### Vektor-Datenbank
 Datenbank zur effizienten Suche nach ähnlichen Embeddings.
 
+### Vendor Lock-in
+Abhängigkeit von einem einzelnen Anbieter, die Wechsel oder Migration zu Alternativen erschwert.
+
 ### Verantwortlicher
 DSGVO-Begriff: natürliche oder juristische Person, die über Zwecke und Mittel der Verarbeitung personenbezogener Daten entscheidet.
 
@@ -472,9 +475,6 @@ Klar geregelte Person oder Rolle, die für ein AI-System zuständig ist.
 
 ### Verzeichnis der Verarbeitungstätigkeiten
 DSGVO-Pflicht-Dokumentation aller Datenverarbeitungen.
-
-### Vendor Lock-in
-Abhängigkeit von einem einzelnen Anbieter, die Wechsel oder Migration zu Alternativen erschwert.
 
 ## W
 

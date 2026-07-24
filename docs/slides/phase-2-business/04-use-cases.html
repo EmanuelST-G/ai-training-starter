@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Anwendungsfälle im Business</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>AI-Anwendungsfälle im Business</h1>
+        <p class="slide-subtitle">Phase 2 — Aus einem Problem einen bewertbaren Use-Case machen</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Geeignete von ungeeigneten Use Cases unterscheiden.</li>
+          <li>Build vs. Buy und Standard vs. Custom entscheiden können.</li>
+          <li>Assistenz vs. Automatisierung und Human-in-the-Loop einordnen.</li>
+          <li>Eine Use-Case-Tabelle je Branche lesen und füllen können.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Heuristik: Wann AI sinnvoll ist</h2>
+        <ul>
+          <li><strong>Hohe Frequenz</strong> (&gt; 100 Wiederholungen pro Monat)</li>
+          <li><strong>Hoher manueller Aufwand</strong> bei niedriger Komplexität</li>
+          <li><strong>Strukturierte Daten</strong> oder klare Eingaben</li>
+          <li><strong>Tolerante Fehlerrate</strong> (&lt; 5 % sind okay)</li>
+          <li><strong>Schriftlich/textbasiert</strong> statt physikalischer Welt</li>
+        </ul>
+        <p class="fragment">Was AI schlecht kann: kontrafaktische Begründungen, physische Welt, langfristige strategische Entscheidungen.</p>
+      </section>
+
+      <section>
+        <h2>Typische Use Cases</h2>
+        <ul>
+          <li>Dokumentenanalyse (Verträge, Rechnungen, Audits)</li>
+          <li>Wissenssuche in internen Beständen</li>
+          <li>Kundenservice / First-Level-Support</li>
+          <li>E-Mail-Triage und -Beantwortung</li>
+          <li>Angebotserstellung aus CRM-Daten</li>
+          <li>Meeting-Zusammenfassungen</li>
+          <li>Reporting (KPIs aus Datenquellen)</li>
+          <li>Forecasting (Nachfrage, Abverkauf)</li>
+          <li>Qualitätsprüfung (Texte, Bilder)</li>
+          <li>Vertragsanalyse (Klauseln, Risiken)</li>
+          <li>Marketing &amp; Content</li>
+          <li>Softwareentwicklung (Code-Vorschläge, Tests, Refactoring)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Use-Case-Tabelle je Branche</h2>
+        <table>
+          <thead>
+            <tr><th>Branche</th><th>Beispiel-Use-Case</th><th>AI-Art</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Versicherung</td><td>Schadensmeldungen klassifizieren</td><td>LLM + Klassifikation</td></tr>
+            <tr><td>Banken</td><td>Vertrags-Klauselrisiken extrahieren</td><td>LLM + RAG</td></tr>
+            <tr><td>Industrie</td><td>Wartungsbedarf aus Sensordaten vorhersagen</td><td>ML / Forecasting</td></tr>
+            <tr><td>Healthcare</td><td>Radiologie-Bilder vorsortieren</td><td>Computer Vision</td></tr>
+            <tr><td>Öffentlicher Sektor</td><td>Bürgeranfragen automatisch beantworten</td><td>LLM + Assistenz</td></tr>
+            <tr><td>Handel / Retail</td><td>Sortimentsempfehlungen personalisieren</td><td>Empfehlungssysteme</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Assistenz vs. Automatisierung</h2>
+        <table>
+          <thead>
+            <tr><th>Grad</th><th>Beispiel</th><th>Risiko</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Vollständige Automatisierung</td><td>Spam-Filter, Auto-Vervollständigung</td><td>niedrig — Fehler reversibel</td></tr>
+            <tr><td>Assistenz</td><td>Copilot für Kundenservice-Antwort</td><td>mittel — Mensch prüft</td></tr>
+            <tr><td>Vollautonom</td><td>AI-Agent beantwortet Kunden ohne Prüfung</td><td>hoch — rechtlich und qualitativ</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Human-in-the-Loop</h2>
+        <p>Wo Fehler Folgen haben, <strong>muss</strong> ein Mensch die Ausgabe prüfen oder freigeben.</p>
+        <ul>
+          <li>Qualität wird messbar besser</li>
+          <li>Time-to-Value sinkt trotzdem (Mensch liest)</li>
+          <li>Rechts- und Reputationsrisiken werden beherrschbar</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Copilot, Reviewer, autonomer Agent</h2>
+        <ul>
+          <li><strong>Copilot:</strong> Vorschlag, Mensch entscheidet</li>
+          <li><strong>Reviewer:</strong> Mensch macht, AI prüft</li>
+          <li><strong>Autonomer Agent:</strong> AI entscheidet und handelt</li>
+        </ul>
+        <p class="fragment">Faustregel: Je höher die Konsequenz, desto mehr Mensch im Loop.</p>
+      </section>
+
+      <section>
+        <h2>Build vs. Buy</h2>
+        <table>
+          <thead>
+            <tr><th>Faktor</th><th>Build</th><th>Buy</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Spezifischer Vorteil erforderlich</td><td>ja</td><td>nein</td></tr>
+            <tr><td>Daten sind unique</td><td>ja</td><td>egal</td></tr>
+            <tr><td>Zeitkritisch</td><td>nein</td><td>ja</td></tr>
+            <tr><td>Volumen rechtfertigt Custom-Lösung</td><td>hoch</td><td>niedrig</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Standardprodukt vs. individuelle Lösung</h2>
+        <p>Microsoft 365 Copilot, Salesforce Einstein, ServiceNow AI — wenn 70 % der Anforderungen reichen, ist Standard fast immer billiger.</p>
+        <p>Individuelle Lösungen nur, wenn die Differenzierung am Use Case hängt.</p>
+        <p class="fragment"><strong>Entscheidungsfrage:</strong> Welche Eigenschaft unterscheidet euch von Wettbewerbern — und ist diese Eigenschaft AI-relevant?</p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>Nicht jeder Use Case ist ein guter AI-Use Case.</li>
+          <li>Assistenz schlägt Vollautonomie in den meisten Anfangsprojekten.</li>
+          <li>Standard &gt; Custom, wenn 70 % reichen.</li>
+          <li>Human-in-the-Loop ist Standard bei nicht-reversiblen Fehlern.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

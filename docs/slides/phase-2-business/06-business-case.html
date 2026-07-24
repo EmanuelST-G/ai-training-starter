@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Case &amp; Wirtschaftlichkeit</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Business Case &amp; Wirtschaftlichkeit</h1>
+        <p class="slide-subtitle">Phase 2 — Stückpreis, Szenarien, versteckte Kosten</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Einen Business Case mit mehreren Szenarien erstellen.</li>
+          <li>Die Kostenarten eines AI-Projekts kennen.</li>
+          <li>Cloud vs. On-Prem und kleine vs. große Modelle abwägen.</li>
+          <li>Versteckte Kosten realistisch einkalkulieren.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Kostenarten</h2>
+        <ul>
+          <li>Modellentwicklung (Custom-Entwicklung)</li>
+          <li>Lizenzen (Plattformgebühren pro Nutzer/Monat)</li>
+          <li>API-Nutzung / Tokens</li>
+          <li>Infrastruktur (Compute, Storage, Vektor-DB)</li>
+          <li>Datenaufbereitung (manuell + Tools)</li>
+          <li>Integration (in Bestandssysteme)</li>
+          <li>Evaluation (interne Tests, Gold-Set-Pflege)</li>
+          <li>Betrieb und Monitoring (LLMOps)</li>
+          <li>Change Management (Schulungen, Kommunikation)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Cloud vs. On-Premises</h2>
+        <table>
+          <thead>
+            <tr><th>Aspekt</th><th>Cloud</th><th>On-Premises</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Time-to-Market</td><td>Tage</td><td>Monate</td></tr>
+            <tr><td>Datenschutz</td><td>abhängig vom Anbieter</td><td>am besten kontrollierbar</td></tr>
+            <tr><td>Kostenverlauf</td><td>OPEX, skalierend</td><td>CAPEX + OPEX</td></tr>
+            <tr><td>Vendor Lock-in</td><td>hoch</td><td>gering</td></tr>
+            <tr><td>Modellauswahl</td><td>alle Anbieter</td><td>Open-Source bevorzugt</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Große vs. kleine Modelle</h2>
+        <ul>
+          <li><strong>Großes Modell</strong> (GPT-5-Klasse, Claude Opus): bessere Qualität, höhere Kosten pro Token, oft Cloud-only</li>
+          <li><strong>Kleines Modell</strong> (z. B. 7B, lokal): billiger, oft ausreichend für Klassifikation / Extraktion, on-premises möglich</li>
+        </ul>
+        <p class="fragment">Faustregel: 80 % der Use Cases kommen mit kleinen Modellen aus.</p>
+      </section>
+
+      <section>
+        <h2>Stand der Zahlen — 23.07.2026</h2>
+        <p>Öffentliche API-Preise (USD pro 1M Tokens, Standard-Tier, ohne Caching). Quelle: Anbieter-Preisseiten, Stand 23.07.2026, ohne Gewähr.</p>
+        <table>
+          <thead>
+            <tr><th>Modell</th><th>Input</th><th>Output</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Google Gemini 2.5 Flash-Lite</td><td>$0,10</td><td>$0,40</td></tr>
+            <tr><td>OpenAI gpt-5.4-nano</td><td>$0,20</td><td>$1,25</td></tr>
+            <tr><td>OpenAI gpt-5.4-mini</td><td>$0,75</td><td>$4,50</td></tr>
+            <tr><td>Anthropic Claude Haiku 4.5</td><td>$1,00</td><td>$5,00</td></tr>
+            <tr><td>Google Gemini 2.5 Pro (≤200k)</td><td>$1,25</td><td>$10,00</td></tr>
+            <tr><td>Anthropic Claude Sonnet 4.5/4.6</td><td>$3,00</td><td>$15,00</td></tr>
+            <tr><td>Anthropic Claude Opus 4.5–4.8</td><td>$5,00</td><td>$25,00</td></tr>
+            <tr><td>OpenAI gpt-5.4 / 5.5</td><td>$2,50 / $5,00</td><td>$15,00 / $30,00</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Mit Prompt-Caching (Cache-Hit ~10 % vom Input) und Batch-API (-50 %) sinken die effektiven Stückkosten erheblich.</p>
+      </section>
+
+      <section>
+        <h2>Stückpreis-Rechnung</h2>
+        <p>Beispiel: RAG-Anfrage mit 2k Input + 500 Output Tokens.</p>
+        <ul>
+          <li>Claude Haiku 4.5: 2 000 × $1,00 / 1M + 500 × $5,00 / 1M ≈ <strong>$0,0045</strong></li>
+          <li>GPT-5.4-mini: 2 000 × $0,75 / 1M + 500 × $4,50 / 1M ≈ <strong>$0,0038</strong></li>
+          <li>Gemini 2.5 Flash-Lite: 2 000 × $0,10 / 1M + 500 × $0,40 / 1M ≈ <strong>$0,0004</strong></li>
+          <li>Eigenes 7B-Modell on-prem: ≈ <strong>$0,0003</strong> + Strom</li>
+        </ul>
+        <p class="fragment">Bei 50 000 Anfragen / Monat: <strong>$225 / $190 / $20 / $15</strong> — Volumen skaliert linear.</p>
+      </section>
+
+      <section>
+        <h2>ROI &amp; TCO</h2>
+        <p>ROI = (Nutzen − Kosten) / Kosten.</p>
+        <p class="fragment">Aber: viele Nutzen sind <strong>nicht direkt messbar</strong> (Mitarbeiterzufriedenheit, Time-to-Market). Hier helfen Szenarien.</p>
+        <ul>
+          <li><strong>TCO</strong> berücksichtigt CAPEX + OPEX über die Lebensdauer</li>
+          <li>Hidden Costs fallen meist in OPEX (siehe nächste Folie)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Drei-Szenarien-Rechnung</h2>
+        <table>
+          <thead>
+            <tr><th>Szenario</th><th>Nutzen/Jahr</th><th>Kosten/Jahr</th><th>ROI</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Best Case</td><td>800.000 €</td><td>200.000 €</td><td>300 %</td></tr>
+            <tr><td>Realistic</td><td>400.000 €</td><td>250.000 €</td><td>60 %</td></tr>
+            <tr><td>Worst Case</td><td>80.000 €</td><td>300.000 €</td><td>−73 %</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Entscheidung fällt meist auf Realistic — mit Worst-Case-Floor als Abbruchkriterium.</p>
+      </section>
+
+      <section>
+        <h2>Versteckte Kosten</h2>
+        <ul>
+          <li>Manuelle Qualitätsprüfung der AI-Outputs</li>
+          <li>Prompt-Engineering-Wartung (Modell-Updates zerschlagen Prompts)</li>
+          <li>Datenpflege (RAG-Quellen aktuell halten)</li>
+          <li>Incident Response und Hotfixes</li>
+          <li>Rechtliche Reviews (Verträge, Datenschutz, AI Act)</li>
+        </ul>
+        <p class="fragment">Realistisch: 30–60 % der Pilot-Zeitersparnis; 10–25 % im produktiven Betrieb.</p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>Stückpreis × Volumen × 12 = Token-Kosten im Jahr — der erste Schock kommt hier.</li>
+          <li>Drei Szenarien rechnen, davon eines ohne AI-Erfolg.</li>
+          <li>Hidden Costs in OPEX machen oft den Unterschied zwischen grün und rot.</li>
+          <li>Modellgröße ist nicht gleich Wert — 80 % der Use Cases kommen mit kleinen Modellen aus.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

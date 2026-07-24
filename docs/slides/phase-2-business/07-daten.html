@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenverständnis</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Datenverständnis</h1>
+        <p class="slide-subtitle">Phase 2 — Datenqualität, Bias, DSGVO</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Welche Datenfragen vor dem Start eines AI-Projekts geklärt sein müssen.</li>
+          <li>Ground Truth und Bias verstehen und adressieren.</li>
+          <li>Datenklassifizierung und Data Governance kennen.</li>
+          <li>Die DSGVO-Schnittstelle für AI-Projekte kennen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Datenqualität &gt; Modellqualität</h2>
+        <p>In den meisten Projekten ist die Datenqualität der Flaschenhals, nicht die Modellarchitektur.</p>
+        <p>Vor dem Start prüfen:</p>
+        <ul>
+          <li>Sind die Daten vollständig?</li>
+          <li>Sind sie aktuell?</li>
+          <li>Sind sie korrekt?</li>
+          <li>Sind sie repräsentativ für den Use Case?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Datenquellen und Verantwortung</h2>
+        <ul>
+          <li>Pro Datenquelle braucht es eine <strong>verantwortliche Person</strong> (Data Owner)</li>
+          <li>Ohne Owner keine Datenstrategie</li>
+          <li>Owner klären: Quelle, Aktualisierung, Berechtigungen, Löschfristen</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Strukturiert vs. unstrukturiert</h2>
+        <table>
+          <thead>
+            <tr><th>Typ</th><th>Beispiele</th><th>Herausforderung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Strukturiert</td><td>SQL-Datenbanken, ERP, CRM, Excel</td><td>Schema-Qualität, Konsistenz</td></tr>
+            <tr><td>Unstrukturiert</td><td>PDFs, E-Mails, Verträge, Bilder</td><td>Extraktion, Klassifikation</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">Viele AI-Projekte leben davon, unstrukturierte Daten zugänglich zu machen.</p>
+      </section>
+
+      <section>
+        <h2>Trainings-, Validierungs- und Testdaten</h2>
+        <ul>
+          <li><strong>Trainingsdaten:</strong> Beispiele, aus denen das Modell lernt</li>
+          <li><strong>Validierungsdaten:</strong> Hyperparameter-Abstimmung in der Entwicklung</li>
+          <li><strong>Testdaten:</strong> unsichtbar bis zur finalen Abnahme</li>
+        </ul>
+        <p class="fragment">Werden diese vermischt, ist jede Genauigkeitsangabe wertlos.</p>
+      </section>
+
+      <section>
+        <h2>Labels &amp; Ground Truth</h2>
+        <p>Ground Truth = „was die richtige Antwort ist".</p>
+        <ul>
+          <li>Wer legt sie fest? Wer prüft sie?</li>
+          <li>Bestehen Sie auf <strong>Fachexperten</strong> als Label-Quelle, nicht nur Entwickler</li>
+          <li>Label-Konsens messen (Mehrfach-Label, Inter-Annotator-Agree)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Bias in Daten</h2>
+        <p>Wenn historische Daten bestimmte Gruppen unterrepräsentieren, lernt das Modell die Diskriminierung mit.</p>
+        <p>Beispiele: Bewerbungsdaten mit gender-tendenziösen Erfolgsmustern, Kreditdaten mit verzerrten Annahmen.</p>
+        <p class="fragment"><strong>Gegenmaßnahmen:</strong> Daten-Audit, faire Repräsentation prüfen, Ergebnisse nach Gruppen stratifiziert auswerten.</p>
+      </section>
+
+      <section>
+        <h2>Datenklassifizierung</h2>
+        <table>
+          <thead>
+            <tr><th>Stufe</th><th>Beispiel</th><th>Zugriff</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Öffentlich</td><td>Webseiten, Broschüren</td><td>keine Einschränkung</td></tr>
+            <tr><td>Intern</td><td>Handbücher, interne Reports</td><td>Mitarbeiter</td></tr>
+            <tr><td>Vertraulich</td><td>Verträge, Kundenlisten</td><td>berechtigter Kreis</td></tr>
+            <tr><td>Streng vertraulich</td><td>personenbezogene Daten, Geschäftsgeheimnisse</td><td>Einzelpersonen, Audit-Pflicht</td></tr>
+          </tbody>
+        </table>
+        <p class="fragment">AI-Use-Cases werden immer in der höchsten betroffenen Stufe bewertet.</p>
+      </section>
+
+      <section>
+        <h2>DSGVO-Schnittstelle</h2>
+        <p>Datenschutz beginnt bei der Frage: <em>Welche Daten kommen rein, welche dürfen verarbeitet werden, was darf das Modell daraus ableiten?</em></p>
+        <ul>
+          <li>Klare Zweckbindung</li>
+          <li>Datenminimierung</li>
+          <li>Zugriffskontrolle</li>
+          <li>Aufbewahrung und Löschung</li>
+          <li>Anonymisierung / Pseudonymisierung prüfen</li>
+        </ul>
+        <p class="fragment">Compliance-Falle: Auch anonymisierte Daten können über Kombinationen reidentifizierbar sein.</p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>Datenqualität schlägt Modellqualität in fast jedem Projekt.</li>
+          <li>Ground Truth gehört in Fachexperten-Hände, nicht in Entwickler-Hände.</li>
+          <li>Bias-Audits sind keine Kür, sondern Voraussetzung für Produktivbetrieb.</li>
+          <li>Datenklassifizierung + DSGVO sind die ersten 10 Tage jedes AI-Projekts.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

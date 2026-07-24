@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generative AI &amp; LLMs</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Generative AI &amp; LLMs</h1>
+        <p class="slide-subtitle">Phase 1 — Tokens, Kontext, Anbieter, Grenzen</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Verstehen, wie LLMs Texte erzeugen — und warum sie irren können.</li>
+          <li>Tokens, Kontextfenster und Temperatur erklären.</li>
+          <li>Anbieter und Modellfamilien unterscheiden.</li>
+          <li>Halluzinationen, Multimodalität und Reasoning-Modelle einordnen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Was sind LLMs?</h2>
+        <p>Large Language Models sind Modelle, die auf riesigen Textmengen trainiert wurden und Wahrscheinlichkeiten für das <strong>nächste wahrscheinlichste Token</strong> berechnen.</p>
+        <p class="fragment">Aus dieser einfachen Aufgabe entsteht durch Skalierung erstaunlich vielseitige Intelligenz.</p>
+      </section>
+
+      <section>
+        <h2>Tokens &amp; Kontext</h2>
+        <ul>
+          <li><strong>Token:</strong> Wortteile; ca. 0,5–1 Token pro englisches Wort, Deutsch 1,2–2 Tokens pro Wort</li>
+          <li><strong>Kontextfenster:</strong> maximale Länge aus Eingabe + Ausgabe, die das Modell gleichzeitig verarbeiten kann</li>
+          <li>Was nicht ins Fenster passt, „weiß" das Modell nicht.</li>
+        </ul>
+        <p class="fragment">Stand: 23.07.2026 — siehe Übersicht auf der „Anbieter im Vergleich"-Folie.</p>
+      </section>
+
+      <section>
+        <h2>Temperatur und Determinismus</h2>
+        <ul>
+          <li><strong>T = 0:</strong> greedy decoding, sehr deterministisch</li>
+          <li><strong>T ≈ 0,7:</strong> ausgewogen (typisch)</li>
+          <li><strong>T ≥ 1:</strong> sehr kreativ, höhere Halluzinationsrate</li>
+        </ul>
+        <p>Für reproduzierbare Ausgaben: Temperatur 0, ggf. <code>seed</code>-Parameter festlegen.</p>
+      </section>
+
+      <section>
+        <h2>System-Prompt, User-Prompt, Assistant</h2>
+        <ul>
+          <li><strong>System-Prompt:</strong> Rollen- und Verhaltensanweisungen (von Entwicklern)</li>
+          <li><strong>User-Prompt:</strong> die eigentliche Anfrage</li>
+          <li><strong>Assistant-Response:</strong> die Antwort des Modells</li>
+        </ul>
+        <p class="fragment">Konvention: System = Rolle &amp; Regeln, User = Frage, Assistant = Antwort.</p>
+      </section>
+
+      <section>
+        <h2>Anbieter im Überblick</h2>
+        <table>
+          <thead>
+            <tr><th>Anbieter</th><th>Modell-Reihe</th><th>Bemerkung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>OpenAI</td><td>GPT-5.x, o-Serie</td><td>Reasoning-Modelle, starker Allrounder</td></tr>
+            <tr><td>Anthropic</td><td>Claude Opus / Sonnet / Haiku 4.5/4.6/5</td><td>lange Kontextfenster, vorsichtig bei Risiken</td></tr>
+            <tr><td>Google</td><td>Gemini 2.5 / 3.x</td><td>multimodal, enge Workspace-Integration</td></tr>
+            <tr><td>Microsoft</td><td>Copilot</td><td>Vermarktung von OpenAI-Modellen + Integration</td></tr>
+            <tr><td>Open-Source</td><td>LLaMA, Mistral, Qwen</td><td>On-Premises und Edge einsetzbar</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Stand der Zahlen — 23.07.2026</h2>
+        <p>Öffentliche API-Preise (USD pro 1M Tokens, Standard-Tier, ohne Caching). Quelle: Anbieter-Preisseiten, Stand 23.07.2026, ohne Gewähr.</p>
+        <table>
+          <thead>
+            <tr><th>Modell</th><th>Kontext</th><th>Input</th><th>Output</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Anthropic Claude Haiku 4.5</td><td>200k</td><td>$1,00</td><td>$5,00</td></tr>
+            <tr><td>Anthropic Claude Sonnet 4.5/4.6</td><td>1M</td><td>$3,00</td><td>$15,00</td></tr>
+            <tr><td>Anthropic Claude Opus 4.5/4.6/4.7/4.8</td><td>1M</td><td>$5,00</td><td>$25,00</td></tr>
+            <tr><td>OpenAI gpt-5.4-nano</td><td>k. A.</td><td>$0,20</td><td>$1,25</td></tr>
+            <tr><td>OpenAI gpt-5.4-mini</td><td>k. A.</td><td>$0,75</td><td>$4,50</td></tr>
+            <tr><td>OpenAI gpt-5.4 / 5.5</td><td>k. A.</td><td>$2,50 / $5,00</td><td>$15,00 / $30,00</td></tr>
+            <tr><td>Google Gemini 2.5 Flash-Lite</td><td>1M</td><td>$0,10</td><td>$0,40</td></tr>
+            <tr><td>Google Gemini 2.5 Flash</td><td>1M</td><td>$0,30</td><td>$2,50</td></tr>
+            <tr><td>Google Gemini 2.5 Pro (≤200k)</td><td>1M</td><td>$1,25</td><td>$10,00</td></tr>
+            <tr><td>Google Gemini 3.1 Flash-Lite</td><td>1M</td><td>$0,25</td><td>$1,50</td></tr>
+            <tr><td>Google Gemini 3.x Pro Preview (≤200k)</td><td>1M</td><td>$2,00</td><td>$12,00</td></tr>
+          </tbody>
+        </table>
+        <p>Batch-Rabatt (50 %) und Prompt-Caching (Cache-Hit ~10 % vom Input) verändern die Stückkosten erheblich.</p>
+      </section>
+
+      <section>
+        <h2>Halluzinationen</h2>
+        <p>Eine <strong>Halluzination</strong> ist eine falsche Aussage, die das Modell sicher präsentiert.</p>
+        <ul>
+          <li>Trainingsdaten enthalten den Fakt nicht</li>
+          <li>Verteilung erlaubt plausible Lügen</li>
+          <li>Modell unterscheidet nicht zwischen „wird oft gesagt" und „ist wahr"</li>
+        </ul>
+        <p class="fragment">Erkennung: Quellen verlangen, Cross-Check, gesundes Misstrauen.</p>
+      </section>
+
+      <section>
+        <h2>Strukturierte Ausgaben &amp; Multimodalität</h2>
+        <ul>
+          <li><strong>Strukturierte Ausgaben:</strong> <code>response_format</code> / JSON Mode — zwingt das Modell in valide JSON- oder XML-Strukturen</li>
+          <li><strong>Multimodale Modelle:</strong> verarbeiten Text, Bilder, Audio und teilweise Video</li>
+          <li>Use Cases: Rechnungsscan, Diagrammanalyse, Audio-Transkription</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Reasoning-Modelle</h2>
+        <p>Modelle wie OpenAI o3 / o4 oder Claude mit „Extended Thinking" zerlegen Aufgaben intern in Zwischenschritte.</p>
+        <ul>
+          <li>Langsamer und teurer pro Token</li>
+          <li>Oft deutlich bessere Ergebnisse bei Mathematik, Logik und mehrstufiger Planung</li>
+          <li>Trade-off: Qualität vs. Latenz / Kosten</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Grenzen von LLMs</h2>
+        <ul>
+          <li>Fehlendes aktuelles Wissen — Trainingsstand beachten</li>
+          <li>Falsche Quellenangaben — erfundene Paper, Urteile, URLs</li>
+          <li>Rechenfehler — selbst starke Modelle rechnen nicht zuverlässig</li>
+          <li>Scheinsicherheit — das Modell sagt selten von sich aus „ich weiß es nicht"</li>
+          <li>Kontextverlust — ältere Teile langer Konversationen werden unscharf</li>
+        </ul>
+        <p class="fragment"><strong>Praxisregel:</strong> „Das klingt überzeugend" ist das schwächste Argument für Korrektheit.</p>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

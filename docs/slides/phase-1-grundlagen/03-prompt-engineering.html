@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Engineering</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Prompt Engineering</h1>
+        <p class="slide-subtitle">Phase 1 — Aus einem schlechten Prompt einen stabilen Business-Prompt machen</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Den Aufbau eines guten Prompts aus wenigen Bausteinen zusammensetzen.</li>
+          <li>Zero-Shot, Few-Shot und iteratives Prompting unterscheiden.</li>
+          <li>Bekannte Patterns und typische Fehler kennen.</li>
+          <li>Verstehen, warum Prompt Engineering allein nicht reicht.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aufbau eines guten Prompts</h2>
+        <table>
+          <thead>
+            <tr><th>Element</th><th>Zweck</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Rolle</td><td>Wer soll das Modell sein?</td></tr>
+            <tr><td>Ziel</td><td>Was soll erreicht werden?</td></tr>
+            <tr><td>Kontext</td><td>Worum geht es, was ist Hintergrund?</td></tr>
+            <tr><td>Aufgabe</td><td>Konkrete Anweisung</td></tr>
+            <tr><td>Einschränkungen</td><td>Was darf nicht?</td></tr>
+            <tr><td>Ausgabeformat</td><td>Wie soll das Ergebnis aussehen?</td></tr>
+            <tr><td>Beispiele</td><td>Few-Shot-Vorgaben</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Beispiel-Skelett</h2>
+        <pre><code class="language-plaintext">Rolle:  Du bist Senior-Risikoanalyst in einer Bank.
+Ziel:   Erkenne vertragliche Risiken in Vertragstexten.
+Kontext: Wir prüfen deutsche Lieferverträge im B2B-Bereich.
+Aufgabe: Liefere je Klausel eine Risikoeinschätzung (hoch/mittel/niedrig).
+Einschränkungen: Keine Rechtsberatung; immer Quelle aus dem Text zitieren.
+Format:  Tabelle mit Spalten: Klausel | Risiko | Begründung | Quelle.
+Beispiele: Siehe Anhang A.</code></pre>
+      </section>
+
+      <section>
+        <h2>Zero-Shot vs. Few-Shot</h2>
+        <ul>
+          <li><strong>Zero-Shot:</strong> nur die Aufgabe, keine Beispiele</li>
+          <li><strong>Few-Shot:</strong> 1–5 Beispiele für das gewünschte Schema</li>
+        </ul>
+        <p>Few-Shot ist robuster für strukturierte Aufgaben, kostet aber Tokens.</p>
+      </section>
+
+      <section>
+        <h2>Iteratives Prompting</h2>
+        <p>Ein guter Prompt entsteht fast nie im ersten Versuch.</p>
+        <ol>
+          <li>Ersten Wurf schreiben</li>
+          <li>An 5–10 Beispielen ausführen</li>
+          <li>Schwächen identifizieren (Halluzinationen, falsches Format, fehlender Kontext)</li>
+          <li>Prompt präzise anpassen</li>
+          <li>Wiederholen, bis Stabilität erreicht ist</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Prompt Templates &amp; Versionierung</h2>
+        <ul>
+          <li>Wiederkehrende Aufgaben: Prompt als Vorlage mit Platzhaltern</li>
+          <li>Versionierung in Git — Änderungen nachvollziehbar machen</li>
+          <li>Tools: <code>promptr</code>, LangChain-Templates oder einfach Markdown-Dateien</li>
+        </ul>
+        <p class="fragment">Tipp: Prompt + Beispiel-Set gehören zusammen versioniert.</p>
+      </section>
+
+      <section>
+        <h2>Rückfragen erlauben</h2>
+        <p>Modelle dürfen (und sollen) Rückfragen stellen, wenn die Aufgabe mehrdeutig ist. Das senkt die Halluzinationsrate drastisch.</p>
+        <pre><code class="language-plaintext">Wenn etwas unklar ist, frage nach, statt zu raten.
+Liste offene Fragen vor dem Antworten kurz auf.</code></pre>
+      </section>
+
+      <section>
+        <h2>Patterns für Business-Aufgaben</h2>
+        <table>
+          <thead>
+            <tr><th>Aufgabe</th><th>Pattern</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Zusammenfassung</td><td>„Fasse in 5 Sätzen zusammen."</td></tr>
+            <tr><td>Analyse</td><td>Schema vorgeben + Belege aus dem Text verlangen</td></tr>
+            <tr><td>Klassifikation</td><td>Kategorienliste + Mehrfachauswahl erlauben</td></tr>
+            <tr><td>Dokumentenerstellung</td><td>Gliederung vorgeben + Stilbeispiel</td></tr>
+            <tr><td>Entscheidungsunterstützung</td><td>Pro/Contra mit geschätztem Impact</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Typische Fehler</h2>
+        <ul>
+          <li><strong>Mehrere Aufgaben</strong> in einem Prompt vermischen</li>
+          <li><strong>Implizite Annahmen</strong> statt explizitem Kontext</li>
+          <li><strong>Fehlende Formatvorgabe</strong> — das Modell „rät"</li>
+          <li><strong>Negative Anweisungen</strong> („sag nicht X") statt positiver Formulierung</li>
+          <li><strong>Zu lange Prompts</strong> mit redundantem Kontext</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Prompt Engineering allein reicht nicht</h2>
+        <p>Für eine zuverlässige AI-Anwendung braucht es zusätzlich:</p>
+        <ul>
+          <li>Evaluation mit qualifizierten Testfällen</li>
+          <li>Vordefinierte Tools / Function Calling</li>
+          <li>Quellen (RAG) statt freier Erfindung</li>
+          <li>Human-in-the-Loop bei Konsequenzen</li>
+        </ul>
+        <p class="fragment">Prompt Engineering ist <em>notwendig, aber nicht hinreichend</em>.</p>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

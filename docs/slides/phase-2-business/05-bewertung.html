@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use-Case-Bewertung &amp; Priorisierung</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Use-Case-Bewertung &amp; Priorisierung</h1>
+        <p class="slide-subtitle">Phase 2 — Aus Ideen wird eine Reihenfolge</p>
+      </section>
+
+      <section>
+        <h2>Lernziel</h2>
+        <ul>
+          <li>Eine einfache AI-Use-Case-Matrix bauen.</li>
+          <li>Bewertungskriterien operationalisieren (Wert, Machbarkeit, Daten, Risiko, Aufwand, TtV).</li>
+          <li>Anhand einer Beispiel-Scorecard argumentieren.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Bewertungsfragen</h2>
+        <p>Für jeden Use Case strukturiert beantworten:</p>
+        <ul>
+          <li>Welches Problem wird gelöst?</li>
+          <li>Wer ist die Zielgruppe?</li>
+          <li>Wie läuft der aktuelle Prozess?</li>
+          <li>Welche Verbesserung wird erwartet?</li>
+          <li>Sind geeignete Daten vorhanden?</li>
+          <li>Wie hoch ist das Fehlerrisiko?</li>
+          <li>Ist menschliche Kontrolle notwendig?</li>
+          <li>Wie häufig wird der Prozess ausgeführt?</li>
+          <li>Wie viel Zeit / Geld wird gespart?</li>
+          <li>Wie komplex ist die Integration?</li>
+          <li>Welche rechtlichen Risiken bestehen?</li>
+          <li>Wie wird der Erfolg gemessen?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Bewertungskriterien</h2>
+        <table>
+          <thead>
+            <tr><th>Kriterium</th><th>Skala</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Business Value (BV)</td><td>1 (gering) – 5 (hoch)</td></tr>
+            <tr><td>Technische Machbarkeit (TM)</td><td>1 (Risiko) – 5 (Standard)</td></tr>
+            <tr><td>Datenverfügbarkeit (DV)</td><td>1 (fehlt) – 5 (vollständig)</td></tr>
+            <tr><td>Risiko (rechtlich, Reputation) (R)</td><td>1 (hoch) – 5 (gering)</td></tr>
+            <tr><td>Umsetzungsaufwand (UA, klein = hoch)</td><td>1 (groß) – 5 (klein)</td></tr>
+            <tr><td>Time-to-Value (TtV, klein = hoch)</td><td>1 (Jahre) – 5 (Wochen)</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Scoring-Mechanik</h2>
+        <p>Score = BV + TM + DV + R + UA + TtV (Maximum 30).</p>
+        <p class="fragment">Interpretation:</p>
+        <ul>
+          <li><strong>≥ 24:</strong> sofort umsetzen</li>
+          <li><strong>18–23:</strong> Pilot in 1–2 Quartalen</li>
+          <li><strong>12–17:</strong> beobachten, Daten beschaffen</li>
+          <li><strong>&lt; 12:</strong> zurückstellen oder verwerfen</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Beispiel-Scorecard</h2>
+        <table>
+          <thead>
+            <tr><th>Use Case</th><th>BV</th><th>TM</th><th>DV</th><th>R</th><th>UA</th><th>TtV</th><th>Score</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Meeting-Zusammenfassung</td><td>4</td><td>5</td><td>5</td><td>5</td><td>4</td><td>5</td><td><strong>28</strong></td></tr>
+            <tr><td>Interner Wissensassistent</td><td>4</td><td>4</td><td>3</td><td>4</td><td>4</td><td>4</td><td><strong>23</strong></td></tr>
+            <tr><td>Vertragsanalyse</td><td>5</td><td>3</td><td>4</td><td>2</td><td>2</td><td>3</td><td><strong>19</strong></td></tr>
+            <tr><td>Kundenservice-Agent</td><td>4</td><td>3</td><td>3</td><td>3</td><td>2</td><td>3</td><td><strong>18</strong></td></tr>
+            <tr><td>Bewerber-Screening</td><td>3</td><td>4</td><td>2</td><td>1</td><td>3</td><td>3</td><td><strong>16</strong></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Modellqualität ergänzt die Bewertung</h2>
+        <p>Bei modellbasierten Use Cases ergänzen <strong>Accuracy</strong>, <strong>Precision</strong>, <strong>Recall</strong> und eine Prüfung auf <strong>Bias</strong> die qualitative Priorisierung.</p>
+        <ul>
+          <li>Accuracy: pauschale Trefferquote</li>
+          <li>Precision: Anteil korrekter Positivvorhersagen</li>
+          <li>Recall: Anteil erkannter positiver Fälle</li>
+          <li>F1-Score: harmonisches Mittel aus Precision &amp; Recall</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Scorecard über Branchen hinweg</h2>
+        <p>Die selbe Matrix funktioniert auch, wenn Use Cases aus verschiedenen Branchen kommen — solange die Skala gleich bleibt.</p>
+        <table>
+          <thead>
+            <tr><th>Use Case</th><th>BV</th><th>TM</th><th>DV</th><th>R</th><th>UA</th><th>TtV</th><th>Score</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Industrie: Predictive Maintenance</td><td>5</td><td>3</td><td>4</td><td>4</td><td>2</td><td>3</td><td><strong>21</strong></td></tr>
+            <tr><td>Healthcare: Radiologie-Vorsortierung</td><td>4</td><td>3</td><td>3</td><td>2</td><td>2</td><td>3</td><td><strong>17</strong></td></tr>
+            <tr><td>Handel: Sortimentsempfehlung</td><td>4</td><td>4</td><td>4</td><td>4</td><td>3</td><td>4</td><td><strong>23</strong></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Praxis-Übung</h2>
+        <ol>
+          <li>Use Cases aus dem Team sammeln (max. 10)</li>
+          <li>Pro Use Case Score 1–5 je Kriterium eintragen</li>
+          <li>Score summieren und sortieren</li>
+          <li>Top 3 im Steering Committee diskutieren</li>
+        </ol>
+        <p class="fragment">Methode bewusst einfach halten — sie soll Akzeptanz schaffen, nicht Perfektion.</p>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>Ohne messbaren Business Value verschwindet das Projekt nach 6 Monaten.</li>
+          <li>Datenverfügbarkeit ist oft der stille Show-Stopper.</li>
+          <li>Ein niedriger Score heißt nicht „schlechter Use Case", sondern „falsche Reihenfolge".</li>
+          <li>Bewertung ist ein Gesprächsanlass, kein Urteil.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

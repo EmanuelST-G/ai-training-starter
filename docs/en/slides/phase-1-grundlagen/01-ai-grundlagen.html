@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Fundamentals</title>
+  <link rel="stylesheet" href="../reveal.js/reset.css">
+  <link rel="stylesheet" href="../reveal.js/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>AI Fundamentals</h1>
+        <p class="slide-subtitle">Phase 1 — What is AI, and when is it the right choice?</p>
+      </section>
+
+      <section>
+        <h2>Learning Objective</h2>
+        <ul>
+          <li>Be able to explain what AI is and what it is not.</li>
+          <li>Distinguish classical software, machine learning and generative AI.</li>
+          <li>Name the most important AI application types.</li>
+          <li>Understand why AI models make mistakes.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What Is AI?</h2>
+        <p>Artificial intelligence refers to software that takes on tasks for which humans typically require intelligence: understanding language, recognising patterns, making decisions.</p>
+        <p class="fragment">In practice today, "AI" almost always means <strong>machine learning</strong>: models that generalise from data instead of being explicitly programmed.</p>
+      </section>
+
+      <section>
+        <h2>Distinction: Classical Software &rarr; GenAI</h2>
+        <table>
+          <thead>
+            <tr><th>Approach</th><th>Properties</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Classical software</td><td>Deterministic, rule-based</td></tr>
+            <tr><td>Rule-based systems</td><td>"If X, then Y" logic, often with a knowledge base</td></tr>
+            <tr><td>Machine learning</td><td>Learns patterns from examples</td></tr>
+            <tr><td>Deep learning</td><td>ML with deep neural networks</td></tr>
+            <tr><td>Generative AI</td><td>Creates new content (text, image, code)</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Training, Inference, Model</h2>
+        <ul>
+          <li><strong>Training:</strong> model learns from data (one-off or continuous)</li>
+          <li><strong>Inference:</strong> model produces predictions for new inputs</li>
+          <li><strong>Model:</strong> stored result of training — the "compiled experience"</li>
+        </ul>
+        <p class="fragment">So data flows through the model twice: when learning and when answering.</p>
+      </section>
+
+      <section>
+        <h2>Structured vs. Unstructured Data</h2>
+        <table>
+          <thead>
+            <tr><th>Type</th><th>Examples</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Structured</td><td>Tables, databases, clearly defined schema</td></tr>
+            <tr><td>Unstructured</td><td>Texts, images, audio, video</td></tr>
+          </tbody>
+        </table>
+        <p>AI can process both — but models differ greatly in what they are suitable for.</p>
+      </section>
+
+      <section>
+        <h2>Probabilistic Outputs</h2>
+        <p>Unlike classical software, AI returns a <strong>probability distribution</strong> over possible answers.</p>
+        <p>Two practical consequences:</p>
+        <ol>
+          <li>The same request can yield slightly different answers.</li>
+          <li>Statements often sound confident but are not guaranteed to be correct.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Why AI Makes Mistakes</h2>
+        <ul>
+          <li><strong>Bias</strong> in the training data — the model inherits prejudices</li>
+          <li><strong>Distribution shift</strong> — the world changes, the model does not</li>
+          <li><strong>Hallucinations</strong> — the model "invents" plausible content</li>
+          <li><strong>Lack of currency</strong> — the model knows nothing after its training cutoff</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Overview: AI Application Types</h2>
+        <ul>
+          <li><strong>Classification</strong> — spam or not?</li>
+          <li><strong>Forecasting</strong> — sales figures next week?</li>
+          <li><strong>Clustering</strong> — which customers are similar?</li>
+          <li><strong>Recommender systems</strong> — which film fits?</li>
+          <li><strong>Computer vision</strong> — what is in the image?</li>
+          <li><strong>NLP</strong> — understand, generate, translate text</li>
+          <li><strong>Generative AI</strong> — create new content</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Take-aways</h2>
+        <ul>
+          <li>"AI" is an umbrella term — the question is always: <em>which</em> AI?</li>
+          <li>Probabilistic outputs are the normal case, not the error.</li>
+          <li>Data quality beats model quality in most projects.</li>
+          <li>Not every problem is an AI problem — classical software often wins.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../reveal.js/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>

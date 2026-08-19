@@ -1,0 +1,82 @@
+/* Custom branding for slides — matches the site's Material indigo accent. */
+
+.reveal {
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #fdfdfd;
+  color: #1a1a1a;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  color: #3f51b5;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.reveal h1 {
+  font-size: 1.6em;
+}
+
+.reveal h2 {
+  font-size: 1.25em;
+}
+
+.reveal .slide-subtitle {
+  color: #6b6b6b;
+  font-size: 0.7em;
+  margin-top: 0.4em;
+}
+
+.reveal pre,
+.reveal code {
+  font-family: "Roboto Mono", "SF Mono", Menlo, monospace;
+}
+
+.reveal pre {
+  background: #f4f4f4;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0.6em;
+  font-size: 0.55em;
+}
+
+.reveal table {
+  border-collapse: collapse;
+  margin: 1em auto;
+  font-size: 0.6em;
+}
+
+.reveal table th,
+.reveal table td {
+  border: 1px solid #d0d0d0;
+  padding: 0.4em 0.8em;
+  text-align: left;
+}
+
+.reveal table th {
+  background: #3f51b5;
+  color: white;
+}
+
+.reveal a,
+.reveal a:hover {
+  color: #3f51b5;
+}
+
+@media print {
+  .reveal {
+    background: white;
+    color: black;
+  }
+  .reveal h1,
+  .reveal h2 {
+    color: #1a237e;
+    page-break-after: avoid;
+  }
+  .reveal pre,
+  .reveal table {
+    page-break-inside: avoid;
+  }
+}

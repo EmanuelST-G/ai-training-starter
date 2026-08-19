@@ -1,5 +1,5 @@
-site_name: AI-Ausbildung Projektleitung
-site_description: Schulungsunterlagen für die Projektleiterin im Bereich AI & Management
+site_name: AI Training for Specialists and Executives
+site_description: Training materials for specialists and executives in AI & Management.
 site_url: https://EmanuelST-G.github.io/ai-training-starter/
 repo_url: https://github.com/EmanuelST-G/ai-training-starter
 docs_dir: docs
@@ -9,8 +9,8 @@ exclude_docs: |
 
 theme:
   name: material
+  language: en
   features:
-    - navigation.instant
     - navigation.tracking
     - navigation.sections
     - navigation.top
@@ -48,42 +48,149 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-plugins:
-  - search
-
 extra_css:
   - stylesheets/print.css
 
-nav:
-  - Startseite: index.md
-  - Lernpfad: lernpfad.md
-  - Themenliste: themenliste.md
-  - Phase 1 – Grundlagen:
-      - AI-Grundlagen: grundlagen/01-ai-grundlagen.md
-      - LLMs: grundlagen/02-llms.md
-      - Prompt Engineering: grundlagen/03-prompt-engineering.md
-  - Phase 2 – Business:
-      - Use Cases: business/04-use-cases.md
-      - Bewertung: business/05-bewertung.md
-      - Business Case: business/06-business-case.md
-      - Daten: business/07-daten.md
-  - Phase 3 – Projektleitung:
-      - Projektphasen: projektleitung/08-projektphasen.md
-      - Anforderungen: projektleitung/09-anforderungen.md
-      - Evaluation: projektleitung/10-evaluation.md
-      - Change Management: projektleitung/11-change.md
-  - Phase 4 – Technik:
-      - RAG und Unternehmenswissen: technik/12-rag.md
-      - AI Agents und Automatisierung: technik/13-agents.md
-      - Integrationen und APIs: technik/14-integration.md
-      - Produktiver Betrieb und LLMOps: technik/15-betrieb.md
-  - Phase 5 – Verantwortung:
-      - Datenschutz und EU AI Act: verantwortung/16-datenschutz.md
-      - AI Security: verantwortung/17-security.md
-      - Responsible AI: verantwortung/18-responsible-ai.md
-      - AI Governance: verantwortung/19-governance.md
-  - Glossar: glossar.md
-  - Übungen: uebungen/index.md
-  - Cheat-Sheets: cheatsheets/index.md
-  - Fallstudien: fallstudien/index.md
-  - Folien: slides/index.md
+extra_javascript:
+  - javascripts/language-redirect.js
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+          site_name: AI Training for Specialists and Executives
+          site_description: Training materials for specialists and executives in AI & Management.
+          nav:
+            - Home: en/index.md
+            - Welcome: en/welcome.md
+            - Learning Path: en/lernpfad.md
+            - Topic List: en/themenliste.md
+            - Phase 1 – Fundamentals:
+                - AI Fundamentals: en/grundlagen/01-ai-grundlagen.md
+                - LLMs: en/grundlagen/02-llms.md
+                - Prompt Engineering: en/grundlagen/03-prompt-engineering.md
+            - Phase 2 – Business:
+                - Use Cases: en/business/04-use-cases.md
+                - Evaluation: en/business/05-bewertung.md
+                - Business Case: en/business/06-business-case.md
+                - Data: en/business/07-daten.md
+            - Phase 3 – Project Management:
+                - Project Phases: en/projektleitung/08-projektphasen.md
+                - Requirements: en/projektleitung/09-anforderungen.md
+                - Evaluation & Quality: en/projektleitung/10-evaluation.md
+                - Change Management: en/projektleitung/11-change.md
+            - Phase 4 – Technology:
+                - RAG and Enterprise Knowledge: en/technik/12-rag.md
+                - AI Agents & Automation: en/technik/13-agents.md
+                - Integrations & APIs: en/technik/14-integration.md
+                - Productive Operations & LLMOps: en/technik/15-betrieb.md
+            - Phase 5 – Responsibility:
+                - Privacy & EU AI Act: en/verantwortung/16-datenschutz.md
+                - AI Security: en/verantwortung/17-security.md
+                - Responsible AI: en/verantwortung/18-responsible-ai.md
+                - AI Governance: en/verantwortung/19-governance.md
+            - Glossary: en/glossar.md
+            - Exercises:
+                - Overview: en/uebungen/index.md
+                - 1 – Reliable Project Status Prompt: en/uebungen/01-prompts-formulieren.md
+                - 2 – Systematic Hallucination Detection: en/uebungen/02-halluzinationen-erkennen.md
+                - 3 – Use-Case Prioritisation: en/uebungen/03-use-cases-priorisieren.md
+                - 4 – Three-Scenario Business Case: en/uebungen/04-business-case-3-szenarien.md
+                - 5 – Measurable Acceptance Criteria: en/uebungen/05-akzeptanzkriterien-formulieren.md
+                - 6 – RAG Prototype Evaluation: en/uebungen/06-rag-prototyp-bewerten.md
+                - 7 – Controlled Agent Process: en/uebungen/07-agentenprozess-skizzieren.md
+                - 8 – Prompt Injection Demo: en/uebungen/08-prompt-injection-demo.md
+                - 9 – Evaluation Rubric: en/uebungen/09-eval-raster-erstellen.md
+                - 10 – AI Risk Register: en/uebungen/10-risikoregister-erstellen.md
+                - 11 – PoC to Production Plan: en/uebungen/11-projektplan-von-poc-zu-betrieb.md
+                - 12 – Change Communication: en/uebungen/12-change-kommunikation.md
+                - 13 – DPIA Preparation: en/uebungen/13-datenschutz-folgenabschatzung.md
+                - 14 – Responsible AI Guidelines: en/uebungen/14-leitlinien-responsible-ai.md
+            - Cheat Sheets:
+                - Overview: en/cheatsheets/index.md
+                - Phase 1 – Fundamentals: en/cheatsheets/phase-1-grundlagen.md
+                - Phase 2 – Business: en/cheatsheets/phase-2-business.md
+                - Phase 3 – Project Management: en/cheatsheets/phase-3-projektleitung.md
+                - Phase 4 – Technology: en/cheatsheets/phase-4-technik.md
+                - Phase 5 – Responsibility: en/cheatsheets/phase-5-verantwortung.md
+            - Case Studies:
+                - Overview: en/fallstudien/index.md
+                - RAG Knowledge Assistant (SME): en/fallstudien/01-rag-wissensassistent-mittelstand.md
+                - Sales Copilot for Proposals: en/fallstudien/02-vertriebscopilot-angebotserstellung.md
+                - Agent Email Triage (Customer Service): en/fallstudien/03-agenten-email-triage-kundenservice.md
+            - Slides:
+                - Overview: en/slides/index.md
+                - Credits & License: en/slides/LICENSE-credits.md
+        - locale: de
+          name: Deutsch
+          build: true
+          site_name: AI-Ausbildung für Fach- und Führungskräfte
+          site_description: Schulungsunterlagen für Fach- und Führungskräfte im Bereich AI & Management.
+          nav:
+            - Startseite: de/index.md
+            - Lernpfad: de/lernpfad.md
+            - Themenliste: de/themenliste.md
+            - Phase 1 – Grundlagen:
+                - AI-Grundlagen: de/grundlagen/01-ai-grundlagen.md
+                - LLMs: de/grundlagen/02-llms.md
+                - Prompt Engineering: de/grundlagen/03-prompt-engineering.md
+            - Phase 2 – Business:
+                - Use Cases: de/business/04-use-cases.md
+                - Bewertung: de/business/05-bewertung.md
+                - Business Case: de/business/06-business-case.md
+                - Daten: de/business/07-daten.md
+            - Phase 3 – Projektleitung:
+                - Projektphasen: de/projektleitung/08-projektphasen.md
+                - Anforderungen: de/projektleitung/09-anforderungen.md
+                - Evaluation: de/projektleitung/10-evaluation.md
+                - Change Management: de/projektleitung/11-change.md
+            - Phase 4 – Technik:
+                - RAG und Unternehmenswissen: de/technik/12-rag.md
+                - AI Agents und Automatisierung: de/technik/13-agents.md
+                - Integrationen und APIs: de/technik/14-integration.md
+                - Produktiver Betrieb und LLMOps: de/technik/15-betrieb.md
+            - Phase 5 – Verantwortung:
+                - Datenschutz und EU AI Act: de/verantwortung/16-datenschutz.md
+                - AI Security: de/verantwortung/17-security.md
+                - Responsible AI: de/verantwortung/18-responsible-ai.md
+                - AI Governance: de/verantwortung/19-governance.md
+            - Glossar: de/glossar.md
+            - Übungen:
+                - Übersicht: de/uebungen/index.md
+                - 1 – Belastbaren Projektstatus-Prompt formulieren: de/uebungen/01-prompts-formulieren.md
+                - 2 – Halluzinationen systematisch erkennen: de/uebungen/02-halluzinationen-erkennen.md
+                - 3 – Use-Cases priorisieren: de/uebungen/03-use-cases-priorisieren.md
+                - 4 – Business Case in drei Szenarien: de/uebungen/04-business-case-3-szenarien.md
+                - 5 – Messbare Akzeptanzkriterien: de/uebungen/05-akzeptanzkriterien-formulieren.md
+                - 6 – RAG-Prototyp bewerten: de/uebungen/06-rag-prototyp-bewerten.md
+                - 7 – Kontrollierten Agentenprozess skizzieren: de/uebungen/07-agentenprozess-skizzieren.md
+                - 8 – Prompt-Injection-Demo: de/uebungen/08-prompt-injection-demo.md
+                - 9 – Eval-Raster mit Freigabelogik: de/uebungen/09-eval-raster-erstellen.md
+                - 10 – AI-Risikoregister: de/uebungen/10-risikoregister-erstellen.md
+                - 11 – PoC zum produktiven Betrieb: de/uebungen/11-projektplan-von-poc-zu-betrieb.md
+                - 12 – Change-Kommunikation: de/uebungen/12-change-kommunikation.md
+                - 13 – DSFA vorbereiten: de/uebungen/13-datenschutz-folgenabschatzung.md
+                - 14 – Responsible-AI-Leitlinien: de/uebungen/14-leitlinien-responsible-ai.md
+            - Cheat-Sheets:
+                - Übersicht: de/cheatsheets/index.md
+                - Phase 1 – Grundlagen: de/cheatsheets/phase-1-grundlagen.md
+                - Phase 2 – Business: de/cheatsheets/phase-2-business.md
+                - Phase 3 – Projektleitung: de/cheatsheets/phase-3-projektleitung.md
+                - Phase 4 – Technik: de/cheatsheets/phase-4-technik.md
+                - Phase 5 – Verantwortung: de/cheatsheets/phase-5-verantwortung.md
+            - Fallstudien:
+                - Übersicht: de/fallstudien/index.md
+                - RAG-Wissensassistent Mittelstand: de/fallstudien/01-rag-wissensassistent-mittelstand.md
+                - Vertriebscopilot Angebotserstellung: de/fallstudien/02-vertriebscopilot-angebotserstellung.md
+                - Agenten-E-Mail-Triage Kundenservice: de/fallstudien/03-agenten-email-triage-kundenservice.md
+            - Folien:
+                - Übersicht: de/slides/index.md
+                - Lizenz & Credits: de/slides/LICENSE-credits.md
